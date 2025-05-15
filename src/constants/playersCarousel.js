@@ -8,10 +8,10 @@ import widereceiver from '../assets/images/players/widereceiver.jpg';
 const playersCarousel = [
   { name: 'Lamar Jackson', image: quarterback },
   { name: 'Saquon Barkley', image: runningback },
-  { name: 'Ja\'Marr Chase', image: widereceiver },
+  { name: "Ja'Marr Chase", image: widereceiver },
   { name: 'Brock Bowers', image: tightend },
   { name: 'Brandon Aubrey', image: kicker },
-  { name: 'Broncos DST', image: defense }
-]
+  { name: 'Broncos DST', image: defense },
+];
 
-export default playersCarousel
+export default playersCarousel;

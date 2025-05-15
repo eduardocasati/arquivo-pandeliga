@@ -1,6 +1,26 @@
 :root {
-  --color-primary: #0066ff;
-  --color-secondary: #00cc99;
-  --font-size-base: 16px;
-  --border-radius: 8px;
+  /* Backgrounds */
+  --color-background-main: #282840;
+  --color-surface-primary: #323150;
+  --color-surface-secondary: #3c3b5b;
+
+  /* Textos */
+  --color-text-primary: #fff;
+  --color-text-secondary: #9e9caa;
+  --color-text-accent-pink: #f92552;
+  --color-text-accent-green: #10e0a9;
+  --color-accent-pink: #f92552;
+  --color-accent-green: #10e0a9;
+
+  /* Cores de cada time */
+  --team-beholders: #fff;
+  --team-breakers: #fff;
+  --team-brewers: #fff;
+  --team-faceiros: #fff;
+  --team-lesionaries: #fff;
+  --team-onekick: #fff;
+  --team-reginaldos: #fff;
+  --team-riders: #fff;
+  --team-tankei: #fff;
+  --team-vikings: #fff;
 }
