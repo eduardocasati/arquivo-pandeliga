@@ -1,5 +1,11 @@
+import { Countdown } from './Countdown/Countdown';
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Countdown />
+    </div>
+  );
 };
 
 export default Home;
