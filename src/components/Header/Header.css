@@ -24,6 +24,7 @@
 
 .header__site-nav {
   background-color: var(--color-surface-secondary);
+  height: 62px;
 }
 
 /* Containers internos */
