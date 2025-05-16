@@ -2,7 +2,7 @@
 // BUSCA O ATUAL CAMPEÃO
 // =====================
 
-import { getLeague, getRosters, getUsers } from './sleeperService.js';
+import { getLeague, getRosters, getUsers } from './sleeperService';
 
 // Busca o ROSTER ID do atual campeão
 export const getChampionRosterId = async () => {

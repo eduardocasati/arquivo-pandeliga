@@ -1,5 +1,5 @@
-import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
-import { SLEEPER_CONFIG } from '../config/sleeperConfig.js';
+import { LEAGUE_CONFIG } from '../config/leagueConfig';
+import { SLEEPER_CONFIG } from '../config/sleeperConfig';
 
 const { LEAGUE_ID } = LEAGUE_CONFIG;
 const { BASE_URL } = SLEEPER_CONFIG;
