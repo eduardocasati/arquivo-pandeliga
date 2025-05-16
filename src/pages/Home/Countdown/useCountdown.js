@@ -1,3 +1,4 @@
+// Custom hook que lida com o cálculo de quanto tempo falta para o primeiro jogo da temporada
 import { useEffect, useState } from 'react';
 
 export function useCountdown(targetDate) {
