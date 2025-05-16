@@ -8,9 +8,9 @@ export function Countdown() {
   return (
     <div>
       <h1>A temporada 2025 da NFL começa em:</h1>
-      <p>
+      <h2>
         {days}d {hours}h {minutes}m {seconds}s
-      </p>
+      </h2>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Header } from '../../components/Header/Header';
 import { getChampionTeamName } from '../../services/leagueChampion';
 import { Countdown } from './Countdown/Countdown';
 
@@ -11,10 +12,11 @@ export const Home = () => {
 
   return (
     <div>
+      <Header />
       <div>
         <Countdown />
       </div>
-      <p>{latestChampion}</p>
+      <h3>{latestChampion}</h3>
     </div>
   );
 };

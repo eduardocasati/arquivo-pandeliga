@@ -1,8 +1,8 @@
 :root {
   /* Backgrounds */
-  --color-background-main: #282840;
-  --color-surface-primary: #323150;
-  --color-surface-secondary: #3c3b5b;
+  --color-background-main: #1e202f;
+  --color-surface-primary: #282840;
+  --color-surface-secondary: #323150;
 
   /* Textos */
   --color-text-primary: #fff;
@@ -13,14 +13,14 @@
   --color-accent-green: #10e0a9;
 
   /* Cores de cada time */
-  --team-beholders: #fff;
-  --team-breakers: #fff;
-  --team-brewers: #fff;
-  --team-faceiros: #fff;
-  --team-lesionaries: #fff;
-  --team-onekick: #fff;
-  --team-reginaldos: #fff;
-  --team-riders: #fff;
-  --team-tankei: #fff;
-  --team-vikings: #fff;
+  --team-beholders: #7f0e00;
+  --team-breakers: #f0331e;
+  --team-brewers: #f5c80e;
+  --team-faceiros: #841e8b;
+  --team-lesionaries: #652d90;
+  --team-onekick: #9deedf;
+  --team-reginaldos: #316d86;
+  --team-riders: #18632b;
+  --team-tankei: #78401b;
+  --team-vikings: #2b6990;
 }
