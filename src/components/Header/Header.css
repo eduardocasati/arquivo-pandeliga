@@ -5,7 +5,8 @@
 /* Áreas principais do header */
 .header__top-bar,
 .header__main,
-.header__site-nav {
+.header__site-nav,
+.header__champion {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +56,7 @@
 }
 
 .header__website-logo img {
-  width: 176px;
+  width: 184px;
 }
 
 .header__team-list {
@@ -85,4 +86,45 @@
 .header__team-item:hover {
   background-color: var(--color-surface-primary);
   box-shadow: inset 0 -4px 0 var(--team-color);
+}
+
+/* Meio do cabeçalho */
+.header__main-inner {
+  gap: 152px;
+}
+
+.header__champion {
+  gap: 8px;
+}
+
+.header__champion-logo img {
+  width: 80px;
+}
+
+.header__champion-name h1,
+.header__champion-name h2 {
+  font-weight: 600;
+}
+
+.header__champion-name h1 {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header__champion-name h1 span {
+  font-size: 1rem;
+  color: var(--color-accent-green);
+  display: flex;
+  align-items: center;
+}
+
+.header__champion-name h2 {
+  font-style: italic;
+  color: var(--color-text-accent-green);
+}
+
+.header__sleeper-logo img {
+  width: 160px;
 }

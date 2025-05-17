@@ -1,39 +1,77 @@
+import { useEffect, useState } from 'react';
+import { FaTrophy } from 'react-icons/fa';
+
 import './Header.css';
 
+import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
 import teamList from '../../constants/teamList';
-
-import { logoArquivoPandeliga } from '../../constants/images';
+import { getChampionTeamName } from '../../services/leagueChampion';
 
 export const Header = () => {
+  const [championTeam, setChampionTeam] = useState(null);
+
+  useEffect(() => {
+    getChampionTeamName().then((championTeamName) => {
+      const foundTeam = teamList.find(
+        (team) => team.team_name === championTeamName,
+      );
+      setChampionTeam(foundTeam);
+    });
+  }, []);
+
   return (
     <header className="header">
       <div className="header__top-bar">
-        {/* header__top-bar-inner = wrapper contendo o logo e a navegação dos times */}
         <div className="header__top-bar-inner">
-          {/* logo do site */}
           <div className="header__website-logo">
-            <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo"></img>
+            <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
           </div>
-          {/* header__team-list = wrapper contendo o menu com a lista dos times */}
           <ul className="header__team-list">
-            {teamList.map((team) => {
-              const cssVarName = `--team-${team.team_name.toLowerCase().replace(/\s+/g, '')}`;
-              return (
-                <li
-                  key={team.team_name}
-                  className="header__team-item"
-                  style={{ '--team-color': `var(${cssVarName})` }}
-                >
-                  {team.team_name}
-                </li>
-              );
-            })}
+            {teamList.map((team) => (
+              <li
+                key={team.team_id}
+                className="header__team-item"
+                style={{ '--team-color': `var(--team-${team.team_id})` }}
+              >
+                {team.display_name}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
+
       <div className="header__main">
-        <div className="header__main-inner"></div>
+        <div className="header__main-inner">
+          <div className="header__champion">
+            <div className="header__champion-logo">
+              {championTeam?.team_logo && (
+                <img
+                  src={championTeam.team_logo}
+                  alt={`${championTeam.team_name} logo`}
+                />
+              )}
+            </div>
+            <div className="header__champion-name">
+              <h1>
+                <span>
+                  <FaTrophy />
+                </span>{' '}
+                Atual campeão
+              </h1>
+              <h2>{championTeam?.team_name}</h2>
+            </div>
+          </div>
+
+          <div className="header__countdown">
+            <p>DRAFT COUNTDOWN</p>
+          </div>
+
+          <div className="header__sleeper-logo">
+            <img src={logoSleeper} alt="Sleeper Logo" />
+          </div>
+        </div>
       </div>
+
       <div className="header__site-nav">
         <ul className="header__nav-list"></ul>
       </div>
