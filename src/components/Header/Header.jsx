@@ -15,6 +15,7 @@ export const Header = () => {
       const foundTeam = teamList.find(
         (team) => team.team_name === championTeamName,
       );
+
       setChampionTeam(foundTeam);
     });
   }, []);
@@ -73,7 +74,14 @@ export const Header = () => {
       </div>
 
       <div className="header__site-nav">
-        <ul className="header__nav-list"></ul>
+        <ul className="header__nav-list">
+          <li className="header__nav-item">Home</li>
+          <li className="header__nav-item">Page2</li>
+          <li className="header__nav-item">Page3</li>
+          <li className="header__nav-item">Page4</li>
+          <li className="header__nav-item">Page5</li>
+          <li className="header__nav-item">Page6</li>
+        </ul>
       </div>
     </header>
   );

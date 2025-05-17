@@ -30,7 +30,8 @@
 
 /* Containers internos */
 .header__top-bar-inner,
-.header__main-inner {
+.header__main-inner,
+.header__nav-list {
   max-width: 1186px;
   width: 100%;
   height: 100%;
@@ -65,24 +66,29 @@
   list-style: none;
 }
 
-/* Itens da lista de times */
-.header__team-item {
-  padding: 0 16px;
+/* Estilos em comum da lista de times e da lista de navegação */
+.header__team-item,
+.header__nav-item {
   height: 100%;
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font:
-    700 0.7rem 'Exo 2',
-    sans-serif;
+  font-weight: 700;
+  font-family: 'Exo 2', sans-serif;
   cursor: pointer;
-  box-shadow: inset 0 -4px 0 transparent;
   transition:
-    background-color 0.4s ease-in-out,
-    box-shadow 0.4s ease-in-out;
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Cor dinâmica no hover com custom property */
+/* Lista dos times */
+.header__team-item {
+  padding: 0 16px;
+  font-size: 0.7rem;
+  box-shadow: inset 0 -4px 0 transparent;
+}
+
+/* Cor dinâmica no hover dos times usando custom property */
 .header__team-item:hover {
   background-color: var(--color-surface-primary);
   box-shadow: inset 0 -4px 0 var(--team-color);
@@ -127,4 +133,26 @@
 
 .header__sleeper-logo img {
   width: 160px;
+}
+
+/* Parte de baixo do cabeçalho - navegação de páginas */
+.header__nav-list {
+  list-style: none;
+  justify-content: space-between;
+}
+
+.header__nav-item {
+  justify-content: center;
+  width: 100%;
+  border-left: 1px solid #3c3b5b;
+  box-shadow: inset 0 4px 0 transparent;
+}
+
+.header__nav-item:nth-child(6) {
+  border-right: 1px solid #3c3b5b;
+}
+
+.header__nav-item:hover {
+  background-color: var(--color-surface-primary);
+  box-shadow: inset 0 4px 0 var(--color-accent-pink);
 }
