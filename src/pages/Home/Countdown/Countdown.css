@@ -1,0 +1,40 @@
+.hero___inner-title h1 {
+  font-size: 3rem;
+  font-style: italic;
+}
+
+.countdown__numbers,
+.countdown__numbers-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown__numbers {
+  font-family: 'Exo 2', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown__numbers span {
+  font-weight: 600;
+  font-size: 5rem;
+  font-style: italic;
+  padding: 0 24px;
+  color: var(--color-text-accent-green);
+}
+
+.countdown__numbers-item {
+  flex-direction: column;
+}
+
+.countdown__numbers-item p {
+  font-weight: 700;
+  font-size: 10rem;
+  font-style: italic;
+  color: var(--color-text-accent-green);
+}
+
+.countdown__numbers-item small {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}

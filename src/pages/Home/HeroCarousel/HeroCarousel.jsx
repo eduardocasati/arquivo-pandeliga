@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { Countdown } from '../Countdown/Countdown';
+
 import playersCarousel from '../../../constants/playersCarousel';
 
 import './HeroCarousel.css';
@@ -13,7 +15,6 @@ export const HeroCarousel = () => {
         prevIndex === playersCarousel.length ? 1 : prevIndex + 1,
       );
     }, 6000);
-
     return () => clearInterval(intervalId);
   }, []);
 
@@ -32,7 +33,9 @@ export const HeroCarousel = () => {
           />
         ))}
       </figure>
-      <div className="hero__inner"></div>
+      <div className="hero__inner">
+        <Countdown />
+      </div>
     </div>
   );
 };

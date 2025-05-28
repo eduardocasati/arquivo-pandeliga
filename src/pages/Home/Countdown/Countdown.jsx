@@ -1,17 +1,47 @@
+import React from 'react';
+
 import { useCountdown } from './useCountdown';
 
 import { getTargetDate } from './getTargetDate';
 
-export const Countdown = () => {
+import './Countdown.css';
+
+export const Countdown = React.memo(() => {
   const targetDate = getTargetDate(); // Importa de getTargetDate qual é a data e horário do jogo
   const { days, hours, minutes, seconds } = useCountdown(targetDate); // Passa para o custom hook useCountdown a data do jogo
 
   return (
-    <div>
-      <h1>A temporada 2025 da NFL começa em:</h1>
-      <h2>
-        {days}d {hours}h {minutes}m {seconds}s
-      </h2>
-    </div>
+    <>
+      <div className="hero___inner-title">
+        <h1>A temporada de 2025 começa em</h1>
+      </div>
+      <div className="countdown__numbers">
+        <div className="countdown__numbers-item">
+          <p>{days}</p>
+          <small>{days === '01' ? 'dia' : 'dias'}</small>
+        </div>
+
+        <span>:</span>
+
+        <div className="countdown__numbers-item">
+          <p>{hours}</p>
+          <small>{hours === '01' ? 'hora' : 'horas'}</small>
+        </div>
+
+        <span>:</span>
+
+        <div className="countdown__numbers-item">
+          <p>{minutes}</p>
+          <small>{minutes === '01' ? 'minuto' : 'minutos'}</small>
+        </div>
+
+        <span>:</span>
+
+        <div className="countdown__numbers-item">
+          <p>{seconds}</p>
+          <small>{seconds === '01' ? 'segundo' : 'segundos'}</small>
+        </div>
+      </div>
+    </>
   );
-};
+});
