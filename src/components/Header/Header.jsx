@@ -1,24 +1,15 @@
-import { useEffect, useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
 import './Header.css';
 
 import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
+import leagueChampion from '../../constants/leagueChampion';
 import teamList from '../../constants/teamList';
-import { getChampionTeamName } from '../../services/leagueChampion';
 
 export const Header = () => {
-  const [championTeam, setChampionTeam] = useState(null);
-
-  useEffect(() => {
-    getChampionTeamName().then((championTeamName) => {
-      const foundTeam = teamList.find(
-        (team) => team.team_name === championTeamName,
-      );
-
-      setChampionTeam(foundTeam);
-    });
-  }, []);
+  const championTeam = teamList.find(
+    (team) => team.team_name === leagueChampion.team_name,
+  );
 
   return (
     <header className="header">
