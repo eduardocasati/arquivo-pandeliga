@@ -1,10 +1,11 @@
 import { FaTrophy } from 'react-icons/fa';
 
-import './Header.css';
-
-import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
 import leagueChampion from '../../constants/leagueChampion';
 import teamList from '../../constants/teamList';
+
+import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
+
+import './Header.css';
 
 export const Header = () => {
   const championTeam = teamList.find(

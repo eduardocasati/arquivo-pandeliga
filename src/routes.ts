@@ -4,7 +4,7 @@ import {
   createRouter,
   Outlet,
 } from '@tanstack/react-router';
-import Home from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 
 // Rota raiz (usada como wrapper)
 const rootRoute = createRootRoute({

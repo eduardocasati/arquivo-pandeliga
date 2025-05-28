@@ -1,7 +1,8 @@
-import { getTargetDate } from './getTargetDate';
 import { useCountdown } from './useCountdown';
 
-export function Countdown() {
+import { getTargetDate } from './getTargetDate';
+
+export const Countdown = () => {
   const targetDate = getTargetDate(); // Importa de getTargetDate qual é a data e horário do jogo
   const { days, hours, minutes, seconds } = useCountdown(targetDate); // Passa para o custom hook useCountdown a data do jogo
 
@@ -13,4 +14,4 @@ export function Countdown() {
       </h2>
     </div>
   );
-}
+};

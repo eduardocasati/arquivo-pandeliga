@@ -1,0 +1,73 @@
+.hero {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.hero__container {
+  position: relative;
+
+  /* Faz as imagens filhas se sobreporem */
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero__container img {
+  height: calc(100dvh - 202px);
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  /* Faz as imagens se sobreporem */
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.hero__container img.active-slide {
+  opacity: 1;
+}
+
+.effect-duotone__layer,
+.effect-duotone__layer::before,
+.effect-duotone__layer::after,
+.effect-duotone__layer-inner {
+  position: absolute;
+  inset: 0;
+}
+
+.effect-duotone__layer::before {
+  content: '';
+  background-color: #000;
+  mix-blend-mode: color;
+  z-index: 2;
+}
+
+.effect-duotone__layer::after {
+  content: '';
+  background-color: var(--color-surface-primary);
+  mix-blend-mode: lighten;
+  z-index: 4;
+}
+
+.effect-duotone__layer-inner {
+  background-color: var(--color-accent-pink);
+  mix-blend-mode: multiply;
+  z-index: 3;
+}
+
+.hero__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* TALBET: 768px */
+@media screen and (max-width: 770px) {
+  .hero__container img {
+    height: auto;
+  }
+}

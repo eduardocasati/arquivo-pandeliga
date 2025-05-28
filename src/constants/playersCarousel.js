@@ -6,12 +6,12 @@ import tightend from '../assets/images/players/tightend.jpg';
 import widereceiver from '../assets/images/players/widereceiver.jpg';
 
 const playersCarousel = [
-  { name: 'Lamar Jackson', image: quarterback },
-  { name: 'Saquon Barkley', image: runningback },
-  { name: "Ja'Marr Chase", image: widereceiver },
-  { name: 'Brock Bowers', image: tightend },
-  { name: 'Brandon Aubrey', image: kicker },
-  { name: 'Broncos DST', image: defense },
+  { alt: 'Lamar Jackson', src: quarterback },
+  { alt: 'Saquon Barkley', src: runningback },
+  { alt: "Ja'Marr Chase", src: widereceiver },
+  { alt: 'Brock Bowers', src: tightend },
+  { alt: 'Brandon Aubrey', src: kicker },
+  { alt: 'Broncos D/ST', src: defense },
 ];
 
 export default playersCarousel;
