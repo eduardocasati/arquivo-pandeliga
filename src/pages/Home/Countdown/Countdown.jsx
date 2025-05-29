@@ -13,7 +13,7 @@ export const Countdown = React.memo(() => {
   return (
     <>
       <div className="hero___inner-title">
-        <h1>A temporada de 2025 começa em</h1>
+        <h1>O draft de 2025 começa em</h1>
       </div>
       <div className="countdown__numbers">
         <div className="countdown__numbers-item">
