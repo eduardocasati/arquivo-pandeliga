@@ -1,5 +1,6 @@
 .header {
   background-color: var(--color-surface-primary);
+  border-bottom: 1px solid var(--color-surface-secondary);
 }
 
 /* Áreas principais do header */
@@ -24,8 +25,9 @@
 }
 
 .header__site-nav {
+  position: relative;
   background-color: var(--color-surface-secondary);
-  height: 62px;
+  height: 100%;
 }
 
 /* Containers internos */
@@ -44,8 +46,6 @@
   justify-content: flex-end;
 }
 
-/* Controle e posicionamento do logo do site e menu dos times*/
-
 .header__top-bar-inner {
   position: relative;
 }
@@ -57,23 +57,15 @@
 }
 
 .header__website-logo img {
-  width: 176px;
+  width: 184px;
 }
 
-.header__team-list {
-  display: flex;
-  height: 100%;
-  list-style: none;
-}
-
-/* Estilos em comum da lista de times e da lista de navegação */
-.header__team-item,
 .header__nav-item {
   height: 100%;
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   font-family: 'Exo 2', sans-serif;
   cursor: pointer;
   transition:
@@ -81,20 +73,12 @@
     box-shadow 0.3s ease;
 }
 
-/* Lista dos times */
-.header__team-item {
+.header__nav-item {
   padding: 0 16px;
   font-size: 0.7rem;
   box-shadow: inset 0 -4px 0 transparent;
 }
 
-/* Cor dinâmica no hover dos times usando custom property */
-.header__team-item:hover {
-  background-color: var(--color-surface-primary);
-  box-shadow: inset 0 -4px 0 var(--team-color);
-}
-
-/* Meio do cabeçalho */
 .header__main-inner {
   gap: 152px;
 }
@@ -135,24 +119,17 @@
   width: 160px;
 }
 
-/* Parte de baixo do cabeçalho - navegação de páginas */
 .header__nav-list {
   list-style: none;
-  justify-content: space-between;
 }
 
 .header__nav-item {
   justify-content: center;
-  width: 100%;
-  border-left: 1px solid #3c3b5b;
   box-shadow: inset 0 4px 0 transparent;
 }
 
-.header__nav-item:nth-child(6) {
-  border-right: 1px solid #3c3b5b;
-}
-
-.header__nav-item:hover {
+.header__nav-item:hover,
+.header__nav-item--dropdown-open {
   background-color: var(--color-surface-primary);
   box-shadow: inset 0 4px 0 var(--color-accent-pink);
 }

@@ -29,7 +29,7 @@ export const HeroCarousel = () => {
             src={slide.src}
             alt={slide.alt}
             key={index}
-            className={slidesIndex === index + 1 ? 'active-slide' : ''}
+            className={slidesIndex === index + 1 ? 'hero__active-slide' : ''}
           />
         ))}
       </figure>

@@ -25,7 +25,7 @@
   grid-column-start: 1;
 }
 
-.hero__container img.active-slide {
+.hero__container img.hero__active-slide {
   opacity: 1;
 }
 

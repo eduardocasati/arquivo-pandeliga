@@ -1,16 +1,25 @@
 import { FaTrophy } from 'react-icons/fa';
 
+import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
+
 import leagueChampion from '../../constants/leagueChampion';
 import teamList from '../../constants/teamList';
 
 import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
 
+import { useState } from 'react';
 import './Header.css';
 
 export const Header = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const championTeam = teamList.find(
     (team) => team.team_name === leagueChampion.team_name,
   );
+
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <header className="header">
@@ -19,17 +28,28 @@ export const Header = () => {
           <div className="header__website-logo">
             <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
           </div>
-          <ul className="header__team-list">
-            {teamList.map((team) => (
+          <div className="header__site-nav">
+            <ul className="header__nav-list">
+              <li className="header__nav-item">Home</li>
+              <li className="header__nav-item">Confrontos Diretos</li>
+              <li className="header__nav-item">Recordes</li>
+              <li className="header__nav-item">Classificação Histórica</li>
+              <li className="header__nav-item">Temporadas</li>
+              <li className="header__nav-item">Hall da Fama</li>
               <li
-                key={team.team_id}
-                className="header__team-item"
-                style={{ '--team-color': `var(--team-${team.team_id})` }}
+                className={`header__nav-item${
+                  dropdownOpen ? ' header__nav-item--dropdown-open' : ''
+                }`}
+                onMouseEnter={handleDropdownToggle}
+                onMouseLeave={handleDropdownToggle}
               >
-                {team.display_name}
+                Times
               </li>
-            ))}
-          </ul>
+            </ul>
+            {dropdownOpen && (
+              <TeamsDropdown setDropdownOpen={setDropdownOpen} />
+            )}
+          </div>
         </div>
       </div>
 
@@ -60,20 +80,15 @@ export const Header = () => {
           </div>
 
           <div className="header__sleeper-logo">
-            <img src={logoSleeper} alt="Sleeper Logo" />
+            <a
+              href="https://sleeper.com/leagues/1181787756111253504/predraft"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={logoSleeper} alt="Sleeper Logo" />
+            </a>
           </div>
         </div>
-      </div>
-
-      <div className="header__site-nav">
-        <ul className="header__nav-list">
-          <li className="header__nav-item">Home</li>
-          <li className="header__nav-item">Page2</li>
-          <li className="header__nav-item">Page3</li>
-          <li className="header__nav-item">Page4</li>
-          <li className="header__nav-item">Page5</li>
-          <li className="header__nav-item">Page6</li>
-        </ul>
       </div>
     </header>
   );
