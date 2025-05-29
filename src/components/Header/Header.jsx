@@ -35,7 +35,7 @@ export const Header = () => {
               <li className="header__nav-item">Recordes</li>
               <li className="header__nav-item">Classificação Histórica</li>
               <li className="header__nav-item">Temporadas</li>
-              <li className="header__nav-item">Hall da Fama</li>
+              <li className="header__nav-item">Sala de Troféus</li>
               <li
                 className={`header__nav-item${
                   dropdownOpen ? ' header__nav-item--dropdown-open' : ''

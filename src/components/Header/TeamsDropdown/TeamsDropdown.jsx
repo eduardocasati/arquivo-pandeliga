@@ -15,7 +15,7 @@ export const TeamsDropdown = ({ setDropdownOpen }) => {
             key={team.team_id}
             style={{ '--team-color': `var(--team-${team.team_id})` }}
           >
-            {team.team_name}
+            {team.display_name}
           </li>
         ))}
       </ul>
