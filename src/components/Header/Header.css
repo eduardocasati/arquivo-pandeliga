@@ -50,6 +50,10 @@
   position: relative;
 }
 
+.header__mobile-logo {
+  display: none;
+}
+
 .header__website-logo {
   position: absolute;
   top: 0;
@@ -136,14 +140,23 @@
 
 /* BREAKPOINT 1: MAX WIDTH DA PÁGINA */
 @media screen and (max-width: 1120px) {
+  .header__top-bar,
   .header__site-nav,
   .header__countdown {
     display: none;
   }
 
-  .header__website-logo {
+  .header__mobile-logo {
+    position: absolute;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+    display: flex;
+    z-index: 10;
+  }
+
+  .header__mobile-logo img {
+    width: 184px;
   }
 
   .header__main-inner {
@@ -151,13 +164,45 @@
   }
 
   .header__main-inner > * {
-    padding: 0 32px;
+    padding: 0 80px;
+  }
+
+  .header__champion-logo img {
+    width: 56px;
+  }
+
+  .header__champion-name h1 {
+    font-size: 0.6rem;
+  }
+
+  .header__champion-name h1 span {
+    font-size: 0.6rem;
+  }
+
+  .header__champion-name h2 {
+    font-size: 1.2rem;
+  }
+
+  .header__sleeper-logo img {
+    width: 136px;
   }
 }
 
 /* BREAKPOINT 2 */
 @media screen and (max-width: 960px) {
-  .header__main-inner {
+  .header__champion,
+  .header__sleeper-logo {
     display: none;
+  }
+
+  .header__main-inner {
+    position: relative;
+  }
+}
+
+/* BREAKPOINT 3 */
+@media screen and (max-width: 768px) {
+  .header__mobile-logo img {
+    width: 144px;
   }
 }

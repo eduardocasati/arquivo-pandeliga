@@ -57,6 +57,11 @@ export const Header = () => {
 
       <div className="header__main">
         <div className="header__main-inner">
+          {/* LOGO DA VERSÃO MOBILE */}
+          <div className="header__mobile-logo">
+            <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
+          </div>
+
           <div className="header__champion">
             <div className="header__champion-logo">
               {championTeam?.team_logo && (
