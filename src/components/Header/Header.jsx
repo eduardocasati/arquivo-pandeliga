@@ -1,6 +1,6 @@
 import { FaTrophy } from 'react-icons/fa';
 
-import { NavDrawer } from './NavDrawer/NavDrawer';
+import { MobileMenu } from './MobileMenu/MobileMenu';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
 import leagueChampion from '../../constants/leagueChampion';
@@ -12,20 +12,19 @@ import { useState } from 'react';
 import './Header.css';
 
 export const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const championTeam = teamList.find(
     (team) => team.team_name === leagueChampion.team_name,
   );
 
   const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <header className="header">
       <div className="header__top-bar">
-        <NavDrawer />
         <div className="header__top-bar-inner">
           <div className="header__website-logo">
             <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
@@ -40,7 +39,7 @@ export const Header = () => {
               <li className="header__nav-item">Sala de Troféus</li>
               <li
                 className={`header__nav-item${
-                  dropdownOpen ? ' header__nav-item--dropdown-open' : ''
+                  isDropdownOpen ? ' header__nav-item--dropdown-open' : ''
                 }`}
                 onMouseEnter={handleDropdownToggle}
                 onMouseLeave={handleDropdownToggle}
@@ -48,8 +47,8 @@ export const Header = () => {
                 Times
               </li>
             </ul>
-            {dropdownOpen && (
-              <TeamsDropdown setDropdownOpen={setDropdownOpen} />
+            {isDropdownOpen && (
+              <TeamsDropdown setIsDropdownOpen={setIsDropdownOpen} />
             )}
           </div>
         </div>
@@ -57,6 +56,9 @@ export const Header = () => {
 
       <div className="header__main">
         <div className="header__main-inner">
+          {/* MENU MOBILE */}
+          <MobileMenu />
+
           {/* LOGO DA VERSÃO MOBILE */}
           <div className="header__mobile-logo">
             <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />

@@ -1,0 +1,109 @@
+.header__mobile-menu-icon {
+  left: 32px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 102;
+}
+
+.mobile-menu-icon__line,
+.mobile-menu-icon__line::before,
+.mobile-menu-icon__line::after {
+  position: absolute;
+  height: 3px;
+  width: 26px;
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.mobile-menu-icon__line {
+  /* Faz o delay da transição acontecer apenas quando a barra fica transparente */
+  /* transition: background-color 0.4s ease 0s; */
+}
+
+.mobile-menu-icon__line::before,
+.mobile-menu-icon__line::after {
+  content: '';
+  /* transition: 0.4s ease-in-out; */
+}
+
+.mobile-menu-icon__line::before {
+  top: -8px;
+  /* transition:
+    top 0.4s,
+    rotate 0.2s ease 0.4s; */
+}
+
+.mobile-menu-icon__line::after {
+  top: 8px;
+}
+
+.mobile-menu-icon--active .mobile-menu-icon__line {
+  background-color: transparent;
+  /* Faz o delay da transição acontecer apenas quando a barra fica transparente */
+  /* transition: background-color 0.4s ease 0.4s; */
+}
+
+.mobile-menu-icon--active .mobile-menu-icon__line::before {
+  top: 0;
+  rotate: 45deg;
+}
+
+.mobile-menu-icon--active .mobile-menu-icon__line::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.header__mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  transition: 0.3s ease-in;
+  z-index: 98;
+  animation: fade-in 0.3s;
+}
+
+.header__mobile-menu-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80dvw;
+  height: 100dvh;
+  background-color: var(--color-surface-secondary);
+  transition: 0.3 ease-in;
+  z-index: 99;
+  animation: slide 0.1s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes slide {
+  from {
+    left: -100dvw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+/* BREAKPOINTS */
+@media screen and (min-width: 961px) {
+  .header__mobile-menu-icon {
+    left: 24px;
+  }
+}
+
+@media screen and (min-width: 1121px) {
+  .header__mobile-menu-icon {
+    display: none;
+  }
+}

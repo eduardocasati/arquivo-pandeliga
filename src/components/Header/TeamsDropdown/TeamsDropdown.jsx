@@ -2,12 +2,12 @@ import teamList from '../../../constants/teamList';
 
 import './TeamsDropdown.css';
 
-export const TeamsDropdown = ({ setDropdownOpen }) => {
+export const TeamsDropdown = ({ setIsDropdownOpen }) => {
   return (
     <div
       className="header__dropdown"
-      onMouseEnter={() => setDropdownOpen(true)}
-      onMouseLeave={() => setDropdownOpen(false)}
+      onMouseEnter={() => setIsDropdownOpen(true)}
+      onMouseLeave={() => setIsDropdownOpen(false)}
     >
       <ul>
         {teamList.map((team) => (
