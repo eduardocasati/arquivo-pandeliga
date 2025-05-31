@@ -133,3 +133,31 @@
   background-color: var(--color-surface-primary);
   box-shadow: inset 0 4px 0 var(--color-accent-pink);
 }
+
+/* BREAKPOINT 1: MAX WIDTH DA PÁGINA */
+@media screen and (max-width: 1120px) {
+  .header__site-nav,
+  .header__countdown {
+    display: none;
+  }
+
+  .header__website-logo {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .header__main-inner {
+    justify-content: space-between;
+  }
+
+  .header__main-inner > * {
+    padding: 0 32px;
+  }
+}
+
+/* BREAKPOINT 2 */
+@media screen and (max-width: 960px) {
+  .header__main-inner {
+    display: none;
+  }
+}

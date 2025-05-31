@@ -1,0 +1,6 @@
+/* BREAKPOINT */
+@media screen and (min-width: 1121px) {
+  .header__mobile-menu {
+    display: none;
+  }
+}

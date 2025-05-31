@@ -1,5 +1,6 @@
 import { FaTrophy } from 'react-icons/fa';
 
+import { NavDrawer } from './NavDrawer/NavDrawer';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
 import leagueChampion from '../../constants/leagueChampion';
@@ -24,6 +25,7 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="header__top-bar">
+        <NavDrawer />
         <div className="header__top-bar-inner">
           <div className="header__website-logo">
             <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
