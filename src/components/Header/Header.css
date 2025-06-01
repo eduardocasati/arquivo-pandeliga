@@ -85,6 +85,7 @@
 
 .header__main-inner {
   gap: 152px;
+  position: relative;
 }
 
 .header__champion {
@@ -194,10 +195,6 @@
   .header__champion,
   .header__sleeper-logo {
     display: none;
-  }
-
-  .header__main-inner {
-    position: relative;
   }
 }
 

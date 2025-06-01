@@ -1,5 +1,7 @@
 .header__mobile-menu-icon {
   left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
   position: absolute;
   cursor: pointer;
   z-index: 102;
@@ -38,12 +40,12 @@
 }
 
 .mobile-menu-icon--active .mobile-menu-icon__line {
-  background-color: transparent;
+  display: none;
   /* Faz o delay da transição acontecer apenas quando a barra fica transparente */
   /* transition: background-color 0.4s ease 0.4s; */
 }
 
-.mobile-menu-icon--active .mobile-menu-icon__line::before {
+/* .mobile-menu-icon--active .mobile-menu-icon__line::before {
   top: 0;
   rotate: 45deg;
 }
@@ -51,7 +53,7 @@
 .mobile-menu-icon--active .mobile-menu-icon__line::after {
   top: 0;
   transform: rotate(-45deg);
-}
+} */
 
 .header__mobile-menu-overlay {
   position: fixed;
@@ -66,6 +68,7 @@
 }
 
 .header__mobile-menu-nav {
+  overflow-y: auto;
   position: fixed;
   top: 0;
   left: 0;
@@ -74,7 +77,73 @@
   background-color: var(--color-surface-secondary);
   transition: 0.3 ease-in;
   z-index: 99;
-  animation: slide 0.1s;
+  animation: slide-in 0.3s;
+}
+
+.mobile-menu-nav__top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.mobile-menu-nav__top img {
+  width: 120px;
+}
+
+.mobile-menu-icon__close {
+  position: absolute;
+  top: 16px;
+  right: 8px;
+  font-size: 1.4rem;
+}
+
+.header__mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* gap: 24px; */
+  margin-top: 8px;
+  list-style: none;
+  font:
+    700 clamp(1.2rem, 2.5vw, 2rem) 'Exo 2',
+    sans-serif;
+  text-transform: uppercase;
+}
+
+.header__mobile-nav-list li {
+  width: fit-content;
+  /* border-left: 4px solid var(--color-accent-pink); */
+  display: flex;
+  align-items: center;
+  padding: 12px 0 12px 24px;
+  /* padding-left: 24px; */
+  cursor: pointer;
+  /* border-bottom: 1px solid var(--color-accent-gray); */
+}
+
+/* FAZ "TIMES" NÃO TER PADDING BOTTOM */
+.header__mobile-nav-list li:nth-child(7) {
+  padding-bottom: 0;
+}
+
+.header__mobile-team-list {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 8px; */
+  margin-left: 32px;
+  padding-bottom: 16px;
+  list-style: none;
+  font:
+    600 1rem 'Exo 2',
+    sans-serif;
+}
+
+.header__mobile-team-list li {
+  width: fit-content;
+  padding-block: 4px;
+  padding-left: 4px;
 }
 
 @keyframes fade-in {
@@ -86,7 +155,7 @@
   }
 }
 
-@keyframes slide {
+@keyframes slide-in {
   from {
     left: -100dvw;
   }
