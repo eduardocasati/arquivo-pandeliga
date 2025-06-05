@@ -6,7 +6,11 @@ import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
 import './Header.css';
 
-import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
+import {
+  logoArquivoPandeliga,
+  logoSleeper,
+  logoSleeperSmall,
+} from '../../constants/images';
 import leagueChampion from '../../constants/leagueChampion';
 import teamList from '../../constants/teamList';
 
@@ -61,6 +65,17 @@ export const Header = () => {
           {/* LOGO DA VERSÃO MOBILE */}
           <div className="header__mobile-logo">
             <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
+          </div>
+
+          {/* LOGO SLEEPER VERSÃO MOBILE */}
+          <div className="header__sleeper-logo-mobile">
+            <a
+              href="https://sleeper.com/leagues/1181787756111253504/predraft"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={logoSleeperSmall} alt="Sleeper Logo" />
+            </a>
           </div>
 
           <div className="header__champion">

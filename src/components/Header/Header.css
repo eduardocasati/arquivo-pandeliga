@@ -50,7 +50,8 @@
   position: relative;
 }
 
-.header__mobile-logo {
+.header__mobile-logo,
+.header__sleeper-logo-mobile {
   display: none;
 }
 
@@ -62,6 +63,17 @@
 
 .header__website-logo img {
   width: 184px;
+}
+
+.header__sleeper-logo-mobile {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  transform: translateY(-50%);
+}
+
+.header__sleeper-logo-mobile img {
+  width: 28px;
 }
 
 .header__nav-item {
@@ -196,11 +208,21 @@
   .header__sleeper-logo {
     display: none;
   }
+
+  .header__sleeper-logo-mobile {
+    display: flex;
+  }
 }
 
 /* BREAKPOINT 3 */
 @media screen and (max-width: 768px) {
   .header__mobile-logo img {
     width: 144px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .header__sleeper-logo-mobile {
+    left: 24px;
   }
 }
