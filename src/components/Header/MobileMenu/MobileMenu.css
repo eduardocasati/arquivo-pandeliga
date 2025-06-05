@@ -1,59 +1,13 @@
 .header__mobile-menu-icon {
+  position: absolute;
   left: 32px;
   top: 50%;
   transform: translateY(-50%);
-  position: absolute;
+  display: flex;
   cursor: pointer;
-  z-index: 102;
+  font-size: 2rem;
+  /* background-color: red; */
 }
-
-.mobile-menu-icon__line,
-.mobile-menu-icon__line::before,
-.mobile-menu-icon__line::after {
-  position: absolute;
-  height: 3px;
-  width: 26px;
-  background-color: #fff;
-  border-radius: 1px;
-}
-
-.mobile-menu-icon__line {
-  /* Faz o delay da transição acontecer apenas quando a barra fica transparente */
-  /* transition: background-color 0.4s ease 0s; */
-}
-
-.mobile-menu-icon__line::before,
-.mobile-menu-icon__line::after {
-  content: '';
-  /* transition: 0.4s ease-in-out; */
-}
-
-.mobile-menu-icon__line::before {
-  top: -8px;
-  /* transition:
-    top 0.4s,
-    rotate 0.2s ease 0.4s; */
-}
-
-.mobile-menu-icon__line::after {
-  top: 8px;
-}
-
-.mobile-menu-icon--active .mobile-menu-icon__line {
-  display: none;
-  /* Faz o delay da transição acontecer apenas quando a barra fica transparente */
-  /* transition: background-color 0.4s ease 0.4s; */
-}
-
-/* .mobile-menu-icon--active .mobile-menu-icon__line::before {
-  top: 0;
-  rotate: 45deg;
-}
-
-.mobile-menu-icon--active .mobile-menu-icon__line::after {
-  top: 0;
-  transform: rotate(-45deg);
-} */
 
 .header__mobile-menu-overlay {
   position: fixed;
@@ -61,23 +15,32 @@
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-color: hsla(0, 0%, 0%, 0.4);
-  transition: 0.3s ease-in;
+  background-color: hsla(0, 0%, 0%, 0.7);
   z-index: 98;
-  animation: fade-in 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
 
-.header__mobile-menu-nav {
+.header__mobile-menu {
   overflow-y: auto;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -80dvw;
   width: 80dvw;
   height: 100dvh;
   background-color: var(--color-surface-secondary);
-  transition: 0.3 ease-in;
+  transition: left 0.3s;
   z-index: 99;
-  animation: slide-in 0.3s;
+}
+
+.mobile-menu--open.header__mobile-menu {
+  left: 0;
+}
+
+.mobile-menu--open.header__mobile-menu-overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .mobile-menu-nav__top {
@@ -101,8 +64,6 @@
 .header__mobile-nav-list {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* gap: 24px; */
   margin-top: 8px;
   list-style: none;
   font:
@@ -113,13 +74,10 @@
 
 .header__mobile-nav-list li {
   width: fit-content;
-  /* border-left: 4px solid var(--color-accent-pink); */
   display: flex;
   align-items: center;
   padding: 12px 0 12px 24px;
-  /* padding-left: 24px; */
   cursor: pointer;
-  /* border-bottom: 1px solid var(--color-accent-gray); */
 }
 
 /* FAZ "TIMES" NÃO TER PADDING BOTTOM */
@@ -131,7 +89,6 @@
   width: fit-content;
   display: flex;
   flex-direction: column;
-  /* margin-top: 8px; */
   margin-left: 32px;
   padding-bottom: 16px;
   list-style: none;
@@ -151,16 +108,7 @@
     opacity: 0;
   }
   to {
-    opacity: 100;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    left: -100dvw;
-  }
-  to {
-    left: 0;
+    opacity: 1;
   }
 }
 
