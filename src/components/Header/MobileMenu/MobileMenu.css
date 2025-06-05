@@ -6,7 +6,6 @@
   display: flex;
   cursor: pointer;
   font-size: 2rem;
-  /* background-color: red; */
 }
 
 .header__mobile-menu-overlay {
@@ -64,10 +63,9 @@
 .header__mobile-nav-list {
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
   list-style: none;
   font:
-    700 clamp(1.2rem, 2.5vw, 2rem) 'Exo 2',
+    700 clamp(1rem, 2.5vw, 2rem) 'Exo 2',
     sans-serif;
   text-transform: uppercase;
 }
@@ -80,27 +78,43 @@
   cursor: pointer;
 }
 
-/* FAZ "TIMES" NÃO TER PADDING BOTTOM */
-.header__mobile-nav-list li:nth-child(7) {
-  padding-bottom: 0;
-}
-
 .header__mobile-team-list {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  margin-left: 32px;
-  padding-bottom: 16px;
-  list-style: none;
+  width: 100%;
+  background-color: var(--color-surface-primary);
   font:
     600 1rem 'Exo 2',
     sans-serif;
+
+  /* efeito sanfona */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.header__mobile-team-list ul {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0 8px 24px;
+  list-style: none;
+}
+
+.team-list--open.header__mobile-team-list {
+  max-height: 500px;
 }
 
 .header__mobile-team-list li {
   width: fit-content;
-  padding-block: 4px;
+  padding-block: 6px;
   padding-left: 4px;
+}
+
+.header__mobile-nav-item span {
+  display: flex;
+}
+
+/* vira a seta de TEAMS para baixo */
+.arrow-rotate-up {
+  transform: rotate(180deg);
 }
 
 @keyframes fade-in {

@@ -14,3 +14,10 @@ h3 {
   font-family: 'Exo 2', sans-serif;
   text-transform: uppercase;
 }
+
+.noselect {
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  -webkit-tap-highlight-color: transparent;
+}
