@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { CgClose, CgMenu } from 'react-icons/cg';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-import teamList from '../../../constants/teamList';
+import './MobileMenu.css';
 
 import { logoArquivoPandeliga } from '../../../constants/images';
-
-import './MobileMenu.css';
+import teamList from '../../../constants/teamList';
 
 export const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

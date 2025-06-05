@@ -1,15 +1,14 @@
+import { useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
 import { MobileMenu } from './MobileMenu/MobileMenu';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
-import leagueChampion from '../../constants/leagueChampion';
-import teamList from '../../constants/teamList';
+import './Header.css';
 
 import { logoArquivoPandeliga, logoSleeper } from '../../constants/images';
-
-import { useState } from 'react';
-import './Header.css';
+import leagueChampion from '../../constants/leagueChampion';
+import teamList from '../../constants/teamList';
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { useCountdown } from './useCountdown';
+import './Countdown.css';
 
 import { getTargetDate } from './getTargetDate';
-
-import './Countdown.css';
+import { useCountdown } from './useCountdown';
 
 export const Countdown = React.memo(() => {
   const targetDate = getTargetDate(); // Importa de getTargetDate qual é a data e horário do jogo

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { Countdown } from '../Countdown/Countdown';
 
-import playersCarousel from '../../../constants/playersCarousel';
-
 import './HeroCarousel.css';
+
+import playersCarousel from '../../../constants/playersCarousel';
 
 export const HeroCarousel = () => {
   const [slidesIndex, setSlidesIndex] = useState(1);
