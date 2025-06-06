@@ -57,6 +57,7 @@
   position: absolute;
   top: 16px;
   right: 8px;
+  cursor: pointer;
   font-size: 1.4rem;
 }
 

@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { CgClose, CgMenu } from 'react-icons/cg';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-import './MobileMenu.css';
+import './NavDrawer.css';
 
 import { logoArquivoPandeliga } from '../../../constants/images';
 import teamList from '../../../constants/teamList';
 
-export const MobileMenu = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export const NavDrawer = () => {
+  const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   const [isTeamlistOpen, setIsTeamlistOpen] = useState(false);
 
-  const handleMobileMenuToggle = () => setIsMenuOpen(!isMenuOpen);
+  const handleNavDrawerToggle = () => setIsNavDrawerOpen(!isNavDrawerOpen);
 
   const handleTeamlistToggle = () => setIsTeamlistOpen(!isTeamlistOpen);
 
@@ -19,25 +19,25 @@ export const MobileMenu = () => {
     <>
       <div
         className="header__mobile-menu-icon noselect"
-        onClick={handleMobileMenuToggle}
+        onClick={handleNavDrawerToggle}
       >
         <CgMenu />
       </div>
 
       <div
-        className={`header__mobile-menu-overlay${isMenuOpen ? ' mobile-menu--open' : ''}`}
-        aria-hidden={!isMenuOpen}
+        className={`header__mobile-menu-overlay${isNavDrawerOpen ? ' mobile-menu--open' : ''}`}
+        aria-hidden={!isNavDrawerOpen}
       />
 
       <div
-        className={`header__mobile-menu${isMenuOpen ? ' mobile-menu--open' : ''}`}
-        aria-hidden={!isMenuOpen}
+        className={`header__mobile-menu${isNavDrawerOpen ? ' mobile-menu--open' : ''}`}
+        aria-hidden={!isNavDrawerOpen}
       >
         <div className="mobile-menu-nav__top">
           <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
           <div
             className="mobile-menu-icon__close"
-            onClick={handleMobileMenuToggle}
+            onClick={handleNavDrawerToggle}
           >
             <CgClose />
           </div>
@@ -55,7 +55,7 @@ export const MobileMenu = () => {
             onClick={handleTeamlistToggle}
           >
             Times
-            <span className={isTeamlistOpen && 'arrow-rotate-up'}>
+            <span className={isTeamlistOpen ? 'arrow-rotate-up' : ''}>
               <MdKeyboardArrowDown />
             </span>
           </li>

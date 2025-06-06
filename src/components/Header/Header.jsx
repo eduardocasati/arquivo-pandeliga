@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
-import { MobileMenu } from './MobileMenu/MobileMenu';
+import { NavDrawer } from './NavDrawer/NavDrawer';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
 import './Header.css';
@@ -60,7 +60,7 @@ export const Header = () => {
       <div className="header__main">
         <div className="header__main-inner">
           {/* MENU MOBILE */}
-          <MobileMenu />
+          <NavDrawer />
 
           {/* LOGO DA VERSÃO MOBILE */}
           <div className="header__mobile-logo">
