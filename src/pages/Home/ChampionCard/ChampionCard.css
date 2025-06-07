@@ -2,11 +2,13 @@
   position: relative;
   display: none;
   width: fit-content;
+  max-width: 90dvw;
   margin: 56px auto;
   padding: 24px 24px;
   background-color: var(--color-surface-secondary);
   border: 1px solid var(--color-accent-gray);
   border-radius: 8px;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .champion-card::before {
@@ -24,7 +26,7 @@
   padding: 4px 8px;
   background-color: var(--color-accent-pink);
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
 }
 
@@ -36,11 +38,12 @@
 .champion-card__champion-info h2 {
   color: var(--color-text-accent-green);
   margin-top: 8px;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .champion-card__champion-info h3 {
   text-transform: capitalize;
+  font-size: 1rem;
 }
 
 .champion-card__champion-stats {
@@ -83,5 +86,28 @@
   .champion-card {
     display: flex;
     gap: 16px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .champion-card__champion-info h1 {
+    font-size: 0.5rem;
+  }
+
+  .champion-card__champion-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .champion-card__champion-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .champion-card__champion-stats p {
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+
+  .champion-card__champion-stats p span {
+    font-size: 0.8rem;
   }
 }

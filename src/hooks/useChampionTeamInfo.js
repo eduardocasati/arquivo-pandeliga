@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import teamList from '../../../constants/teamList';
+import teamList from '../constants/teamList.js';
 import {
   getChampionOwnerId,
   getChampionRosterId,
   getChampionTeamName,
-} from '../../../services/championService/championService';
+} from '../services/championService/championService.js';
 import {
   getLocalChampionTeamInfo,
   saveChampionTeamInfo,
-} from '../../../utils/storage/championStorage';
+} from '../utils/storage/championStorage';
 
 export function useChampionTeamInfo() {
   const [teamInfo, setTeamInfo] = useState(null);
@@ -32,6 +32,7 @@ export function useChampionTeamInfo() {
           getChampionOwnerId(),
           getChampionRosterId(),
         ]);
+        // encontra o time campeão na constant teamList
         const findTeam = teamList.find((team) => team.team_name === team_name);
         // une as informações estáticas e da API
         const championData = {

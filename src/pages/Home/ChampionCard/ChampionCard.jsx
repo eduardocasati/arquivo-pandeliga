@@ -1,8 +1,8 @@
-import { useChampionTeamInfo } from './useChampionTeamInfo';
-
 import { LoadingSpinner } from '../../../components/LoadingSpinner/LoadingSpinner';
 
 import './ChampionCard.css';
+
+import { useChampionTeamInfo } from '../../../hooks/useChampionTeamInfo';
 
 export const ChampionCard = () => {
   const { teamInfo, isLoading } = useChampionTeamInfo();

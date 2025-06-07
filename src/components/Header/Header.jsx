@@ -6,20 +6,18 @@ import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
 import './Header.css';
 
+import { useChampionTeamInfo } from '../../hooks/useChampionTeamInfo';
+
 import {
   logoArquivoPandeliga,
   logoSleeper,
   logoSleeperSmall,
 } from '../../constants/images';
-import leagueChampion from '../../constants/leagueChampion';
-import teamList from '../../constants/teamList';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const championTeam = teamList.find(
-    (team) => team.team_name === leagueChampion.team_name,
-  );
+  const { teamInfo, isLoading } = useChampionTeamInfo();
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -79,25 +77,28 @@ export const Header = () => {
           </div>
 
           <div className="header__champion">
-            <div className="header__champion-logo">
-              {championTeam?.team_logo && (
-                <img
-                  src={championTeam.team_logo}
-                  alt={`${championTeam.team_name} logo`}
-                />
-              )}
-            </div>
-            <div className="header__champion-name">
-              <h1>
-                <span>
-                  <FaTrophy />
-                </span>{' '}
-                Atual campeão
-              </h1>
-              <h2>{championTeam?.team_name}</h2>
-            </div>
+            {isLoading || !teamInfo ? (
+              <LoadingSpinner />
+            ) : (
+              <>
+                <div className="header__champion-logo">
+                  <img
+                    src={teamInfo.team_logo}
+                    alt={`${teamInfo.team_name} Logo`}
+                  />
+                </div>
+                <div className="header__champion-name">
+                  <h1>
+                    <span>
+                      <FaTrophy />
+                    </span>{' '}
+                    Atual campeão
+                  </h1>
+                  <h2>{teamInfo.team_name}</h2>
+                </div>
+              </>
+            )}
           </div>
-
           <div className="header__countdown">
             <p>DRAFT COUNTDOWN</p>
           </div>
