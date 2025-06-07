@@ -1,18 +1,87 @@
 .champion-card {
+  position: relative;
   display: none;
   width: fit-content;
-  margin: 80px auto;
-  padding: 24px 32px;
+  margin: 56px auto;
+  padding: 24px 24px;
   background-color: var(--color-surface-secondary);
   border: 1px solid var(--color-accent-gray);
+  border-radius: 8px;
 }
 
-.champion-card img {
+.champion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-accent-pink);
+}
+
+.champion-card__champion-info h1 {
+  width: fit-content;
+  padding: 4px 8px;
+  background-color: var(--color-accent-pink);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.champion-card__champion-info h2,
+.champion-card__champion-info h3 {
+  font-style: italic;
+}
+
+.champion-card__champion-info h2 {
+  color: var(--color-text-accent-green);
+  margin-top: 8px;
+  font-size: 1.4rem;
+}
+
+.champion-card__champion-info h3 {
+  text-transform: capitalize;
+}
+
+.champion-card__champion-stats {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.champion-card__champion-stats h4 {
+  padding-bottom: 4px;
+  text-align: left;
+  font-size: 0.5rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.champion-card__champion-stats p {
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.champion-card__champion-stats p span {
+  color: var(--color-text-accent-green);
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+
+.champion-card__champion-logo {
+  margin-top: -12px;
+}
+
+.champion-card__champion-logo img {
   width: 96px;
 }
 
 @media screen and (max-width: 960px) {
   .champion-card {
     display: flex;
+    gap: 16px;
   }
 }
