@@ -1,4 +1,5 @@
 import { Header } from '../../components/Header/Header';
+import { MarqueeJokes } from '../../components/MarqueeJokes/MarqueeJokes';
 import { ChampionCard } from './ChampionCard/ChampionCard';
 import { HeroCarousel } from './HeroCarousel/HeroCarousel';
 
@@ -10,6 +11,7 @@ export const Home = () => {
       <Header />
       <HeroCarousel />
       <ChampionCard />
+      <MarqueeJokes />
     </div>
   );
 };

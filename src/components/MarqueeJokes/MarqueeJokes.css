@@ -1,0 +1,109 @@
+.jokes-marquee {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  height: 38px;
+  align-items: center;
+  background-color: var(--color-surface-secondary);
+}
+
+.jokes-marquee::before,
+.jokes-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 24%;
+}
+
+.jokes-marquee::before {
+  left: 0;
+  background-color: var(--color-accent-pink);
+  clip-path: polygon(0 0, 100% 0%, 94% 100%, 0% 100%);
+}
+
+.jokes-marquee::after {
+  right: 0;
+  background-color: var(--color-accent-green);
+  clip-path: polygon(6% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.jokes-marquee__content {
+  white-space: nowrap;
+}
+
+.jokes-marquee .jokes-marquee__content ul {
+  display: inline;
+  white-space: nowrap;
+  list-style: none;
+}
+
+.jokes-marquee .jokes-marquee__content ul li {
+  display: inline;
+}
+
+.jokes-marquee .jokes-marquee__content ul li p {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  text-transform: uppercase;
+  display: inline;
+}
+
+.jokes-marquee .jokes-marquee__content ul li p::before {
+  content: '//';
+  margin-right: 0.5rem;
+  color: var(--color-text-accent-green);
+  font-size: 12px;
+}
+
+.scroll {
+  animation: scroll 88s linear infinite;
+}
+
+.jokes-marquee__author {
+  padding-inline: 8px;
+  color: #abb2ce;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+/* @media screen and (max-width: 770px) {
+  .app__marquee-wrapper::before,
+  .app__marquee-wrapper::after {
+    width: 132px;
+  }
+
+  .app__marquee-wrapper::before {
+    clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+  }
+
+  .app__marquee-wrapper::after {
+    clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+}
+
+@media screen and (max-width: 482px) {
+  .app__marquee-wrapper::before,
+  .app__marquee-wrapper::after {
+    width: 8px;
+  }
+
+  .scroll {
+    animation: scroll 112s linear infinite;
+  }
+} */
