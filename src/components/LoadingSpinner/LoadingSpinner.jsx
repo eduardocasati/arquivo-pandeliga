@@ -1,12 +1,12 @@
 import { BounceLoader } from 'react-spinners';
 
-import './FullPageLoadingSpinner.css';
+import './LoadingSpinner.css';
 
-export const FullPageLoadingSpinner = () => {
+export const LoadingSpinner = () => {
   return (
     <div className="full-page-loading-spinner">
       <div className="loading-spinner">
-        <BounceLoader color="#10e0a9" />
+        <BounceLoader color="#00f6ed" />
       </div>
     </div>
   );
