@@ -1,4 +1,4 @@
-import { SLEEPER_CONFIG } from '../../config/sleeperConfig.js';
+// import { SLEEPER_CONFIG } from '../../config/sleeperConfig.js';
 import {
   getLeague,
   getPreviousLeague,
@@ -7,14 +7,14 @@ import {
   getUsers,
 } from '../sleeperService.js';
 
-const { BASE_URL } = SLEEPER_CONFIG; // https://api.sleeper.app/v1
+// const { BASE_URL } = SLEEPER_CONFIG; // https://api.sleeper.app/v1
 
 // =====================
 // BUSCA O ATUAL CAMPEÃO
 // =====================
 
 // BUSCA O ROSTER ID DO ATUAL CAMPEÃO
-const getChampionRosterId = async () => {
+export const getChampionRosterId = async () => {
   const leagueInfo = await getLeague();
   const rosterId = leagueInfo.metadata.latest_league_winner_roster_id;
 
@@ -22,7 +22,7 @@ const getChampionRosterId = async () => {
 };
 
 // BUSCA O OWNER ID DO ATUAL CAMPEÃO
-const getChampionOwnerId = async () => {
+export const getChampionOwnerId = async () => {
   const leagueRosters = await getRosters();
   const rosterId = await getChampionRosterId();
 
@@ -35,7 +35,7 @@ const getChampionOwnerId = async () => {
 };
 
 // BUSCA O NOME DO TIME DO ATUAL CAMPEÃO
-const getChampionTeamName = async () => {
+export const getChampionTeamName = async () => {
   const leagueUsers = await getUsers();
   const ownerId = await getChampionOwnerId();
 
@@ -43,23 +43,6 @@ const getChampionTeamName = async () => {
   const teamName = findTeamName.metadata.team_name;
 
   return teamName;
-};
-
-// ORGANIZA AS INFORMAÇÕES COLETADAS SOBRE O CAMPEÃO
-const championInfo = async () => {
-  const rosterId = await getChampionRosterId();
-  const ownerId = await getChampionOwnerId();
-  const teamName = await getChampionTeamName();
-  const teamInfo = teamList.find((team) => team.team_name === teamName);
-
-  return {
-    roster_id: rosterId,
-    owner_id: ownerId,
-    team_id: teamInfo.team_id,
-    display_name: teamInfo.display_name,
-    team_name: teamName,
-    team_logo: teamInfo.team_logo,
-  };
 };
 
 // BUSCA AS PONTUAÇÕES DO CAMPEÃO NA TEMPORADA REGULAR
@@ -82,7 +65,10 @@ export const getChampionRegularSeasonResults = async () => {
     });
     return championResults;
   } catch (error) {
-    return console.error(error);
+    return console.error(
+      'Erro ao buscar dados dos regular season matchups do campeão:',
+      error,
+    );
   }
 };
 
@@ -109,8 +95,9 @@ export const getChampionPostSeasonResults = async () => {
     });
     return championResults;
   } catch (error) {
-    return console.error(error);
+    return console.error(
+      'Erro ao buscar dados dos playoff matchups do campeão:',
+      error,
+    );
   }
 };
-
-getChampionPostSeasonResults();
