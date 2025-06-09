@@ -82,28 +82,16 @@
   }
 }
 
-/* @media screen and (max-width: 770px) {
-  .app__marquee-wrapper::before,
-  .app__marquee-wrapper::after {
-    width: 132px;
-  }
-
-  .app__marquee-wrapper::before {
-    clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
-  }
-
-  .app__marquee-wrapper::after {
-    clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0 100%);
+@media screen and (max-width: 1200px) {
+  .jokes-marquee::before,
+  .jokes-marquee::after {
+    width: 16%;
   }
 }
 
-@media screen and (max-width: 482px) {
-  .app__marquee-wrapper::before,
-  .app__marquee-wrapper::after {
-    width: 8px;
+@media screen and (max-width: 1200px) {
+  .jokes-marquee::before,
+  .jokes-marquee::after {
+    width: 6px;
   }
-
-  .scroll {
-    animation: scroll 112s linear infinite;
-  }
-} */
+}

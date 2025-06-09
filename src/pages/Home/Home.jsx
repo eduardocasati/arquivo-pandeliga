@@ -10,8 +10,8 @@ export const Home = () => {
     <div>
       <Header />
       <HeroCarousel />
-      <ChampionCard />
       <MarqueeJokes />
+      <ChampionCard />
     </div>
   );
 };
