@@ -48,7 +48,7 @@ Aqui está o planejamento de desenvolvimento da aplicação. Este roadmap será 
 
 ## Agradecimento
 
-[Nick Melhado](https://github.com/nmelhado) por me ajudar com algumas direções de como otimizar a busca dos dados na API do Sleeper. Enquanto eu estava estudando e fazendo pesquisas para o projeto, me deparei com um projeto semelhante (mas muito mais avançado) do Nick no [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/), e ele foi muito solícito em responder minhas dúvidas e me ajudar.
+[Nick Melhado](https://github.com/nmelhado) por me ajudar com algumas dicas de como otimizar a busca dos dados na API do Sleeper. Enquanto eu estava estudando e fazendo pesquisas para o projeto, me deparei com um projeto semelhante (mas muito mais avançado) do Nick no [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/), e ele foi muito solícito em responder minhas dúvidas e me ajudar.
 
 Big thanks to [Nick Melhado](https://github.com/nmelhado) for helping me out with some Sleeper API stuff! While I was digging into the project and doing some research for it, I stumbled upon Nick's similar (but way more advanced) project on [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/), and he was super cool in answering my questions and helping me out. He made a real difference in getting this project off the ground!
 
