@@ -1,6 +1,6 @@
 .champion-card {
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 16px;
   width: fit-content;
@@ -86,7 +86,11 @@
   text-transform: uppercase;
 }
 
-/* 🔽 Adiciona largura maior em telas menores */
+@media screen and (max-width: 1120px) {
+  .champion-card {
+    display: flex;
+  }
+}
 @media screen and (max-width: 620px) {
   .champion-card {
     min-width: 72dvw;
@@ -104,5 +108,41 @@
 
   .champion-card__background-logo {
     width: 232px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .champion-card {
+    padding: 16px 24px;
+  }
+
+  .champion-card__background-logo {
+    width: 200px;
+  }
+
+  .champion-card__champion-info h1 {
+    font-size: 0.6rem;
+  }
+
+  .champion-card__champion-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .champion-card__champion-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .champion-card__champion-stats h4 {
+    font-size: 0.7rem;
+  }
+
+  .champion-card__champion-stats p {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .champion-card__champion-stats p span {
+    font-weight: 700;
+    font-size: 0.9rem;
   }
 }
