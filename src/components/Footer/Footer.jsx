@@ -20,8 +20,8 @@ export const Footer = () => {
         <div className="footer__joke">
           {/* <p>Criado na força do mais puro ódio dos meus jogadores</p> */}
           <p>
-            Construído entre derrotas inexplicáveis e decisões que pareciam boas
-            na hora.
+            Construído entre derrotas inexplicáveis e decisões equivocadas que
+            pareciam boas no momento.
           </p>
           {/* opção: substituir "inexplicáveis" por "injustas" */}
           {/* <p>Feito com React, suor, e escolhas de escalação questionáveis.</p> */}
