@@ -1,4 +1,4 @@
-import marqueeJokes from '../../constants/marqueeJokes.jsx';
+import marqueeJokes from '../../../constants/marqueeJokes.jsx';
 
 import './MarqueeJokes.css';
 
