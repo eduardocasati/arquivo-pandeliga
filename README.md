@@ -14,7 +14,7 @@ Bem-vindo(a) ao Arquivo Pandeliga, um projeto que começou como um hobby, mas ac
 
 ## Sobre
 
-Em 2022, a liga fez a transição do [NFL Fantasy](https://fantasy.nfl.com/) para o [Sleeper](https://sleeper.com/), resultando na fragmentação do histórico da liga. O objetivo deste projeto é manter as estatísticas da liga atualizadas, consolidando informações de ambas as plataformas usando suas APIs e oferecendo análises mais aprofundadas do que as plataformas oficiais podem fornecer.
+Em 2022, a liga fez a transição do [NFL Fantasy](https://fantasy.nfl.com/) para o [Sleeper](https://sleeper.com/), resultando na fragmentação do histórico da liga. O objetivo deste projeto é manter as estatísticas da liga atualizadas de forma dinâmica, consolidando informações de ambas as plataformas usando suas APIs e oferecendo análises mais aprofundadas do que as plataformas oficiais podem fornecer.
 
 ## Funcionalidades
 
