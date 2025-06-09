@@ -9,7 +9,7 @@
 
 .footer {
   width: 100%;
-  padding-bottom: 8px;
+  padding-block: 8px;
 }
 
 .footer__wrapper {
@@ -33,9 +33,9 @@
   text-decoration: none;
 }
 
-.footer a:hover {
+.footer a:active {
   color: var(--color-text-primary);
-  transition: color 0.3s ease;
+  transition: none;
 }
 
 .footer__joke {
@@ -47,6 +47,11 @@
 
 @media screen and (min-width: 661px) {
   .footer {
-    padding-top: 32px;
+    padding-top: 44px;
+  }
+
+  .footer a:hover {
+    color: var(--color-text-primary);
+    transition: color 0.3s ease;
   }
 }
