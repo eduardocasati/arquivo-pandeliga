@@ -46,7 +46,7 @@
 
 .effect-duotone__layer::after {
   content: '';
-  background-color: var(--color-surface-primary);
+  background-color: var(--color-background-main);
   mix-blend-mode: lighten;
   z-index: 4;
 }

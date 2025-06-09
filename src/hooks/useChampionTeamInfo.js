@@ -5,6 +5,7 @@ import {
   getChampionOwnerId,
   getChampionRosterId,
   getChampionTeamName,
+  getChampionUserName,
 } from '../services/championService/championService.js';
 import {
   getLocalChampionTeamInfo,
@@ -27,10 +28,11 @@ export function useChampionTeamInfo() {
       }
 
       try {
-        const [team_name, owner_id, roster_id] = await Promise.all([
+        const [team_name, owner_id, roster_id, user_name] = await Promise.all([
           getChampionTeamName(),
           getChampionOwnerId(),
           getChampionRosterId(),
+          getChampionUserName(),
         ]);
         // encontra o time campeão na constant teamList
         const findTeam = teamList.find((team) => team.team_name === team_name);
@@ -39,6 +41,7 @@ export function useChampionTeamInfo() {
           team_name,
           owner_id,
           roster_id,
+          user_name,
           team_id: findTeam.team_id,
           display_name: findTeam?.display_name,
           team_logo: findTeam.team_logo,

@@ -17,7 +17,7 @@ export const ChampionCard = () => {
       <div className="champion-card__champion-info">
         <h1>Atual Campeão</h1>
         <h2>{teamInfo.team_name}</h2>
-        <h3>Krusador</h3>
+        <h3>{teamInfo.user_name}</h3>
         <div className="champion-card__champion-stats">
           <div className="stats-regular">
             <h4>TEMP REGULAR</h4>

@@ -45,6 +45,14 @@ export const getChampionTeamName = async () => {
   return teamName;
 };
 
+export const getChampionUserName = async () => {
+  const leagueUsers = await getUsers();
+  const ownerId = await await getChampionOwnerId(); // o owner_id no endpoint de rosters é igual ao user_id no endpoint de users
+  const findUserName = leagueUsers.find((user) => user.user_id === ownerId);
+  const userName = findUserName.display_name;
+  return userName;
+};
+
 // BUSCA AS PONTUAÇÕES DO CAMPEÃO NA TEMPORADA REGULAR
 export const getChampionRegularSeasonResults = async () => {
   const previousLeagueEndpoint = await getPreviousLeagueEndpoint();
