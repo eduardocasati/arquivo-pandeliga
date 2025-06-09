@@ -83,13 +83,36 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .jokes-marquee::before {
+    clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
+  }
+
+  .jokes-marquee::after {
+    right: 0;
+    background-color: var(--color-accent-green);
+    clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+
   .jokes-marquee::before,
   .jokes-marquee::after {
     width: 16%;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 860px) {
+  .jokes-marquee::before,
+  .jokes-marquee::after {
+    width: 8px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .jokes-marquee .jokes-marquee__content ul li p {
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 480px) {
   .jokes-marquee::before,
   .jokes-marquee::after {
     width: 4px;
