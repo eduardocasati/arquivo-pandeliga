@@ -6,7 +6,7 @@ import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
 
 import './Header.css';
 
-import { useChampionTeamInfo } from '../../hooks/useChampionTeamInfo';
+import { useChampionData } from '../../hooks/useChampionData';
 
 import {
   logoArquivoPandeliga,
@@ -17,7 +17,7 @@ import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { teamInfo, isLoading } = useChampionTeamInfo();
+  const { teamInfo, isLoading } = useChampionData();
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);

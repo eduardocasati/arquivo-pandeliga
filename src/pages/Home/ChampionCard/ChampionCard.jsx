@@ -2,14 +2,10 @@ import { LoadingSpinner } from '../../../components/LoadingSpinner/LoadingSpinne
 
 import './ChampionCard.css';
 
-import { useChampionTeamInfo } from '../../../hooks/useChampionTeamInfo';
+import { useChampionData } from '../../../hooks/useChampionData';
 
 export const ChampionCard = () => {
-  const { teamInfo, isLoading } = useChampionTeamInfo();
-
-  // if (isLoading || !teamInfo) {
-  //   return <LoadingSpinner />;
-  // }
+  const { teamInfo, isLoading } = useChampionData();
 
   // TO DO: Adicionar a lógica que pega os stats do campeão de forma dinâmica
   return (
@@ -39,22 +35,23 @@ export const ChampionCard = () => {
                 V-D <span>10-4</span>
               </p>
               <p>
-                PF <span>1929,90</span>
+                PF <span>{teamInfo.regular_season_total_points}</span>
               </p>
               <p>
                 PPJ <span>137,85</span>
               </p>
-              <p>
+              {/* TO DO: pegar o total de roster moves de um time na temporada no endpoint https://api.sleeper.app/v1/league/<league_id>/transactions/<round> */}
+              {/* <p>
                 Roster Moves <span>16</span>
-              </p>
+              </p> */}
             </div>
             <div className="stats-playoffs">
               <h4>PLAYOFFS</h4>
               <p>
-                Bye <span>Sim</span>
+                Bye <span>{teamInfo.bye_week ? 'Sim' : 'Não'}</span>
               </p>
               <p>
-                PF <span>316,28</span>
+                PF <span>{teamInfo.playoffs_total_points}</span>
               </p>
               <p>
                 PPJ <span>158,14</span>

@@ -65,11 +65,11 @@ export const getChampionRegularSeasonResults = async () => {
   const response = weeksUrls.map((url) => fetch(url).then((res) => res.json()));
   // retorna os resultados de cada semana
   try {
-    const results = await Promise.allSettled(response);
+    const results = await Promise.all(response);
     // filtra apenas os resultados do campeão
     const championRosterId = await getChampionRosterId();
     const championResults = results.map((result) => {
-      return result.value.find((data) => data.roster_id === championRosterId);
+      return result.find((data) => data.roster_id === championRosterId);
     });
     return championResults;
   } catch (error) {
@@ -95,11 +95,11 @@ export const getChampionPostSeasonResults = async () => {
   const response = weeksUrls.map((url) => fetch(url).then((res) => res.json()));
   // retorna os resultados de cada semana
   try {
-    const results = await Promise.allSettled(response);
+    const results = await Promise.all(response);
     // filtra apenas os resultados do campeão
     const championRosterId = await getChampionRosterId();
     const championResults = results.map((result) => {
-      return result.value.find((data) => data.roster_id === championRosterId);
+      return result.find((data) => data.roster_id === championRosterId);
     });
     return championResults;
   } catch (error) {
