@@ -14,7 +14,7 @@ export const ChampionCard = () => {
   // TO DO: Adicionar a lógica que pega os stats do campeão de forma dinâmica
   return (
     <div className="champion-card">
-      {isLoading ? (
+      {isLoading || !teamInfo ? (
         <LoadingSpinner />
       ) : (
         <>
