@@ -86,7 +86,7 @@
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 960px) {
   .champion-card {
     display: flex;
   }
