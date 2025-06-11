@@ -45,7 +45,7 @@
 }
 
 .jokes-marquee .jokes-marquee__content ul li p {
-  font-family: 'Exo 2', sans-serif;
+  font-family: var(--font-accent);
   font-size: 12px;
   font-style: italic;
   text-transform: uppercase;

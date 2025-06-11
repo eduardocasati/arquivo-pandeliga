@@ -11,7 +11,7 @@
 }
 
 .countdown__numbers {
-  font-family: 'Exo 2', sans-serif;
+  font-family: var(--font-accent);
   font-variant-numeric: tabular-nums;
 }
 

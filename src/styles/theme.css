@@ -27,6 +27,10 @@
   --color-accent-green: #00f6ed;
   --color-accent-gray: #34373c;
 
+  /* Fontes */
+  --font-base: Roboto, sans-serif;
+  --font-accent: 'Exo 2', sans-serif;
+
   /* Cores do duotone do HeroCarousel */
   --color-duotone-1: #f33349;
   --color-duotone-2: #9e69ee;
@@ -43,4 +47,17 @@
   --team-rohan-riders: #017f35;
   --team-tankei: #b3995e;
   --team-valhalla-vikings: #2a6990;
+
+  /* Fontes de cada time
+    Beholders: UnifrakturCook, Dragonlord (não-Google)
+    Spirit Breakers: Anton
+    São Sepé Brewers: Stint Ultra Condensed
+    Ijuí Faceiros: Wellfleet (lembra vagamente a fonte no capacete dos Steelers)
+    Rome Lesionaries: Cinzel Decorative 
+    One Kick: Russo One
+    Alanbama Reginaldos: Rampart One, Yellowtail
+    Rohan Riders: Ringbearer (não-Google), Uncial Antiqua, Caudex, IM Fell English SC (lembra Ringbearer)
+    Tankei: Black Ops One, Bangers, Changa One, Sigmar One
+    Valhalla Vikings: Vollkorn SC, IM Fell English SC (lembra Ringbearer)
+  */
 }

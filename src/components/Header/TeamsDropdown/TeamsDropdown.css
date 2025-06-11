@@ -6,7 +6,7 @@
   font:
     600 0.7rem 'Exo 2',
     sans-serif;
-  /* font-family: 'Exo 2', sans-serif;
+  /* font-family: var(--font-accent);
   font-weight: 600;
   font-size: 0.7rem; */
   text-transform: uppercase;
