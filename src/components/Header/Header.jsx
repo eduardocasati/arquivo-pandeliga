@@ -17,7 +17,7 @@ import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { teamInfo, isLoading } = useChampionData();
+  const { teamData, isLoading } = useChampionData();
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -77,14 +77,14 @@ export const Header = () => {
           </div>
 
           <div className="header__champion">
-            {isLoading || !teamInfo ? (
+            {isLoading || !teamData ? (
               <LoadingSpinner />
             ) : (
               <>
                 <div className="header__champion-logo">
                   <img
-                    src={teamInfo.team_logo}
-                    alt={`${teamInfo.team_name} Logo`}
+                    src={teamData.team_logo}
+                    alt={`${teamData.team_name} Logo`}
                   />
                 </div>
                 <div className="header__champion-name">
@@ -94,7 +94,7 @@ export const Header = () => {
                     </span>{' '}
                     Atual campeão
                   </h1>
-                  <h2>{teamInfo.team_name}</h2>
+                  <h2>{teamData.team_name}</h2>
                 </div>
               </>
             )}
