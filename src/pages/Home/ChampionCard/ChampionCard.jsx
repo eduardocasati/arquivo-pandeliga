@@ -5,27 +5,27 @@ import './ChampionCard.css';
 import { useChampionData } from '../../../hooks/useChampionData';
 
 export const ChampionCard = () => {
-  const { teamInfo, isLoading } = useChampionData();
+  const { teamData, isLoading } = useChampionData();
 
   // TO DO: Adicionar a lógica que pega os stats do campeão de forma dinâmica
   return (
     <div className="champion-card">
-      {isLoading || !teamInfo ? (
+      {isLoading || !teamData ? (
         <LoadingSpinner />
       ) : (
         <>
           {/* logo do campeão como imagem de fundo */}
           <img
             className="champion-card__background-logo"
-            src={teamInfo.team_logo}
+            src={teamData.team_logo}
             alt=""
             aria-hidden="true"
           />
 
           <div className="champion-card__champion-info">
             <h1>Atual Campeão</h1>
-            <h2>{teamInfo.team_name}</h2>
-            <h3>{teamInfo.user_name}</h3>
+            <h2>{teamData.team_name}</h2>
+            <h3>{teamData.user_name}</h3>
           </div>
 
           <div className="champion-card__champion-stats">
@@ -35,7 +35,7 @@ export const ChampionCard = () => {
                 V-D <span>10-4</span>
               </p>
               <p>
-                PF <span>{teamInfo.regular_season_total_points}</span>
+                PF <span>{teamData.regular_season_total_points}</span>
               </p>
               <p>
                 PPJ <span>137,85</span>
@@ -48,10 +48,10 @@ export const ChampionCard = () => {
             <div className="stats-playoffs">
               <h4>PLAYOFFS</h4>
               <p>
-                Bye <span>{teamInfo.bye_week ? 'Sim' : 'Não'}</span>
+                Bye <span>{teamData.bye_week ? 'Sim' : 'Não'}</span>
               </p>
               <p>
-                PF <span>{teamInfo.playoffs_total_points}</span>
+                PF <span>{teamData.playoffs_total_points}</span>
               </p>
               <p>
                 PPJ <span>158,14</span>
@@ -60,7 +60,7 @@ export const ChampionCard = () => {
           </div>
 
           {/* <div className="champion-card__champion-logo">
-            <img src={teamInfo.team_logo} alt={`${teamInfo.team_name} Logo`} />
+            <img src={teamData.team_logo} alt={`${teamData.team_name} Logo`} />
           </div> */}
         </>
       )}

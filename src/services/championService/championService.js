@@ -54,6 +54,7 @@ export const getChampionUserName = async () => {
 };
 
 // BUSCA AS PONTUAÇÕES DO CAMPEÃO NA TEMPORADA REGULAR
+// TO DO: refatorar essa função para retornar vitórias e derrotas como em getSingleSeasonMatchups para fazer apenas uma chamada à API
 export const getChampionRegularSeasonResults = async () => {
   const previousLeagueEndpoint = await getPreviousLeagueEndpoint();
   // cria um array de 14 posições contendo as urls de cada semana
@@ -81,7 +82,7 @@ export const getChampionRegularSeasonResults = async () => {
 };
 
 // BUSCA AS PONTUAÇÕES DO CAMPEÃO NOS PLAYOFFS
-export const getChampionPostSeasonResults = async () => {
+export const getChampionPlayoffResults = async () => {
   const previousLeagueEndpoint = await getPreviousLeagueEndpoint();
   // pega qual semana os playoffs começaram
   const previousLeague = await getPreviousLeague();

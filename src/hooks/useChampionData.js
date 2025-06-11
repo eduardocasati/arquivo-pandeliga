@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import teamList from '../constants/teamList.js';
 import {
   getChampionOwnerId,
-  getChampionPostSeasonResults,
+  getChampionPlayoffResults,
   getChampionRegularSeasonResults,
   getChampionRosterId,
   getChampionTeamName,
@@ -13,21 +13,21 @@ import { formatToBRDecimal } from '../utils/numberFormat.js';
 import { hasPlayoffByeWeek } from '../utils/seasonData/hasPlayoffByeWeek.js';
 import { sumPoints } from '../utils/seasonData/sumPoints.js';
 import {
-  getLocalChampionTeamInfo,
-  saveChampionTeamInfo,
+  getLocalChampionTeamData,
+  saveChampionTeamData,
 } from '../utils/storage/championStorage.js';
 
 export function useChampionData() {
-  const [teamInfo, setTeamInfo] = useState(null);
+  const [teamData, setTeamData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchChampionInfo = async () => {
-      const cachedData = getLocalChampionTeamInfo();
+    const fetchChampionData = async () => {
+      const cachedData = getLocalChampionTeamData();
 
       // pega as informações do campeão no local storage se existirem
       if (cachedData) {
-        setTeamInfo(cachedData);
+        setTeamData(cachedData);
         setIsLoading(false);
         return;
       }
@@ -46,7 +46,7 @@ export function useChampionData() {
           getChampionRosterId(),
           getChampionUserName(),
           getChampionRegularSeasonResults(),
-          getChampionPostSeasonResults(),
+          getChampionPlayoffResults(),
         ]);
         // encontra o time campeão na constant teamList
         const findTeam = teamList.find((team) => team.team_name === team_name);
@@ -88,19 +88,19 @@ export function useChampionData() {
           roster_moves: 0,
           bye_week: hadByeWeek,
         };
-        setTeamInfo(championData);
+        setTeamData(championData);
         // salva as informações no local storage
-        saveChampionTeamInfo(championData);
+        saveChampionTeamData(championData);
       } catch (error) {
         console.error('Erro ao buscar dados do campeão:', error);
-        setTeamInfo(null);
+        setTeamData(null);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchChampionInfo();
+    fetchChampionData();
   }, []);
 
-  return { teamInfo, isLoading };
+  return { teamData, isLoading };
 }
