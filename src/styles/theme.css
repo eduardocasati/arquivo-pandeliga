@@ -27,6 +27,11 @@
   --color-accent-green: #00f6ed;
   --color-accent-gray: #34373c;
 
+  /* Cores do duotone do HeroCarousel */
+  --color-duotone-1: #f33349;
+  --color-duotone-2: #9e69ee;
+  --color-duotone-3: #2ec0f9; /* opções cor 3: amarelo #F3B700, azul #28afb0 #2EC0F9 */
+
   /* Cores de cada time */
   --team-beholders: #8d1d1a;
   --team-spirit-breakers: #f03223;
