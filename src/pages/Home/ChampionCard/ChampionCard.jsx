@@ -7,7 +7,7 @@ import { useChampionData } from '../../../hooks/useChampionData';
 export const ChampionCard = () => {
   const { teamData, isLoading } = useChampionData();
 
-  // TO DO: Adicionar a lógica que pega os stats do campeão de forma dinâmica
+  // TODO: Adicionar a lógica que pega os stats do campeão de forma dinâmica
   return (
     <div className="champion-card">
       {isLoading || !teamData ? (
@@ -31,6 +31,7 @@ export const ChampionCard = () => {
           <div className="champion-card__champion-stats">
             <div className="stats-regular">
               <h4>TEMP REGULAR</h4>
+              {/* TODO: pegar o recorde de forma dinâmica com matchupService */}
               <p>
                 V-D <span>10-4</span>
               </p>
@@ -40,7 +41,7 @@ export const ChampionCard = () => {
               <p>
                 PPJ <span>137,85</span>
               </p>
-              {/* TO DO: pegar o total de roster moves de um time na temporada no endpoint https://api.sleeper.app/v1/league/<league_id>/transactions/<round> */}
+              {/* TODO: pegar o total de roster moves de um time na temporada no endpoint https://api.sleeper.app/v1/league/<league_id>/transactions/<round> */}
               {/* <p>
                 Roster Moves <span>16</span>
               </p> */}

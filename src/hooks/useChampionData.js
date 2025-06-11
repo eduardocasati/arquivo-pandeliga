@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import teamList from '../constants/teamList.js';
 import {
   getChampionOwnerId,
   getChampionPlayoffResults,
@@ -17,6 +16,8 @@ import {
   saveChampionTeamData,
 } from '../utils/storage/championStorage.js';
 
+import teamList from '../constants/teamList.js';
+
 export function useChampionData() {
   const [teamData, setTeamData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +26,7 @@ export function useChampionData() {
     const fetchChampionData = async () => {
       const cachedData = getLocalChampionTeamData();
 
-      // pega as informações do campeão no local storage se existirem
+      // pega os dados do campeão no local storage se existirem
       if (cachedData) {
         setTeamData(cachedData);
         setIsLoading(false);
@@ -51,14 +52,13 @@ export function useChampionData() {
         // encontra o time campeão na constant teamList
         const findTeam = teamList.find((team) => team.team_name === team_name);
 
-        // verifica se teve bye week nos playoffs
+        // verifica se o campeão teve bye week nos playoffs
         const hadByeWeek = hasPlayoffByeWeek(playoffs_results);
         // soma os pontos totais da temporada regular e playoffs
         const regularSeasonTotalPoints = sumPoints(regular_season_results);
-        // a verificação no parâmetro assegura que a semana de bye não seja somada
         const playoffsTotalPoints = sumPoints(
           hadByeWeek === true ? playoffs_results.slice(1) : playoffs_results,
-        );
+        ); // a verificação no parâmetro assegura que a semana de bye não seja somada
         // cálculo de pontos por jogo
         const regularSeasonPpg = regularSeasonTotalPoints / 14;
         // se teve bye são dois jogos, senão 3
@@ -66,7 +66,7 @@ export function useChampionData() {
           ? playoffsTotalPoints / 2
           : playoffsTotalPoints / 3;
 
-        // une as informações estáticas e da API
+        // une os dados estáticas e da API
         const championData = {
           team_name,
           owner_id,
@@ -88,8 +88,9 @@ export function useChampionData() {
           roster_moves: 0,
           bye_week: hadByeWeek,
         };
+        // salva os dados do campeão no estado
         setTeamData(championData);
-        // salva as informações no local storage
+        // salva os dados no local storage
         saveChampionTeamData(championData);
       } catch (error) {
         console.error('Erro ao buscar dados do campeão:', error);

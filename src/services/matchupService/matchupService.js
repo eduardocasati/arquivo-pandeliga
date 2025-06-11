@@ -1,5 +1,6 @@
 // import { getMatchups } from "../sleeperService";
 
+// TODO: refatorar para usar url dinâmica recebendo o parâmetro leagueId
 export const getSingleSeasonMatchups = async (leagueId, rosterId) => {
   // cria um array de 14 posições contendo as urls de cada semana
   const weeksUrls = Array.from(

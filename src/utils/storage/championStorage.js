@@ -15,8 +15,8 @@ export const getLocalChampionTeamData = () => {
   }
 };
 
-// função para ser usada caso as informações do campeão sejam obsoletas
-// TO DO: adicionar verificação da idade e obsolescência das informações
+// função para ser usada caso as informações do campeão sejam obsoletas e apagá-las para substituí-las
+// TODO: adicionar verificação da idade e obsolescência das informações
 export const clearLocalChampionTeamData = () => {
   localStorage.removeItem(STORAGE_KEY);
 };
