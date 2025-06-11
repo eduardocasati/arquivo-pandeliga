@@ -30,17 +30,17 @@
   /* Cores do duotone do HeroCarousel */
   --color-duotone-1: #f33349;
   --color-duotone-2: #9e69ee;
-  --color-duotone-3: #2ec0f9; /* opções cor 3: amarelo #F3B700, azul #28afb0 #2EC0F9 */
+  --color-duotone-3: #2ec0f9; /* opções cor 3: #28afb0 #2ec0f9 */
 
   /* Cores de cada time */
-  --team-beholders: #8d1d1a;
-  --team-spirit-breakers: #f03223;
-  --team-sao-sepe-brewers: #0049ac;
-  --team-ijui-faceiros: #841e8b;
+  --team-beholders: #861816;
+  --team-spirit-breakers: #e24232;
+  --team-sao-sepe-brewers: #0043b4;
+  --team-ijui-faceiros: #ffb612;
   --team-rome-lesionaries: #b80049;
-  --team-one-kick: #a3eddf;
-  --team-alanbama-reginaldos: #f6a800;
-  --team-rohan-riders: #19622c;
-  --team-tankei: #78411c;
-  --team-valhalla-vikings: #7e9292;
+  --team-one-kick: #9deedf;
+  --team-alanbama-reginaldos: #db2c87;
+  --team-rohan-riders: #017f35;
+  --team-tankei: #b3995e;
+  --team-valhalla-vikings: #2a6990;
 }
