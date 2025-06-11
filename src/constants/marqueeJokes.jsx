@@ -27,6 +27,15 @@ const marqueeJokes = [
     ),
   },
   {
+    // joke: 'Vós que entrais, abandonai toda a esperança.',
+    joke: <p>Esse é o ano do Kyle Pitts!</p>,
+    author: (
+      <span className="jokes-marquee__author">
+        Uma pessoa que draftou o Kyle Pitts porque as opções acabaram.
+      </span>
+    ),
+  },
+  {
     joke: (
       <p>
         Ó, Santíssimo Menino Jesus, eu vos imploro: livrai meus jogadores da
@@ -37,21 +46,6 @@ const marqueeJokes = [
     author: (
       <span className="jokes-marquee__author">
         Oração de São Christian McCaffrey.
-      </span>
-    ),
-  },
-  {
-    // joke: 'If Kyle Pitts has a million haters, then I’m one of them. If Kyle Pitts has one hater, then I’m THAT ONE. If Kyle Pitts has no haters, that means I’m dead.',
-    joke: (
-      <p>
-        Se Kyle Pitts tem um milhão de haters, então eu sou um deles. Se Kyle
-        Pitts tem um hater, então eu sou esse hater. Se Kyle Pitts não tem
-        haters, então estou morto.
-      </p>
-    ),
-    author: (
-      <span className="jokes-marquee__author">
-        Qualquer pessoa que já draftou esse desgraçado.
       </span>
     ),
   },
@@ -70,11 +64,17 @@ const marqueeJokes = [
     ),
   },
   {
-    // joke: 'Vós que entrais, abandonai toda a esperança.',
-    joke: <p>Esse é o ano do Kyle Pitts!</p>,
+    // joke: 'If Kyle Pitts has a million haters, then I’m one of them. If Kyle Pitts has one hater, then I’m THAT ONE. If Kyle Pitts has no haters, that means I’m dead.',
+    joke: (
+      <p>
+        Se Kyle Pitts tem um milhão de haters, então eu sou um deles. Se Kyle
+        Pitts tem um hater, então eu sou esse hater. Se Kyle Pitts não tem
+        haters, então estou morto.
+      </p>
+    ),
     author: (
       <span className="jokes-marquee__author">
-        Uma pessoa que draftou esse desgraçado porque as opções acabaram.
+        Uma pessoa depois de escalar esse desgraçado por alguns jogos.
       </span>
     ),
   },
