@@ -49,7 +49,11 @@ const marqueeJokes = [
         haters, então estou morto.
       </p>
     ),
-    author: <span className="jokes-marquee__author">Anônimo</span>,
+    author: (
+      <span className="jokes-marquee__author">
+        Qualquer pessoa que já draftou esse desgraçado.
+      </span>
+    ),
   },
   {
     // joke: 'Vós que entrais, abandonai toda a esperança.',
@@ -62,6 +66,15 @@ const marqueeJokes = [
     author: (
       <span className="jokes-marquee__author">
         Dante Alighieri, <i>Divina Comédia: Inferno, Canto III, verso 9.</i>
+      </span>
+    ),
+  },
+  {
+    // joke: 'Vós que entrais, abandonai toda a esperança.',
+    joke: <p>Esse é o ano do Kyle Pitts!</p>,
+    author: (
+      <span className="jokes-marquee__author">
+        Uma pessoa que draftou esse desgraçado porque as opções acabaram.
       </span>
     ),
   },
