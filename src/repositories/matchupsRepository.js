@@ -1,6 +1,10 @@
 import { getMatchups } from '../services/api/sleeperService.js';
 
-//  PEGA TODOS OS MATCHUPS DE UMA TEMPORADA
+/**
+ * PEGA TODOS OS MATCHUPS DE UMA TEMPORADA
+ * cada array com arrays, onde cada array contém todos os resultados da semana
+ * @returns {Array<Array<Object>>}
+ */
 export const getSeasonMatchups = async (leagueId) => {
   const numberOfWeeks = 17;
   const matchupPromises = [];

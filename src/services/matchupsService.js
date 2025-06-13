@@ -6,11 +6,17 @@ import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 
 const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
+/**
+ * A função retorna um array com arrays que contém os resultados dos dois times no matchup de uma semana
+ * Essa função deve receber como parâmetro os matchups de uma temporada
+ * @returns {Array<Array<Object>>}
+ */
 export const getCurrentChampionMatchups = async () => {
   const previousLeagueId = await getPreviousLeagueId(CURRENT_SEASON_LEAGUE_ID);
   const championRosterId = await getCurrentChampionRosterId();
   // allWeeklyMatchups retorna um array de arrays contendo os objetos que são
   // os resultados de cada time naquela semana
+  // a chamada a getSeasonMatchups precisa de await apesar do VSCode dizer que não
   const allWeeklyMatchups = await getSeasonMatchups(previousLeagueId);
 
   const championMatchups = allWeeklyMatchups.map((weeklyMatchups) => {
@@ -21,10 +27,10 @@ export const getCurrentChampionMatchups = async () => {
 
     const championWeeklyMatchups = [];
 
-    // guarda os resultados do campeão e seu oponente nesta semana
-    weeklyMatchups.forEach((weeklyMatchup) => {
-      if (weeklyMatchup.matchup_id === weeklyMatchupId) {
-        championWeeklyMatchups.push(weeklyMatchup);
+    // encontra os dois resultados (campeão e seu oponente) com o mesmo matchup_id e coloca no array
+    weeklyMatchups.filter((matchup) => {
+      if (matchup.matchup_id === weeklyMatchupId) {
+        championWeeklyMatchups.push(matchup);
       }
     });
 
@@ -33,3 +39,32 @@ export const getCurrentChampionMatchups = async () => {
 
   return championMatchups;
 };
+
+// PEGA OS RESULTADOS DO ÚLTIMO CAMPEÃO NA TEMPORADA QUE ELE FOI CAMPEÃO
+export const getCurrentChampionResults = async () => {
+  const previousLeagueId = await getPreviousLeagueId(CURRENT_SEASON_LEAGUE_ID);
+  const championRosterId = await getCurrentChampionRosterId();
+  const allWeeklyMatchups = await getSeasonMatchups(previousLeagueId);
+
+  const foundChampionResults = allWeeklyMatchups.map((matchup) => {
+    return matchup.find((result) => result.roster_id === championRosterId);
+  });
+
+  return foundChampionResults;
+};
+
+/**
+ * // TODO
+ * Pega dois times e retorna os matchups desses dois times na temporada
+ * @param {number} rosterId_1
+ * @param {number} rosterId_2
+ * @param {string} leagueId
+ * @param {Array<Array<Object>>} weeklyMatchups
+ * @returns {Array<Array<Object>>}
+ */
+export const getHeadToHeadMatchups = (
+  rosterId_1,
+  rosterId_2,
+  leagueId,
+  weeklyMatchups,
+) => {};

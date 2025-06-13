@@ -10,6 +10,10 @@ export const getCurrentChampionRosterId = async () => {
   return Number(league.metadata.latest_league_winner_roster_id);
 };
 
+/**
+ * A função retorna um objeto contendo as informações do campeão obtidas na API
+ * @returns {Object}
+ */
 export const getCurrentChampionData = async () => {
   const championRosterId = await getCurrentChampionRosterId();
   const rosters = await getRosters(CURRENT_SEASON_LEAGUE_ID);
