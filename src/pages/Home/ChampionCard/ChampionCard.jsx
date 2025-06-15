@@ -33,13 +33,17 @@ export const ChampionCard = () => {
               <h4>TEMP REGULAR</h4>
               {/* TODO: pegar o recorde de forma dinâmica com matchupService */}
               <p>
-                V-D <span>10-4</span>
+                V-D{' '}
+                <span>
+                  {championData.team_record.wins}-
+                  {championData.team_record.losses}
+                </span>
               </p>
               <p>
-                PF <span>{championData.regular_season_total_points}</span>
+                PF <span>{championData.total_regular_season_points}</span>
               </p>
               <p>
-                PPJ <span>137,85</span>
+                PPJ <span>{championData.regular_season_ppg}</span>
               </p>
               {/* TODO: pegar o total de roster moves de um time na temporada no endpoint https://api.sleeper.app/v1/league/<league_id>/transactions/<round> */}
               {/* <p>
@@ -49,13 +53,13 @@ export const ChampionCard = () => {
             <div className="stats-playoffs">
               <h4>PLAYOFFS</h4>
               <p>
-                Bye <span>{championData.bye_week ? 'Sim' : 'Não'}</span>
+                Bye <span>{championData.had_bye_week ? 'Sim' : 'Não'}</span>
               </p>
               <p>
-                PF <span>{championData.playoffs_total_points}</span>
+                PF <span>{championData.total_playoffs_points}</span>
               </p>
               <p>
-                PPJ <span>158,14</span>
+                PPJ <span>{championData.playoffs_ppg}</span>
               </p>
             </div>
           </div>

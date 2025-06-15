@@ -7,8 +7,7 @@ import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
 /**
- * A função retorna um array com arrays que contém os resultados dos dois times no matchup de uma semana
- * Essa função deve receber como parâmetro os matchups de uma temporada
+ * A função retorna um array com arrays que contém os resultados do campeão e seu adversário
  * @returns {Array<Array<Object>>}
  */
 export const getCurrentChampionMatchups = async () => {
@@ -17,6 +16,7 @@ export const getCurrentChampionMatchups = async () => {
   // allWeeklyMatchups retorna um array de arrays contendo os objetos que são
   // os resultados de cada time naquela semana
   // a chamada a getSeasonMatchups precisa de await apesar do VSCode dizer que não
+  // TODO resolver o problema do await abaixo
   const allWeeklyMatchups = await getSeasonMatchups(previousLeagueId);
 
   const championMatchups = allWeeklyMatchups.map((weeklyMatchups) => {
@@ -44,6 +44,7 @@ export const getCurrentChampionMatchups = async () => {
 export const getCurrentChampionResults = async () => {
   const previousLeagueId = await getPreviousLeagueId(CURRENT_SEASON_LEAGUE_ID);
   const championRosterId = await getCurrentChampionRosterId();
+  // TODO resolver o problema do await abaixo
   const allWeeklyMatchups = await getSeasonMatchups(previousLeagueId);
 
   const foundChampionResults = allWeeklyMatchups.map((matchup) => {

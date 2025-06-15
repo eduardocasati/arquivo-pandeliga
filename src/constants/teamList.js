@@ -1,4 +1,4 @@
-// import logoVikings from '../assets/images/teams/team_logo_vikings.png';
+import logoVikings from '../assets/images/teams/team_logo_vikings.png';
 
 const teamList = [
   {
@@ -47,8 +47,7 @@ const teamList = [
     team_id: 'valhalla-vikings',
     display_name: 'Vikings',
     team_name: 'Valhalla Vikings',
-    // team_logo: logoVikings,
-    team_logo: null,
+    team_logo: logoVikings,
   },
   {
     roster_id: 7,

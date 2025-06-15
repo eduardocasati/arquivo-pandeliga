@@ -31,7 +31,11 @@ export const processChampionData = async () => {
     foundChampionTeam.roster_id,
     championData.weekly_matchups,
   );
+
   return {
+    team_name: championData.team_name,
+    user_name: championData.user_name,
+    team_logo: foundChampionTeam.team_logo,
     total_regular_season_points: formatToBRDecimal(totalRegularSeasonPoints),
     regular_season_ppg: formatToBRDecimal(regularSeasonPpg),
     had_bye_week: hadByeWeek,
@@ -45,5 +49,3 @@ export const processChampionData = async () => {
     // roster_moves: 0,
   };
 };
-
-processChampionData();

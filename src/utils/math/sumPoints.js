@@ -15,6 +15,5 @@ export const sumPointsFromResults = (initialWeek, lastWeek, weeklyResults) => {
     totalPoints = totalPoints + flat[i].points;
   }
 
-  // console.log(foundTeamResults);
   return totalPoints;
 };
