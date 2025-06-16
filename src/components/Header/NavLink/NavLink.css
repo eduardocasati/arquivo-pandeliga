@@ -18,9 +18,3 @@
   background-color: var(--color-surface-primary);
   box-shadow: inset 0 4px 0 var(--color-accent-pink);
 }
-
-/* TODO criar estilização de item ativo para o menu mobile */
-.header__mobile-nav-item.nav-item--active {
-  background-color: var(--color-surface-primary);
-  box-shadow: inset 0 4px 0 var(--color-accent-pink);
-}

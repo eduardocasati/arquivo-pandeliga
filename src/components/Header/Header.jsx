@@ -38,12 +38,6 @@ export const Header = () => {
               {navItems.map(({ to, label }) => (
                 <NavLink key={to} to={to} label={label} />
               ))}
-              {/* <li className="header__nav-item">Home</li>
-              <li className="header__nav-item">Confrontos Diretos</li>
-              <li className="header__nav-item">Recordes</li>
-              <li className="header__nav-item">Classificação Histórica</li>
-              <li className="header__nav-item">Temporadas</li>
-              <li className="header__nav-item">Sala de Troféus</li> */}
               {/* Times está separado pois não leva a nenhuma rota */}
               <li
                 className={`header__nav-item${

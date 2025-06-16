@@ -1,13 +1,15 @@
 import { Link, useMatchRoute } from '@tanstack/react-router';
 
-import './NavLink.css';
+import './MobileNavLink.css';
 
-export const NavLink = ({ to, label }) => {
+export const MobileNavLink = ({ to, label }) => {
   const matchRoute = useMatchRoute();
   const isActive = matchRoute({ to, fuzzy: false });
 
   return (
-    <li className={`header__nav-item${isActive ? ' nav-item--active' : ''}`}>
+    <li
+      className={`header__mobile-nav-item${isActive ? ' nav-item--active' : ''}`}
+    >
       <Link to={to}>{label}</Link>
     </li>
   );

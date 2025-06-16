@@ -1,0 +1,17 @@
+.header__mobile-nav-item a,
+.header__mobile-nav-item a:visited,
+.header__mobile-nav-item a:hover,
+.header__mobile-nav-item a:active {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.header__mobile-nav-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* TODO criar estilo específico para item ativo no menu mobile */
