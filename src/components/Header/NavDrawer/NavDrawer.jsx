@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { CgClose, CgMenu } from 'react-icons/cg';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
+import { NavLink } from '../NavLink/NavLink';
+
 import './NavDrawer.css';
 
 import { logoArquivoPandeliga } from '../../../constants/images';
+import { navItems } from '../../../constants/navItems';
 import teamList from '../../../constants/teamList';
 
 export const NavDrawer = () => {
@@ -44,12 +47,16 @@ export const NavDrawer = () => {
         </div>
 
         <ul className="header__mobile-nav-list">
-          <li className="header__mobile-nav-item">Home</li>
+          {/* TODO criar estilização de item ativo para o menu mobile */}
+          {navItems.map(({ to, label }) => (
+            <NavLink key={to} to={to} label={label} />
+          ))}
+          {/* <li className="header__mobile-nav-item">Home</li>
           <li className="header__mobile-nav-item">Confrontos Diretos</li>
           <li className="header__mobile-nav-item">Recordes</li>
           <li className="header__mobile-nav-item">Classificação Histórica</li>
           <li className="header__mobile-nav-item">Temporadas</li>
-          <li className="header__mobile-nav-item">Sala de Troféus</li>
+          <li className="header__mobile-nav-item">Sala de Troféus</li> */}
           <li
             className="header__mobile-nav-item noselect"
             onClick={handleTeamlistToggle}
