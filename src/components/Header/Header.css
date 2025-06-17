@@ -7,10 +7,16 @@
 .header__top-bar,
 .header__main,
 .header__site-nav,
-.header__champion {
+.header__champion,
+.header__countdown {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header__countdown {
+  margin-top: 10px;
+  flex-direction: column;
 }
 
 /* Alturas e cores específicas */
@@ -96,7 +102,7 @@
 }
 
 .header__main-inner {
-  gap: 136px;
+  gap: 120px;
   position: relative;
 }
 

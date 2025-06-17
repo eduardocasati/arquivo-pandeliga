@@ -1,0 +1,60 @@
+.header__draft-countdown-title h1 {
+  display: flex;
+  font-size: 0.8rem;
+  /* font-style: italic; */
+  font-weight: 600;
+  /* border: 1px solid lime; */
+  /* padding-bottom: 2px; */
+}
+
+.header__draft-countdown-numbers {
+  margin-top: -4px;
+  /* border: 1px solid red; */
+}
+
+.header__draft-countdown-title h1 span {
+  color: var(--color-accent-green);
+  font-size: 0.9rem;
+  padding-right: 6px;
+  padding-top: 2px;
+}
+
+.header__draft-countdown-numbers,
+.header__draft-countdown-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__draft-countdown-numbers {
+  font-family: var(--font-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.header__draft-countdown-numbers span {
+  margin-bottom: 12px;
+  padding: 0 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-text-accent-green);
+}
+
+.header__draft-countdown-item {
+  flex-direction: column;
+}
+
+.header__draft-countdown-item p {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--color-text-accent-green);
+}
+
+.header__draft-countdown-item small {
+  margin-top: -2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+}

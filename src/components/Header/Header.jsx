@@ -2,6 +2,7 @@ import { useMatchRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
+import { DraftCountdown } from '../DraftCountdown/DraftCountdown';
 import { NavDrawer } from './NavDrawer/NavDrawer';
 import { NavLink } from './NavLink/NavLink';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
@@ -85,11 +86,11 @@ export const Header = () => {
             </a>
           </div>
 
-          {!isHomeRouteActive && (
-            <div className="header__countdown">
-              <p>DRAFT COUNTDOWN</p>
-            </div>
-          )}
+          <div className="header__countdown">
+            {!isHomeRouteActive && (
+              <DraftCountdown variant={'header'} compact />
+            )}
+          </div>
 
           <div className="header__champion">
             {isLoading || !championData ? (
