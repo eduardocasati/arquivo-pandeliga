@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CgClose, CgMenu } from 'react-icons/cg';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-import { MobileNavLink } from '../MobileNavLink/MobileNavLink';
+import { NavLink } from '../NavLink/NavLink';
 
 import './NavDrawer.css';
 
@@ -49,7 +49,12 @@ export const NavDrawer = () => {
         <ul className="header__mobile-nav-list">
           {/* TODO criar estilo específico para item ativo no menu mobile */}
           {navItems.map(({ to, label }) => (
-            <MobileNavLink key={to} to={to} label={label} />
+            <NavLink
+              key={to}
+              to={to}
+              label={label}
+              className={'header__mobile-nav-item'}
+            />
           ))}
           <li
             className="header__mobile-nav-item noselect"

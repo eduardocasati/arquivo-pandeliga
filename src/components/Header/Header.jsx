@@ -36,7 +36,12 @@ export const Header = () => {
           <div className="header__site-nav">
             <ul className="header__nav-list">
               {navItems.map(({ to, label }) => (
-                <NavLink key={to} to={to} label={label} />
+                <NavLink
+                  key={to}
+                  to={to}
+                  label={label}
+                  className={'header__nav-item'}
+                />
               ))}
               {/* Times está separado pois não leva a nenhuma rota */}
               <li

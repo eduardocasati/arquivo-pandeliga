@@ -1,12 +1,17 @@
 .header__nav-item a,
 .header__nav-item a:visited,
 .header__nav-item a:hover,
-.header__nav-item a:active {
+.header__nav-item a:active,
+.header__mobile-nav-item a,
+.header__mobile-nav-item:visited,
+.header__mobile-nav-item:hover,
+.header__mobile-nav-item:active {
   color: var(--color-text-primary);
   text-decoration: none;
 }
 
-.header__nav-item a {
+.header__nav-item a,
+.header__mobile-nav-item a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,4 +22,29 @@
 .header__nav-item.nav-item--active {
   background-color: var(--color-surface-primary);
   box-shadow: inset 0 4px 0 var(--color-accent-pink);
+}
+
+.header__mobile-nav-item {
+  position: relative;
+}
+
+.header__mobile-nav-item.nav-item--active {
+  margin-left: 1rem;
+}
+
+.header__mobile-nav-item::before {
+  content: none;
+}
+
+.header__mobile-nav-item.nav-item--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-accent-pink);
+}
+
+@media screen and (max-width: 1120px) {
 }
