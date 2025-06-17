@@ -1,3 +1,4 @@
+import { useMatchRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
@@ -19,6 +20,8 @@ import {
 import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 export const Header = () => {
+  const matchRoute = useMatchRoute();
+  const isHomeRouteActive = matchRoute({ to: '/', fuzzy: false });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { championData, isLoading } = useChampionData();
 
@@ -82,6 +85,12 @@ export const Header = () => {
             </a>
           </div>
 
+          {!isHomeRouteActive && (
+            <div className="header__countdown">
+              <p>DRAFT COUNTDOWN</p>
+            </div>
+          )}
+
           <div className="header__champion">
             {isLoading || !championData ? (
               <LoadingSpinner />
@@ -104,9 +113,6 @@ export const Header = () => {
                 </div>
               </>
             )}
-          </div>
-          <div className="header__countdown">
-            <p>DRAFT COUNTDOWN</p>
           </div>
 
           <div className="header__sleeper-logo">
