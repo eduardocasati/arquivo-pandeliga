@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Countdown } from '../Countdown/Countdown';
+// import { Countdown } from '../Countdown/Countdown';
+import { DraftCountdown } from '../../../components/DraftCountdown/DraftCountdown';
 
 import './HeroCarousel.css';
 
@@ -41,7 +42,8 @@ export const HeroCarousel = () => {
         ))}
       </figure>
       <div className="hero__inner">
-        <Countdown />
+        {/* <Countdown /> */}
+        <DraftCountdown variant={'hero'} />
       </div>
     </div>
   );
