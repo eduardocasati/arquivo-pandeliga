@@ -23,7 +23,7 @@
 }
 
 .header__draft-countdown-numbers {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent-primary);
   font-variant-numeric: tabular-nums;
 }
 
@@ -51,7 +51,5 @@
   margin-top: -2px;
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  font-size: 0.65rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font: 700 0.65rem var(--font-accent-secondary);
 }

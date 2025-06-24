@@ -29,7 +29,8 @@
 
   /* Fontes */
   --font-base: Roboto, sans-serif;
-  --font-accent: 'Exo 2', sans-serif;
+  --font-accent-primary: 'Exo 2', sans-serif;
+  --font-accent-secondary: 'Montserrat', sans-serif;
 
   /* Cores do duotone do HeroCarousel */
   --color-duotone-1: #f33349;

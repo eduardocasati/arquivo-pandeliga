@@ -45,7 +45,7 @@
 }
 
 .jokes-marquee .jokes-marquee__content ul li p {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent-primary);
   font-size: 12px;
   font-style: italic;
   text-transform: uppercase;

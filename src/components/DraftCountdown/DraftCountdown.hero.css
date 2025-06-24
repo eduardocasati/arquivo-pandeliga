@@ -11,7 +11,7 @@
 }
 
 .hero__draft-countdown-numbers {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent-primary);
   font-variant-numeric: tabular-nums;
 }
 
