@@ -22,3 +22,19 @@ h3 {
   -ms-user-select: none; /* IE 10+ */
   -webkit-tap-highlight-color: transparent;
 }
+
+.page-content__wrapper {
+  max-width: 1186px;
+  margin: 48px auto 0 auto;
+  padding: 40px;
+  background-color: var(--color-surface-primary);
+  border: 1px solid var(--color-accent-gray);
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 1120px) {
+  .page-content__wrapper {
+    max-width: 90%;
+    padding: 24px;
+  }
+}
