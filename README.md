@@ -43,6 +43,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 - [ ] Coletar dados do NFL Fantasy via _web scraping_, devido à indisponibilidade da API oficial
 - [ ] Tratar e estruturar os dados coletados
 - [ ] Integrar estes dados com os dados coletados na API do Sleeper
+- [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
 
 ### Etapas Concluídas
 
