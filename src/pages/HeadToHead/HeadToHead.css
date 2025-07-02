@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.6rem;
   margin: 0 auto;
   font-size: 0.8rem;
 }
@@ -33,17 +33,54 @@
   display: flex;
   align-items: center;
   justify-items: center;
-  gap: 32px;
+  /* gap: 32px; */
   width: fit-content;
   margin: 24px auto 0;
 }
 
 .head-to-head__team-logos span {
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  min-width: clamp(88px, 8vw, 104px);
+  text-align: center;
 }
 
 .head-to-head__team-logos img {
   width: clamp(80px, 8vw, 104px);
+}
+
+.head-to-head__versus-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.versus-stats__row {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-accent-primary);
+}
+
+.versus-stats__center {
+  min-width: clamp(88px, 8vw, 104px);
+  text-align: center;
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+}
+
+.versus-stats__numbers {
+  font-size: clamp(1.5rem, 2.5vw, 1.7rem);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-text-accent-green);
+}
+
+/* TODO classe placeholder apenas para testar o visual */
+.versus-stats__numbers-red {
+  font-size: clamp(1.5rem, 2.5vw, 1.7rem);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-text-accent-pink);
 }
 
 @media screen and (max-width: 1120px) {

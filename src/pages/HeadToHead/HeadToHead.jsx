@@ -79,20 +79,40 @@ export const HeadToHead = () => {
         </div>
 
         {teamASelected && teamBSelected != '' && (
-          <div className="head-to-head__team-logos">
-            <img
-              src={findTeam(teamASelected).team_logo}
-              alt={`${findTeam(teamASelected).team_name} Logo`}
-            />
-            <span>vs.</span>
-            <img
-              src={findTeam(teamBSelected).team_logo}
-              alt={`${findTeam(teamBSelected).team_name} Logo`}
-            />
-          </div>
-        )}
+          <>
+            <div className="head-to-head__team-logos">
+              <img
+                src={findTeam(teamASelected).team_logo}
+                alt={`${findTeam(teamASelected).team_name} Logo`}
+              />
+              <span>vs.</span>
+              <img
+                src={findTeam(teamBSelected).team_logo}
+                alt={`${findTeam(teamBSelected).team_name} Logo`}
+              />
+            </div>
 
-        {/* TODO fazer uma lógica que renderiza os logos dos times quando os dois são selecionados */}
+            {/* TODO a classe versus-stats__numbers-red é placeholder apenas para testar o visual */}
+            {/* na lógica final o número menor fica vermelho dinamicamente */}
+            <div className="head-to-head__versus-stats">
+              <div className="versus-stats__row">
+                <p className="versus-stats__numbers">6</p>
+                <p className="versus-stats__center">Vitórias</p>
+                <p className="versus-stats__numbers-red">4</p>
+              </div>
+              <div className="versus-stats__row">
+                <p className="versus-stats__numbers">60%</p>
+                <p className="versus-stats__center">%Vitórias</p>
+                <p className="versus-stats__numbers-red">40%</p>
+              </div>
+              <div className="versus-stats__row">
+                <p className="versus-stats__numbers">1700,00</p>
+                <p className="versus-stats__center">Pontos</p>
+                <p className="versus-stats__numbers-red">1300,00</p>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
