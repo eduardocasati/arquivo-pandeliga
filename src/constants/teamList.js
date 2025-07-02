@@ -1,3 +1,12 @@
+import logoBeholders from '../assets/images/teams/team_logo_beholders.png';
+import logoBreakers from '../assets/images/teams/team_logo_breakers.png';
+import logoBrewers from '../assets/images/teams/team_logo_brewers.png';
+import logoFaceiros from '../assets/images/teams/team_logo_faceiros.png';
+import logoLesionaries from '../assets/images/teams/team_logo_lesionaries.png';
+import logoOnekick from '../assets/images/teams/team_logo_onekick.png';
+import logoReginaldos from '../assets/images/teams/team_logo_reginaldos.png';
+import logoRiders from '../assets/images/teams/team_logo_riders.png';
+import logoTankei from '../assets/images/teams/team_logo_tankei.png';
 import logoVikings from '../assets/images/teams/team_logo_vikings.png';
 
 const teamList = [
@@ -7,7 +16,7 @@ const teamList = [
     team_id: 'rohan-riders',
     display_name: 'Riders',
     team_name: 'Rohan Riders',
-    team_logo: null,
+    team_logo: logoRiders,
   },
   {
     roster_id: 2,
@@ -15,7 +24,7 @@ const teamList = [
     team_id: 'beholders',
     display_name: 'Beholders',
     team_name: 'Beholders',
-    team_logo: null,
+    team_logo: logoBeholders,
   },
   {
     roster_id: 3,
@@ -23,7 +32,7 @@ const teamList = [
     team_id: 'tankei',
     display_name: 'Tankei',
     team_name: 'Tankei',
-    team_logo: null,
+    team_logo: logoTankei,
   },
   {
     roster_id: 4,
@@ -31,7 +40,7 @@ const teamList = [
     team_id: 'ijui-faceiros',
     display_name: 'Faceiros',
     team_name: 'Ijuí Faceiros',
-    team_logo: null,
+    team_logo: logoFaceiros,
   },
   {
     roster_id: 5,
@@ -39,7 +48,7 @@ const teamList = [
     team_id: 'spirit-breakers',
     display_name: 'Breakers',
     team_name: 'Spirit Breakers',
-    team_logo: null,
+    team_logo: logoBreakers,
   },
   {
     roster_id: 6,
@@ -55,7 +64,7 @@ const teamList = [
     team_id: 'rome-lesionaries',
     team_name: 'Rome Lesionaries',
     display_name: 'Lesionaries',
-    team_logo: null,
+    team_logo: logoLesionaries,
   },
   {
     roster_id: 8,
@@ -63,7 +72,7 @@ const teamList = [
     team_id: 'one-kick',
     display_name: 'One Kick',
     team_name: 'One Kick',
-    team_logo: null,
+    team_logo: logoOnekick,
   },
   {
     roster_id: 9,
@@ -71,7 +80,7 @@ const teamList = [
     team_id: 'alanbama-reginaldos',
     display_name: 'Reginaldos',
     team_name: 'Alanbama Reginaldos',
-    team_logo: null,
+    team_logo: logoReginaldos,
   },
   {
     roster_id: 10,
@@ -79,7 +88,7 @@ const teamList = [
     team_id: 'sao-sepe-brewers',
     display_name: 'Brewers',
     team_name: 'São Sepé Brewers',
-    team_logo: null,
+    team_logo: logoBrewers,
   },
 ];
 

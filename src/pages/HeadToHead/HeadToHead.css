@@ -39,6 +39,23 @@
   font-size: 1.3rem;
 }
 
+.head-to-head__team-logos {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 32px;
+  width: fit-content;
+  margin: 24px auto 0;
+}
+
+.head-to-head__team-logos span {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.head-to-head__team-logos img {
+  width: clamp(80px, 8vw, 104px);
+}
+
 @media screen and (max-width: 1120px) {
   .mobile-page__title {
     display: block;

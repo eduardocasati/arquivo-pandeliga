@@ -17,6 +17,11 @@ export const HeadToHead = () => {
     setTeamBSelected(event.target.value);
   };
 
+  const findTeam = (selectedTeam) => {
+    const foundTeam = teamList.find((team) => team.team_name === selectedTeam);
+    return foundTeam;
+  };
+
   return (
     <>
       <Header />
@@ -45,7 +50,6 @@ export const HeadToHead = () => {
                 ))}
               </select>
             </label>
-            {/* <span>vs.</span> */}
             <label htmlFor="">
               <select
                 name="teamB"
@@ -69,6 +73,20 @@ export const HeadToHead = () => {
             </label>
           </form>
         </div>
+
+        {teamASelected && teamBSelected != '' && (
+          <div className="head-to-head__team-logos">
+            <img
+              src={findTeam(teamASelected).team_logo}
+              alt={`${findTeam(teamASelected).team_name} Logo`}
+            />
+            <span>vs.</span>
+            <img
+              src={findTeam(teamBSelected).team_logo}
+              alt={`${findTeam(teamBSelected).team_name} Logo`}
+            />
+          </div>
+        )}
 
         <div className="head-to-head__table">
           {/* TODO fazer uma lógica que renderiza os logos dos times quando os dois são selecionados */}
