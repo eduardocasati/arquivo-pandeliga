@@ -3,6 +3,10 @@ import teamList from '../../../constants/teamList';
 import './TeamsDropdown.css';
 
 export const TeamsDropdown = ({ setIsDropdownOpen }) => {
+  const sortedTeams = [...teamList].sort((a, b) =>
+    a.display_name.localeCompare(b.display_name),
+  );
+
   return (
     <div
       className="header__dropdown"
@@ -10,7 +14,7 @@ export const TeamsDropdown = ({ setIsDropdownOpen }) => {
       onMouseLeave={() => setIsDropdownOpen(false)}
     >
       <ul>
-        {teamList.map((team) => (
+        {sortedTeams.map((team) => (
           <li
             key={team.team_id}
             style={{ '--team-color': `var(--team-${team.team_id})` }}

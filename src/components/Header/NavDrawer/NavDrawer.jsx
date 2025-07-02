@@ -14,6 +14,10 @@ export const NavDrawer = () => {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   const [isTeamlistOpen, setIsTeamlistOpen] = useState(false);
 
+  const sortedTeams = [...teamList].sort((a, b) =>
+    a.display_name.localeCompare(b.display_name),
+  );
+
   const handleNavDrawerToggle = () => setIsNavDrawerOpen(!isNavDrawerOpen);
 
   const handleTeamlistToggle = () => setIsTeamlistOpen(!isTeamlistOpen);
@@ -71,7 +75,7 @@ export const NavDrawer = () => {
           aria-hidden={!isTeamlistOpen}
         >
           <ul>
-            {teamList.map((team) => {
+            {sortedTeams.map((team) => {
               return (
                 <li
                   style={{ '--team-color': `var(--team-${team.team_id})` }}

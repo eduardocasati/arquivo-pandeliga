@@ -9,6 +9,10 @@ export const HeadToHead = () => {
   const [teamASelected, setTeamASelected] = useState('');
   const [teamBSelected, setTeamBSelected] = useState('');
 
+  const sortedTeams = [...teamList].sort((a, b) =>
+    a.team_name.localeCompare(b.team_name),
+  );
+
   const handleTeamAChange = (event) => {
     setTeamASelected(event.target.value);
   };
@@ -39,7 +43,7 @@ export const HeadToHead = () => {
                 <option value="" disabled>
                   Selecione um time
                 </option>
-                {teamList.map((team) => (
+                {sortedTeams.map((team) => (
                   <option
                     value={team.team_name}
                     key={team.team_id}
@@ -60,7 +64,7 @@ export const HeadToHead = () => {
                 <option value="" disabled>
                   Selecione um time
                 </option>
-                {teamList.map((team) => (
+                {sortedTeams.map((team) => (
                   <option
                     value={team.team_name}
                     key={team.team_id}
