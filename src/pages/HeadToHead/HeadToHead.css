@@ -1,5 +1,6 @@
 .mobile-page__title {
   text-align: center;
+  text-transform: uppercase;
   display: none;
   padding-bottom: 24px;
   font-size: clamp(1.5rem, 3vw, 3rem);
@@ -12,31 +13,20 @@
   align-items: center;
   gap: 2rem;
   margin: 0 auto;
+  font-size: 0.8rem;
 }
 
 .head-to-head__form select {
   padding: 8px;
   border-radius: 4px;
-  font-size: clamp(0.6rem, 2.5vw, 1rem);
   font: var(--font-base);
   background-color: var(--color-surface-secondary);
   color: var(--color-text-primary);
   border: 1px solid var(--color-accent-gray);
 }
 
-.head-to-head__form form span {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-}
-
 .head-to-head__table {
   padding-top: 24px;
-}
-
-.head-to-head__table-title span {
-  text-transform: lowercase;
-  font: var(--font-base);
-  font-weight: 500;
-  font-size: 1.3rem;
 }
 
 .head-to-head__team-logos {

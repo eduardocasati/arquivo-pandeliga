@@ -88,9 +88,7 @@ export const HeadToHead = () => {
           </div>
         )}
 
-        <div className="head-to-head__table">
-          {/* TODO fazer uma lógica que renderiza os logos dos times quando os dois são selecionados */}
-        </div>
+        {/* TODO fazer uma lógica que renderiza os logos dos times quando os dois são selecionados */}
       </div>
     </>
   );
