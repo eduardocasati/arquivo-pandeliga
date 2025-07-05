@@ -1,6 +1,6 @@
 import { getSeasonMatchups } from '../repositories/matchupsRepository.js';
 import { getCurrentChampionRosterId } from './championService.js';
-import { getPreviousLeagueId } from './leagueService.js';
+import { getAllLeagues, getPreviousLeagueId } from './leagueService.js';
 
 import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 
@@ -52,6 +52,21 @@ export const getCurrentChampionResults = async () => {
   });
 
   return foundChampionResults;
+};
+
+export const getAllSeasonsMatchups = async () => {
+  const allLeaguesData = await getAllLeagues();
+  const allSeasonsMatchups = [];
+
+  allLeaguesData.map((league) => {
+    const seasonMatchups = getSeasonMatchups(league.league_id);
+    allSeasonsMatchups.push({
+      season: league.season,
+      matchups: seasonMatchups,
+    });
+  });
+
+  return allSeasonsMatchups;
 };
 
 /**
