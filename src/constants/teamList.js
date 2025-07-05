@@ -17,6 +17,16 @@ const teamList = [
     display_name: 'Riders',
     team_name: 'Rohan Riders',
     team_logo: logoRiders,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 2,
@@ -25,6 +35,7 @@ const teamList = [
     display_name: 'Beholders',
     team_name: 'Beholders',
     team_logo: logoBeholders,
+    history: {},
   },
   {
     roster_id: 3,
@@ -33,6 +44,16 @@ const teamList = [
     display_name: 'Tankei',
     team_name: 'Tankei',
     team_logo: logoTankei,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 4,
@@ -41,6 +62,16 @@ const teamList = [
     display_name: 'Faceiros',
     team_name: 'Ijuí Faceiros',
     team_logo: logoFaceiros,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 5,
@@ -49,6 +80,16 @@ const teamList = [
     display_name: 'Breakers',
     team_name: 'Spirit Breakers',
     team_logo: logoBreakers,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 6,
@@ -57,6 +98,16 @@ const teamList = [
     display_name: 'Vikings',
     team_name: 'Valhalla Vikings',
     team_logo: logoVikings,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 7,
@@ -65,6 +116,16 @@ const teamList = [
     team_name: 'Rome Lesionaries',
     display_name: 'Lesionaries',
     team_logo: logoLesionaries,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 8,
@@ -73,6 +134,16 @@ const teamList = [
     display_name: 'One Kick',
     team_name: 'One Kick',
     team_logo: logoOnekick,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 9,
@@ -81,6 +152,16 @@ const teamList = [
     display_name: 'Reginaldos',
     team_name: 'Alanbama Reginaldos',
     team_logo: logoReginaldos,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
   {
     roster_id: 10,
@@ -89,6 +170,16 @@ const teamList = [
     display_name: 'Brewers',
     team_name: 'São Sepé Brewers',
     team_logo: logoBrewers,
+    history: {
+      best_position: {
+        position: null,
+        year: null,
+      },
+      worst_position: {
+        position: null,
+        year: null,
+      },
+    },
   },
 ];
 
