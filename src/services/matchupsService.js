@@ -71,18 +71,4 @@ export const getAllSeasonsMatchups = async () => {
   return allSeasonsMatchups;
 };
 
-/**
- * // TODO
- * Pega dois times e retorna os matchups desses dois times na temporada
- * @param {number} rosterId_1
- * @param {number} rosterId_2
- * @param {string} leagueId
- * @param {Array<Array<Object>>} weeklyMatchups
- * @returns {Array<Array<Object>>}
- */
-export const getHeadToHeadMatchups = (
-  rosterId_1,
-  rosterId_2,
-  leagueId,
-  weeklyMatchups,
-) => {};
+export const getHeadToHeadMatchups = (teamA_RosterId, teamB_RosterId) => {};
