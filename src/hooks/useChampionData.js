@@ -1,6 +1,5 @@
-// TODO ajustar o código para receber as informações de utils/processors/championProcessor/processChampionData.js
-
 import { useQuery } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
 
 import { processChampionData } from '../utils/processors/championProcessor.js';
 import {
@@ -8,7 +7,6 @@ import {
   saveToLocalStorage,
 } from '../utils/storage/localStorageUtils.js';
 
-import { useEffect, useState } from 'react';
 import { STORAGE_KEYS } from '../constants/storageKeys.js';
 
 const { CHAMPION_DATA } = STORAGE_KEYS;

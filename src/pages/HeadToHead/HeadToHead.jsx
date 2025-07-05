@@ -1,11 +1,15 @@
+import { useState } from 'react';
+
 import { Header } from '../../components/Header/Header';
+import { LoadingSpinner } from '../../components/LoadingSpinner/LoadingSpinner';
+import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
 
 import './HeadToHead.css';
 
-import { useState } from 'react';
 import teamList from '../../constants/teamList';
 
 export const HeadToHead = () => {
+  const { allSeasonsMatchups, isLoading } = useAllSeasonsMatchups();
   const [teamASelected, setTeamASelected] = useState('');
   const [teamBSelected, setTeamBSelected] = useState('');
 
@@ -29,91 +33,95 @@ export const HeadToHead = () => {
   return (
     <>
       <Header />
-      <div className="page-content__wrapper">
-        <h1 className="mobile-page__title">Confrontos Diretos</h1>
-        <div className="head-to-head__form">
-          <form>
-            <label htmlFor="teamASelect">
-              <select
-                name="teamA"
-                id="teamASelect"
-                value={teamASelected}
-                onChange={handleTeamAChange}
-              >
-                <option value="" disabled>
-                  Selecione um time
-                </option>
-                {sortedTeams.map((team) => (
-                  <option
-                    value={team.team_name}
-                    key={team.team_id}
-                    disabled={team.team_name === teamBSelected ? true : false}
-                  >
-                    {team.team_name}
+      {isLoading || !allSeasonsMatchups ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="page-content__wrapper">
+          <h1 className="mobile-page__title">Confrontos Diretos</h1>
+          <div className="head-to-head__form">
+            <form>
+              <label htmlFor="teamASelect">
+                <select
+                  name="teamA"
+                  id="teamASelect"
+                  value={teamASelected}
+                  onChange={handleTeamAChange}
+                >
+                  <option value="" disabled>
+                    Selecione um time
                   </option>
-                ))}
-              </select>
-            </label>
-            <label htmlFor="">
-              <select
-                name="teamB"
-                id="teamBSelect"
-                value={teamBSelected}
-                onChange={handleTeamBChange}
-              >
-                <option value="" disabled>
-                  Selecione um time
-                </option>
-                {sortedTeams.map((team) => (
-                  <option
-                    value={team.team_name}
-                    key={team.team_id}
-                    disabled={team.team_name === teamASelected ? true : false}
-                  >
-                    {team.team_name}
+                  {sortedTeams.map((team) => (
+                    <option
+                      value={team.team_name}
+                      key={team.team_id}
+                      disabled={team.team_name === teamBSelected ? true : false}
+                    >
+                      {team.team_name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label htmlFor="">
+                <select
+                  name="teamB"
+                  id="teamBSelect"
+                  value={teamBSelected}
+                  onChange={handleTeamBChange}
+                >
+                  <option value="" disabled>
+                    Selecione um time
                   </option>
-                ))}
-              </select>
-            </label>
-          </form>
+                  {sortedTeams.map((team) => (
+                    <option
+                      value={team.team_name}
+                      key={team.team_id}
+                      disabled={team.team_name === teamASelected ? true : false}
+                    >
+                      {team.team_name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </form>
+          </div>
+
+          {teamASelected && teamBSelected != '' && (
+            <>
+              <div className="head-to-head__team-logos">
+                <img
+                  src={findTeam(teamASelected).team_logo}
+                  alt={`${findTeam(teamASelected).team_name} Logo`}
+                />
+                <span>vs.</span>
+                <img
+                  src={findTeam(teamBSelected).team_logo}
+                  alt={`${findTeam(teamBSelected).team_name} Logo`}
+                />
+              </div>
+
+              {/* TODO a classe versus-stats__numbers-red é placeholder apenas para testar o visual */}
+              {/* na lógica final o número menor fica vermelho dinamicamente */}
+              <div className="head-to-head__versus-stats">
+                <div className="versus-stats__row">
+                  <p className="versus-stats__numbers">6</p>
+                  <p className="versus-stats__center">Vitórias</p>
+                  <p className="versus-stats__numbers-red">4</p>
+                </div>
+                <div className="versus-stats__row">
+                  <p className="versus-stats__numbers">60%</p>
+                  <p className="versus-stats__center">%Vitórias</p>
+                  <p className="versus-stats__numbers-red">40%</p>
+                </div>
+                <div className="versus-stats__row">
+                  <p className="versus-stats__numbers">1700,00</p>
+                  <p className="versus-stats__center">Pontos</p>
+                  <p className="versus-stats__numbers-red">1300,00</p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
-
-        {teamASelected && teamBSelected != '' && (
-          <>
-            <div className="head-to-head__team-logos">
-              <img
-                src={findTeam(teamASelected).team_logo}
-                alt={`${findTeam(teamASelected).team_name} Logo`}
-              />
-              <span>vs.</span>
-              <img
-                src={findTeam(teamBSelected).team_logo}
-                alt={`${findTeam(teamBSelected).team_name} Logo`}
-              />
-            </div>
-
-            {/* TODO a classe versus-stats__numbers-red é placeholder apenas para testar o visual */}
-            {/* na lógica final o número menor fica vermelho dinamicamente */}
-            <div className="head-to-head__versus-stats">
-              <div className="versus-stats__row">
-                <p className="versus-stats__numbers">6</p>
-                <p className="versus-stats__center">Vitórias</p>
-                <p className="versus-stats__numbers-red">4</p>
-              </div>
-              <div className="versus-stats__row">
-                <p className="versus-stats__numbers">60%</p>
-                <p className="versus-stats__center">%Vitórias</p>
-                <p className="versus-stats__numbers-red">40%</p>
-              </div>
-              <div className="versus-stats__row">
-                <p className="versus-stats__numbers">1700,00</p>
-                <p className="versus-stats__center">Pontos</p>
-                <p className="versus-stats__numbers-red">1300,00</p>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+      )}
     </>
   );
 };
