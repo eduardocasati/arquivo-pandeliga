@@ -7,7 +7,7 @@ import { hasByeWeekInPlayoffs } from '../playoff/hasByeWeekInPlayoffs.js';
 
 import teamList from '../../constants/teamList.js';
 
-export const processChampionData = async () => {
+export async function processChampionData() {
   const championData = await getCurrentChampionData();
   const championResults = await getCurrentChampionResults();
   const foundChampionTeam = teamList.find(
@@ -48,4 +48,4 @@ export const processChampionData = async () => {
     // TODO:
     // roster_moves: 0,
   };
-};
+}

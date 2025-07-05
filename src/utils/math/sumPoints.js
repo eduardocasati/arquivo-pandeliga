@@ -3,7 +3,7 @@
  * @param {number} lastWeek - A semana onde a soma deve parar (14 para a temporada regular, 17 para os playoffs)
  * @param {Array} weeklyResults - array contendo as matchups
  */
-export const sumPointsFromResults = (initialWeek, lastWeek, weeklyResults) => {
+export function sumPointsFromResults(initialWeek, lastWeek, weeklyResults) {
   if (!Array.isArray(weeklyResults)) return 0; // garante que a entrada é um array
 
   // se for um array de arrays (várias temporadas), achata (se torna um array)
@@ -16,4 +16,4 @@ export const sumPointsFromResults = (initialWeek, lastWeek, weeklyResults) => {
   }
 
   return totalPoints;
-};
+}

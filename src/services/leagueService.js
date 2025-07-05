@@ -6,13 +6,13 @@ import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
 // PEGA O LEAGUE_ID DO ANO ANTERIOR
-export const getPreviousLeagueId = async (leagueId) => {
+export async function getPreviousLeagueId(leagueId) {
   const league = await getLeague(leagueId);
   return league.previous_league_id;
-};
+}
 
 // PEGA O LEAGUE_ID DE TODOS OS ANOS ANTERIORES
-export const getAllPreviousLeagueIds = async (initialLeagueId) => {
+export async function getAllPreviousLeagueIds(initialLeagueId) {
   const previousLeagueIds = [];
   let previousLeagueId = await getPreviousLeagueId(initialLeagueId);
 
@@ -28,10 +28,10 @@ export const getAllPreviousLeagueIds = async (initialLeagueId) => {
   }
 
   return previousLeagueIds;
-};
+}
 
 // PEGA AS INFORMAÇÕES GERAIS DE TODOS OS ANOS DA LIGA
-export const getAllLeagues = async () => {
+export async function getAllLeagues() {
   const allLeagues = [];
   let leagueId = CURRENT_SEASON_LEAGUE_ID;
 
@@ -42,4 +42,4 @@ export const getAllLeagues = async () => {
   }
 
   return allLeagues;
-};
+}

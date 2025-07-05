@@ -5,16 +5,16 @@ import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 
 const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
-export const getCurrentChampionRosterId = async () => {
+export async function getCurrentChampionRosterId() {
   const league = await getLeague(CURRENT_SEASON_LEAGUE_ID);
   return Number(league.metadata.latest_league_winner_roster_id);
-};
+}
 
 /**
  * A função retorna um objeto contendo as informações do campeão obtidas na API
  * @returns {Object}
  */
-export const getCurrentChampionData = async () => {
+export async function getCurrentChampionData() {
   const championRosterId = await getCurrentChampionRosterId();
   const rosters = await getRosters(CURRENT_SEASON_LEAGUE_ID);
   const users = await getUsers(CURRENT_SEASON_LEAGUE_ID);
@@ -35,4 +35,4 @@ export const getCurrentChampionData = async () => {
     owner_id: championData.user_id, // user_id = owner_id (ex: '703075560737288192')
     weekly_matchups: championWeeklyMatchups,
   };
-};
+}

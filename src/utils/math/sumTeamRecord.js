@@ -5,12 +5,12 @@
  * @param {Array} weeklyMatchups - array contendo as matchups
  */
 
-export const sumRegularSeasonTeamRecord = (
+export function sumRegularSeasonTeamRecord(
   initialWeek,
   lastWeek,
   rosterId,
   weeklyMatchups,
-) => {
+) {
   let wins = 0;
   let losses = 0;
 
@@ -33,4 +33,4 @@ export const sumRegularSeasonTeamRecord = (
     wins: wins,
     losses: losses,
   };
-};
+}

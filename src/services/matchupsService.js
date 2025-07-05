@@ -10,7 +10,7 @@ const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
  * A função retorna um array com arrays que contém os resultados do campeão e seu adversário
  * @returns {Array<Array<Object>>}
  */
-export const getCurrentChampionMatchups = async () => {
+export async function getCurrentChampionMatchups() {
   const previousLeagueId = await getPreviousLeagueId(CURRENT_SEASON_LEAGUE_ID);
   const championRosterId = await getCurrentChampionRosterId();
   // allWeeklyMatchups retorna um array de arrays contendo os objetos que são
@@ -38,10 +38,10 @@ export const getCurrentChampionMatchups = async () => {
   });
 
   return championMatchups;
-};
+}
 
 // PEGA OS RESULTADOS DO ÚLTIMO CAMPEÃO NA TEMPORADA QUE ELE FOI CAMPEÃO
-export const getCurrentChampionResults = async () => {
+export async function getCurrentChampionResults() {
   const previousLeagueId = await getPreviousLeagueId(CURRENT_SEASON_LEAGUE_ID);
   const championRosterId = await getCurrentChampionRosterId();
   // TODO resolver o problema do await abaixo
@@ -52,9 +52,9 @@ export const getCurrentChampionResults = async () => {
   });
 
   return foundChampionResults;
-};
+}
 
-export const getAllSeasonsMatchups = async () => {
+export async function getAllSeasonsMatchups() {
   const allLeaguesData = await getAllLeagues();
 
   const allSeasonsMatchupsPromises = allLeaguesData.map(async (league) => {
@@ -69,6 +69,6 @@ export const getAllSeasonsMatchups = async () => {
 
   console.log(allSeasonsMatchups);
   return allSeasonsMatchups;
-};
+}
 
-export const getHeadToHeadMatchups = (teamA_RosterId, teamB_RosterId) => {};
+export async function getHeadToHeadMatchups(teamA_RosterId, teamB_RosterId) {}
