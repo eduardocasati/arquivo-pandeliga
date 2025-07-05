@@ -10,19 +10,19 @@ import teamList from '../../constants/teamList';
 
 export const HeadToHead = () => {
   const { allSeasonsMatchups, isLoading } = useAllSeasonsMatchups();
-  const [teamASelected, setTeamASelected] = useState('');
-  const [teamBSelected, setTeamBSelected] = useState('');
+  const [selectedFirstTeam, setSelectedFirstTeam] = useState('');
+  const [selectedSecondTeam, setSelectedSecondTeam] = useState('');
 
   const sortedTeams = [...teamList].sort((a, b) =>
     a.team_name.localeCompare(b.team_name),
   );
 
-  const handleTeamAChange = (event) => {
-    setTeamASelected(event.target.value);
+  const handleFirstTeamChange = (event) => {
+    setSelectedFirstTeam(event.target.value);
   };
 
-  const handleTeamBChange = (event) => {
-    setTeamBSelected(event.target.value);
+  const handleSecondTeamChange = (event) => {
+    setSelectedSecondTeam(event.target.value);
   };
 
   const findTeam = (selectedTeam) => {
@@ -45,8 +45,8 @@ export const HeadToHead = () => {
                   <select
                     name="teamA"
                     id="teamASelect"
-                    value={teamASelected}
-                    onChange={handleTeamAChange}
+                    value={selectedFirstTeam}
+                    onChange={handleFirstTeamChange}
                   >
                     <option value="" disabled>
                       Selecione um time
@@ -56,7 +56,7 @@ export const HeadToHead = () => {
                         value={team.team_name}
                         key={team.team_id}
                         disabled={
-                          team.team_name === teamBSelected ? true : false
+                          team.team_name === selectedSecondTeam ? true : false
                         }
                       >
                         {team.team_name}
@@ -68,8 +68,8 @@ export const HeadToHead = () => {
                   <select
                     name="teamB"
                     id="teamBSelect"
-                    value={teamBSelected}
-                    onChange={handleTeamBChange}
+                    value={selectedSecondTeam}
+                    onChange={handleSecondTeamChange}
                   >
                     <option value="" disabled>
                       Selecione um time
@@ -79,7 +79,7 @@ export const HeadToHead = () => {
                         value={team.team_name}
                         key={team.team_id}
                         disabled={
-                          team.team_name === teamASelected ? true : false
+                          team.team_name === selectedFirstTeam ? true : false
                         }
                       >
                         {team.team_name}
@@ -90,17 +90,17 @@ export const HeadToHead = () => {
               </form>
             </div>
 
-            {teamASelected && teamBSelected != '' && (
+            {selectedFirstTeam && selectedSecondTeam != '' && (
               <>
                 <div className="head-to-head__team-logos">
                   <img
-                    src={findTeam(teamASelected).team_logo}
-                    alt={`${findTeam(teamASelected).team_name} Logo`}
+                    src={findTeam(selectedFirstTeam).team_logo}
+                    alt={`${findTeam(selectedFirstTeam).team_name} Logo`}
                   />
                   <span>vs.</span>
                   <img
-                    src={findTeam(teamBSelected).team_logo}
-                    alt={`${findTeam(teamBSelected).team_name} Logo`}
+                    src={findTeam(selectedSecondTeam).team_logo}
+                    alt={`${findTeam(selectedSecondTeam).team_name} Logo`}
                   />
                 </div>
 

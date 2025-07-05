@@ -4,7 +4,7 @@ const { BASE_URL } = SLEEPER_CONFIG; // https://api.sleeper.app/v1
 
 // ENDPOINT BASE DA LIGA
 function leagueEndpoint(leagueId, path = '') {
-  `${BASE_URL}/league/${leagueId}${path}`;
+  return `${BASE_URL}/league/${leagueId}${path}`;
 }
 
 // PEGA AS INFORMAÇÕES GERAIS DA LIGA EM https://api.sleeper.app/v1/league/<league_id>

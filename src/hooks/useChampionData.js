@@ -13,6 +13,7 @@ const { CHAMPION_DATA } = STORAGE_KEYS;
 
 export const useChampionData = () => {
   const cachedData = getFromLocalStorage(CHAMPION_DATA);
+  // TODO refatorar para usar onSuccess ao invés de estado
   const [championData, setChampionData] = useState(cachedData || null);
 
   const { data, isLoading, isError, error } = useQuery({

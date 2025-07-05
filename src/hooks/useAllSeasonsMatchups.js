@@ -14,6 +14,7 @@ const { ALL_SEASONS_MATCHUPS } = STORAGE_KEYS;
 
 export const useAllSeasonsMatchups = () => {
   const cachedData = getFromLocalStorage(ALL_SEASONS_MATCHUPS);
+  // TODO refatorar para usar onSuccess ao invés de estado
   const [allSeasonsMatchups, setAllSeasonsMatchups] = useState(
     cachedData || null,
   );
