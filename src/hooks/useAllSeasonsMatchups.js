@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
 import { getAllSeasonsMatchups } from '../services/matchupsService.js';
-
 import {
   getFromLocalStorage,
   saveToLocalStorage,

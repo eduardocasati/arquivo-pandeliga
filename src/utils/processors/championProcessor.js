@@ -32,23 +32,6 @@ export async function processChampionData() {
     championData.weekly_matchups,
   );
 
-  console.log({
-    team_name: championData.team_name,
-    user_name: championData.user_name,
-    team_logo: foundChampionTeam.team_logo,
-    total_regular_season_points: formatToBRDecimal(totalRegularSeasonPoints),
-    regular_season_ppg: formatToBRDecimal(regularSeasonPpg),
-    had_bye_week: hadByeWeek,
-    total_playoffs_points: formatToBRDecimal(totalPlayoffPoints),
-    playoffs_ppg: formatToBRDecimal(playoffsPpg),
-    team_record: {
-      wins: regularSeasonTeamRecord.wins,
-      losses: regularSeasonTeamRecord.losses,
-    },
-    // TODO:
-    // roster_moves: 0,
-  });
-
   return {
     team_name: championData.team_name,
     user_name: championData.user_name,

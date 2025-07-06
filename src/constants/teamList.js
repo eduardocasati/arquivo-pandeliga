@@ -1,13 +1,13 @@
-// import logoBeholders from '../assets/images/teams/team_logo_beholders.png';
-// import logoBreakers from '../assets/images/teams/team_logo_breakers.png';
-// import logoBrewers from '../assets/images/teams/team_logo_brewers.png';
-// import logoFaceiros from '../assets/images/teams/team_logo_faceiros.png';
-// import logoLesionaries from '../assets/images/teams/team_logo_lesionaries.png';
-// import logoOnekick from '../assets/images/teams/team_logo_onekick.png';
-// import logoReginaldos from '../assets/images/teams/team_logo_reginaldos.png';
-// import logoRiders from '../assets/images/teams/team_logo_riders.png';
-// import logoTankei from '../assets/images/teams/team_logo_tankei.png';
-// import logoVikings from '../assets/images/teams/team_logo_vikings.png';
+import logoBeholders from '../assets/images/teams/team_logo_beholders.png';
+import logoBreakers from '../assets/images/teams/team_logo_breakers.png';
+import logoBrewers from '../assets/images/teams/team_logo_brewers.png';
+import logoFaceiros from '../assets/images/teams/team_logo_faceiros.png';
+import logoLesionaries from '../assets/images/teams/team_logo_lesionaries.png';
+import logoOnekick from '../assets/images/teams/team_logo_onekick.png';
+import logoReginaldos from '../assets/images/teams/team_logo_reginaldos.png';
+import logoRiders from '../assets/images/teams/team_logo_riders.png';
+import logoTankei from '../assets/images/teams/team_logo_tankei.png';
+import logoVikings from '../assets/images/teams/team_logo_vikings.png';
 
 const teamList = [
   {
@@ -16,7 +16,7 @@ const teamList = [
     team_id: 'rohan-riders',
     display_name: 'Riders',
     team_name: 'Rohan Riders',
-    // team_logo: logoRiders,
+    team_logo: logoRiders,
     history: {
       best_position: {
         position: null,
@@ -34,7 +34,7 @@ const teamList = [
     team_id: 'beholders',
     display_name: 'Beholders',
     team_name: 'Beholders',
-    // team_logo: logoBeholders,
+    team_logo: logoBeholders,
     history: {},
   },
   {
@@ -43,7 +43,7 @@ const teamList = [
     team_id: 'tankei',
     display_name: 'Tankei',
     team_name: 'Tankei',
-    // team_logo: logoTankei,
+    team_logo: logoTankei,
     history: {
       best_position: {
         position: null,
@@ -61,7 +61,7 @@ const teamList = [
     team_id: 'ijui-faceiros',
     display_name: 'Faceiros',
     team_name: 'Ijuí Faceiros',
-    // team_logo: logoFaceiros,
+    team_logo: logoFaceiros,
     history: {
       best_position: {
         position: null,
@@ -79,7 +79,7 @@ const teamList = [
     team_id: 'spirit-breakers',
     display_name: 'Breakers',
     team_name: 'Spirit Breakers',
-    // team_logo: logoBreakers,
+    team_logo: logoBreakers,
     history: {
       best_position: {
         position: null,
@@ -97,7 +97,7 @@ const teamList = [
     team_id: 'valhalla-vikings',
     display_name: 'Vikings',
     team_name: 'Valhalla Vikings',
-    // team_logo: logoVikings,
+    team_logo: logoVikings,
     history: {
       best_position: {
         position: null,
@@ -115,7 +115,7 @@ const teamList = [
     team_id: 'rome-lesionaries',
     team_name: 'Rome Lesionaries',
     display_name: 'Lesionaries',
-    // team_logo: logoLesionaries,
+    team_logo: logoLesionaries,
     history: {
       best_position: {
         position: null,
@@ -133,7 +133,7 @@ const teamList = [
     team_id: 'one-kick',
     display_name: 'One Kick',
     team_name: 'One Kick',
-    // team_logo: logoOnekick,
+    team_logo: logoOnekick,
     history: {
       best_position: {
         position: null,
@@ -151,7 +151,7 @@ const teamList = [
     team_id: 'alanbama-reginaldos',
     display_name: 'Reginaldos',
     team_name: 'Alanbama Reginaldos',
-    // team_logo: logoReginaldos,
+    team_logo: logoReginaldos,
     history: {
       best_position: {
         position: null,
@@ -169,7 +169,7 @@ const teamList = [
     team_id: 'sao-sepe-brewers',
     display_name: 'Brewers',
     team_name: 'São Sepé Brewers',
-    // team_logo: logoBrewers,
+    team_logo: logoBrewers,
     history: {
       best_position: {
         position: null,

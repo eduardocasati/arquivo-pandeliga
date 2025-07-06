@@ -1,11 +1,42 @@
-// import { getFromLocalStorage } from '../../utils/storage/localStorageUtils';
+import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups.js';
 
-// import { STORAGE_KEYS } from '../constants/storageKeys.js';
+export const useHeadToHeadMatchups = (
+  firstTeamRosterId,
+  secondTeamRosterId,
+) => {
+  const { allSeasonsMatchups, isLoading, isError, error } =
+    useAllSeasonsMatchups();
 
-// const { ALL_SEASONS_MATCHUPS } = STORAGE_KEYS;
+  const headToHeadMatchups = [];
 
-// export const useHeadToHeadMatchups = (teamArosterId, teamBrosterId) => {
-//   const cachedData = getFromLocalStorage(ALL_SEASONS_MATCHUPS);
+  allSeasonsMatchups.forEach((seasonData) => {
+    const { matchups, season } = seasonData;
+    matchups.forEach((weekMatchups, weekIndex) => {
+      if (weekMatchups.length === 0) return; // condição para ignorar semanas que ainda não têm jogos e são arrays vazios
 
-//   return <div>useHeadToHeadMatchups</div>;
-// };
+      const firstTeamResult = weekMatchups.find(
+        (result) => result.roster_id === firstTeamRosterId,
+      );
+      const secondTeamResult = weekMatchups.find(
+        (result) => result.roster_id === secondTeamRosterId,
+      );
+
+      if (
+        firstTeamResult &&
+        secondTeamResult &&
+        firstTeamResult.matchup_id === secondTeamResult.matchup_id
+      ) {
+        const foundHeadToHeadMatchup = weekMatchups.filter(
+          (result) => result.matchup_id === firstTeamResult.matchup_id,
+        );
+        headToHeadMatchups.push({
+          season,
+          week: weekIndex + 1,
+          matchup: foundHeadToHeadMatchup,
+        });
+      }
+    });
+  });
+
+  return headToHeadMatchups;
+};

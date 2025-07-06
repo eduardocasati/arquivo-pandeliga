@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { LoadingSpinner } from '../../components/LoadingSpinner/LoadingSpinner';
 import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
+import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
 
 import './HeadToHead.css';
 
@@ -29,6 +30,8 @@ export const HeadToHead = () => {
     const foundTeam = teamList.find((team) => team.team_name === selectedTeam);
     return foundTeam;
   };
+
+  console.log(useHeadToHeadMatchups(1, 9));
 
   return (
     <>
