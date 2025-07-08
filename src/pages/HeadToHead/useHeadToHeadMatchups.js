@@ -1,4 +1,5 @@
 import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups.js';
+import { headToHeadProcessor } from '../../utils/processors/headToHeadProcessor.js';
 
 export const useHeadToHeadMatchups = (
   firstTeamRosterId,
@@ -24,6 +25,8 @@ export const useHeadToHeadMatchups = (
       if (
         firstTeamResult &&
         secondTeamResult &&
+        firstTeamResult.matchup_id &&
+        secondTeamResult.matchup_id &&
         firstTeamResult.matchup_id === secondTeamResult.matchup_id
       ) {
         const foundHeadToHeadMatchup = weekMatchups.filter(
@@ -38,5 +41,22 @@ export const useHeadToHeadMatchups = (
     });
   });
 
-  return headToHeadMatchups;
+  // ordena os matchups de forma decrescente pelo ano e depois semana
+  const sortedHeadToHeadMatchups = headToHeadMatchups.sort((a, b) => {
+    if (a.season !== b.season) {
+      return b.season - a.season; // season decrescente
+    }
+    return b.week - a.week; // week decrescente
+  });
+
+  // processa os dados dos matchups e retorna pontos, vitórias e porcentagem de vitórias
+  const headToHeadStats = headToHeadProcessor(
+    firstTeamRosterId,
+    secondTeamRosterId,
+    sortedHeadToHeadMatchups,
+  );
+
+  console.log(headToHeadStats);
+
+  return { sortedHeadToHeadMatchups, headToHeadStats };
 };

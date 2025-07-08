@@ -45,9 +45,5 @@ export async function processChampionData() {
       wins: regularSeasonTeamRecord.wins,
       losses: regularSeasonTeamRecord.losses,
     },
-    // TODO:
-    // roster_moves: 0,
   };
 }
-
-processChampionData();

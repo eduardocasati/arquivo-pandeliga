@@ -11,6 +11,7 @@ import teamList from '../../constants/teamList';
 
 export const HeadToHead = () => {
   const { allSeasonsMatchups, isLoading } = useAllSeasonsMatchups();
+  const { sortedHeadToHeadMatchups, headToHeadStats } = useHeadToHeadMatchups();
   const [selectedFirstTeam, setSelectedFirstTeam] = useState('');
   const [selectedSecondTeam, setSelectedSecondTeam] = useState('');
 
@@ -27,11 +28,13 @@ export const HeadToHead = () => {
   };
 
   const findTeam = (selectedTeam) => {
-    const foundTeam = teamList.find((team) => team.team_name === selectedTeam);
+    const foundTeam = teamList.find(
+      (team) => team.roster_id === Number(selectedTeam),
+    );
     return foundTeam;
   };
 
-  console.log(useHeadToHeadMatchups(1, 2));
+  console.log(useHeadToHeadMatchups(1, 6));
 
   return (
     <>
@@ -56,7 +59,7 @@ export const HeadToHead = () => {
                     </option>
                     {sortedTeams.map((team) => (
                       <option
-                        value={team.team_name}
+                        value={team.roster_id}
                         key={team.team_id}
                         disabled={
                           team.team_name === selectedSecondTeam ? true : false
@@ -79,7 +82,7 @@ export const HeadToHead = () => {
                     </option>
                     {sortedTeams.map((team) => (
                       <option
-                        value={team.team_name}
+                        value={team.roster_id}
                         key={team.team_id}
                         disabled={
                           team.team_name === selectedFirstTeam ? true : false
