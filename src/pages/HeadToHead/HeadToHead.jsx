@@ -13,7 +13,22 @@ export const HeadToHead = () => {
   const { allSeasonsMatchups, isLoading } = useAllSeasonsMatchups();
   const [selectedFirstTeam, setSelectedFirstTeam] = useState('');
   const [selectedSecondTeam, setSelectedSecondTeam] = useState('');
+  const { headToHeadMatchups, headToHeadStats } = useHeadToHeadMatchups(
+    selectedFirstTeam ? Number(selectedFirstTeam) : null,
+    selectedSecondTeam ? Number(selectedSecondTeam) : null,
+  );
 
+  // desestrutura o objeto headToHeadStats, e garante que a renderização espere até que os valores não sejam null
+  const {
+    firstTeamWins = '',
+    secondTeamWins = '',
+    firstTeamWinPercentage = '',
+    secondTeamWinPercentage = '',
+    firstTeamTotalPoints = '',
+    secondTeamTotalPoints = '',
+  } = headToHeadStats || {};
+
+  // funções utilitárias
   const sortedTeams = [...teamList].sort((a, b) =>
     a.team_name.localeCompare(b.team_name),
   );
@@ -33,20 +48,27 @@ export const HeadToHead = () => {
     return foundTeam;
   };
 
-  const { headToHeadMatchups, headToHeadStats } = useHeadToHeadMatchups(
-    selectedFirstTeam ? Number(selectedFirstTeam) : null,
-    selectedSecondTeam ? Number(selectedSecondTeam) : null,
+  // função e variáveis para colorir as estatísticas de forma dinâmica
+  const getStatColors = (a, b) => {
+    const COLOR_GREEN = 'var(--color-text-accent-green)';
+    const COLOR_PINK = 'var(--color-text-accent-pink)';
+    const COLOR_WHITE = 'var(--color-text-primary)';
+    if (a > b) return [COLOR_GREEN, COLOR_PINK];
+    if (a < b) return [COLOR_PINK, COLOR_GREEN];
+    return [COLOR_WHITE, COLOR_WHITE];
+  };
+  const [winsLeftColor, winsRightColor] = getStatColors(
+    firstTeamWins,
+    secondTeamWins,
   );
-
-  // desestrutura o objeto headToHeadStats, e garante que a renderização espere até que os valores não sejam null
-  const {
-    firstTeamWins = '',
-    secondTeamWins = '',
-    firstTeamWinPercentage = '',
-    secondTeamWinPercentage = '',
-    firstTeamTotalPoints = '',
-    secondTeamTotalPoints = '',
-  } = headToHeadStats || {};
+  const [percentageLeftColor, percentageRightColor] = getStatColors(
+    firstTeamWinPercentage,
+    secondTeamWinPercentage,
+  );
+  const [pointsLeftColor, pointsRightColor] = getStatColors(
+    firstTeamTotalPoints,
+    secondTeamTotalPoints,
+  );
 
   console.log(headToHeadMatchups, headToHeadStats);
 
@@ -128,29 +150,47 @@ export const HeadToHead = () => {
                 {/* na lógica final o número menor fica vermelho dinamicamente */}
                 <div className="head-to-head__versus-stats">
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers versus-stats__numbers--left">
+                    <p
+                      className="versus-stats__numbers versus-stats__numbers--left"
+                      style={{ '--stat-color': winsLeftColor }}
+                    >
                       {firstTeamWins}
                     </p>
                     <p className="versus-stats__center">Vitórias</p>
-                    <p className="versus-stats__numbers versus-stats__numbers--right">
+                    <p
+                      className="versus-stats__numbers versus-stats__numbers--right"
+                      style={{ '--stat-color': winsRightColor }}
+                    >
                       {secondTeamWins}
                     </p>
                   </div>
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers versus-stats__numbers--left">
+                    <p
+                      className="versus-stats__numbers versus-stats__numbers--left"
+                      style={{ '--stat-color': percentageLeftColor }}
+                    >
                       {firstTeamWinPercentage}%
                     </p>
                     <p className="versus-stats__center">%Vitórias</p>
-                    <p className="versus-stats__numbers versus-stats__numbers--right">
+                    <p
+                      className="versus-stats__numbers versus-stats__numbers--right"
+                      style={{ '--stat-color': percentageRightColor }}
+                    >
                       {secondTeamWinPercentage}%
                     </p>
                   </div>
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers versus-stats__numbers--left">
+                    <p
+                      className="versus-stats__numbers versus-stats__numbers--left"
+                      style={{ '--stat-color': pointsLeftColor }}
+                    >
                       {firstTeamTotalPoints}
                     </p>
                     <p className="versus-stats__center">Pontos</p>
-                    <p className="versus-stats__numbers versus-stats__numbers--right">
+                    <p
+                      className="versus-stats__numbers versus-stats__numbers--right"
+                      style={{ '--stat-color': pointsRightColor }}
+                    >
                       {secondTeamTotalPoints}
                     </p>
                   </div>
