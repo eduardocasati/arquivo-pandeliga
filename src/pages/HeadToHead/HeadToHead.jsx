@@ -77,7 +77,12 @@ export const HeadToHead = () => {
       <Header />
       <div className="page-content__wrapper">
         {isLoading || !allSeasonsMatchups ? (
-          <LoadingSpinner />
+          <>
+            <LoadingSpinner />
+            <p className="head-to-head__loading-message">
+              Carregando os confrontos
+            </p>
+          </>
         ) : (
           <>
             <h1 className="mobile-page__title">Confrontos Diretos</h1>
