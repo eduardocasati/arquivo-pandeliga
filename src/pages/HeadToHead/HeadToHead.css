@@ -54,33 +54,38 @@
   justify-content: center;
   flex-direction: column;
   margin-top: 16px;
+  font-variant-numeric: tabular-nums;
 }
 
 .versus-stats__row {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: var(--font-accent-primary);
+  width: 100%;
 }
 
 .versus-stats__center {
-  min-width: clamp(88px, 8vw, 104px);
+  flex-shrink: 0;
+  min-width: clamp(80px, 8vw, 104px);
   text-align: center;
   font-size: clamp(0.75rem, 2.5vw, 0.9rem);
 }
 
 .versus-stats__numbers {
-  font-size: clamp(1.5rem, 2.5vw, 1.7rem);
+  flex: 1;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   font-style: italic;
   font-weight: 600;
   color: var(--color-text-accent-green);
 }
 
-/* TODO classe placeholder apenas para testar o visual */
-.versus-stats__numbers-red {
-  font-size: clamp(1.5rem, 2.5vw, 1.7rem);
-  font-style: italic;
-  font-weight: 600;
-  color: var(--color-text-accent-pink);
+.versus-stats__numbers--left {
+  text-align: right;
+}
+
+.versus-stats__numbers--right {
+  text-align: left;
 }
 
 @media screen and (max-width: 1120px) {

@@ -128,27 +128,29 @@ export const HeadToHead = () => {
                 {/* na lógica final o número menor fica vermelho dinamicamente */}
                 <div className="head-to-head__versus-stats">
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers">{firstTeamWins}</p>
+                    <p className="versus-stats__numbers versus-stats__numbers--left">
+                      {firstTeamWins}
+                    </p>
                     <p className="versus-stats__center">Vitórias</p>
-                    <p className="versus-stats__numbers-red">
+                    <p className="versus-stats__numbers versus-stats__numbers--right">
                       {secondTeamWins}
                     </p>
                   </div>
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers">
+                    <p className="versus-stats__numbers versus-stats__numbers--left">
                       {firstTeamWinPercentage}%
                     </p>
                     <p className="versus-stats__center">%Vitórias</p>
-                    <p className="versus-stats__numbers-red">
+                    <p className="versus-stats__numbers versus-stats__numbers--right">
                       {secondTeamWinPercentage}%
                     </p>
                   </div>
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers">
+                    <p className="versus-stats__numbers versus-stats__numbers--left">
                       {firstTeamTotalPoints}
                     </p>
                     <p className="versus-stats__center">Pontos</p>
-                    <p className="versus-stats__numbers-red">
+                    <p className="versus-stats__numbers versus-stats__numbers--right">
                       {secondTeamTotalPoints}
                     </p>
                   </div>
