@@ -11,7 +11,6 @@ import teamList from '../../constants/teamList';
 
 export const HeadToHead = () => {
   const { allSeasonsMatchups, isLoading } = useAllSeasonsMatchups();
-  const { sortedHeadToHeadMatchups, headToHeadStats } = useHeadToHeadMatchups();
   const [selectedFirstTeam, setSelectedFirstTeam] = useState('');
   const [selectedSecondTeam, setSelectedSecondTeam] = useState('');
 
@@ -34,7 +33,22 @@ export const HeadToHead = () => {
     return foundTeam;
   };
 
-  console.log(useHeadToHeadMatchups(1, 6));
+  const { headToHeadMatchups, headToHeadStats } = useHeadToHeadMatchups(
+    selectedFirstTeam ? Number(selectedFirstTeam) : null,
+    selectedSecondTeam ? Number(selectedSecondTeam) : null,
+  );
+
+  // desestrutura o objeto headToHeadStats, e garante que a renderização espere até que os valores não sejam null
+  const {
+    firstTeamWins = '',
+    secondTeamWins = '',
+    firstTeamWinPercentage = '',
+    secondTeamWinPercentage = '',
+    firstTeamTotalPoints = '',
+    secondTeamTotalPoints = '',
+  } = headToHeadStats || {};
+
+  console.log(headToHeadMatchups, headToHeadStats);
 
   return (
     <>
@@ -114,19 +128,29 @@ export const HeadToHead = () => {
                 {/* na lógica final o número menor fica vermelho dinamicamente */}
                 <div className="head-to-head__versus-stats">
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers">6</p>
+                    <p className="versus-stats__numbers">{firstTeamWins}</p>
                     <p className="versus-stats__center">Vitórias</p>
-                    <p className="versus-stats__numbers-red">4</p>
+                    <p className="versus-stats__numbers-red">
+                      {secondTeamWins}
+                    </p>
                   </div>
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers">60%</p>
+                    <p className="versus-stats__numbers">
+                      {firstTeamWinPercentage}%
+                    </p>
                     <p className="versus-stats__center">%Vitórias</p>
-                    <p className="versus-stats__numbers-red">40%</p>
+                    <p className="versus-stats__numbers-red">
+                      {secondTeamWinPercentage}%
+                    </p>
                   </div>
                   <div className="versus-stats__row">
-                    <p className="versus-stats__numbers">1700,00</p>
+                    <p className="versus-stats__numbers">
+                      {firstTeamTotalPoints}
+                    </p>
                     <p className="versus-stats__center">Pontos</p>
-                    <p className="versus-stats__numbers-red">1300,00</p>
+                    <p className="versus-stats__numbers-red">
+                      {secondTeamTotalPoints}
+                    </p>
                   </div>
                 </div>
               </>

@@ -42,10 +42,10 @@ export function headToHeadProcessor(
 
   return {
     firstTeamTotalPoints: formatToBRDecimal(firstTeamTotalPoints),
-    firstTeamWins: formatToBRDecimal(firstTeamWins),
+    firstTeamWins: firstTeamWins,
     firstTeamWinPercentage: formatToBRDecimal(firstTeamWinPercentage),
     secondTeamTotalPoints: formatToBRDecimal(secondTeamTotalPoints),
-    secondTeamWins: formatToBRDecimal(secondTeamWins),
+    secondTeamWins: secondTeamWins,
     secondTeamWinPercentage: formatToBRDecimal(secondTeamWinPercentage),
   };
 }
