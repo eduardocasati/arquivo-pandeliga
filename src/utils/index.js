@@ -1,8 +1,8 @@
-export { formatToBRDecimal } from './format/numberFormat.js';
-export { sumPointsFromMatchups } from './math/sumPoints.js';
-export { hasByeWeekInPlayoffs } from './playoff/hasPlayoffByeWeek.js';
+export { sumPointsFromMatchups } from './aggregators/sumPoints.js';
+export { formatToBRDecimal } from './formatters/numberFormat.js';
 export {
   clearLocalChampionTeamData,
   getLocalChampionTeamData,
   saveChampionTeamData,
 } from './storage/championStorage.js';
+export { hasByeWeekInPlayoffs } from './validators/hasPlayoffByeWeek.js';

@@ -1,9 +1,9 @@
 import { getCurrentChampionData } from '../../services/championService.js';
 import { getCurrentChampionResults } from '../../services/matchupsService.js';
-import { formatToBRDecimal } from '../format/numberFormat.js';
-import { sumPointsFromResults } from '../math/sumPoints.js';
-import { sumRegularSeasonTeamRecord } from '../math/sumTeamRecord.js';
-import { hasByeWeekInPlayoffs } from '../playoff/hasByeWeekInPlayoffs.js';
+import { sumPointsFromResults } from '../aggregators/sumPoints.js';
+import { sumRegularSeasonTeamRecord } from '../aggregators/sumTeamRecord.js';
+import { formatToBRDecimal } from '../formatters/numberFormat.js';
+import { hasByeWeekInPlayoffs } from '../validators/hasByeWeekInPlayoffs.js';
 
 import teamList from '../../constants/teamList.js';
 

@@ -31,7 +31,7 @@ export const HeadToHead = () => {
     return foundTeam;
   };
 
-  console.log(useHeadToHeadMatchups(1, 9));
+  console.log(useHeadToHeadMatchups(1, 2));
 
   return (
     <>
