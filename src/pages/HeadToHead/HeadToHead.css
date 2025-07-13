@@ -1,12 +1,9 @@
 .head-to-head__loading-message {
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  font-family: var(--font-accent-primary);
-  font-style: italic;
   color: var(--color-text-accent-green);
   text-transform: uppercase;
-  font-weight: 500;
   text-align: center;
   padding-top: 24px;
+  font: italic 500 clamp(0.9rem, 2.5vw, 1.1rem) var(--font-accent-primary);
 }
 
 .mobile-page__title {
@@ -14,7 +11,7 @@
   text-transform: uppercase;
   display: none;
   padding-bottom: 24px;
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.4rem, 3vw, 2.9rem);
   color: var(--color-text-accent-green);
 }
 
@@ -30,7 +27,7 @@
 .head-to-head__form select {
   padding: 8px;
   border-radius: 4px;
-  font: var(--font-base);
+  font-family: var(--font-base);
   background-color: var(--color-surface-secondary);
   color: var(--color-text-primary);
   border: 1px solid var(--color-accent-gray);
@@ -44,7 +41,6 @@
   display: flex;
   align-items: center;
   justify-items: center;
-  /* gap: 32px; */
   width: fit-content;
   margin: 24px auto 0;
 }

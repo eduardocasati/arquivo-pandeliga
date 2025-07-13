@@ -1,0 +1,47 @@
+.matchup-table {
+  padding-top: 16px;
+}
+
+.matchup-table__title {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.matchup-table__paging-title {
+  display: flex;
+  justify-content: space-between;
+  width: 216px;
+  margin: 0 auto;
+}
+
+.matchup-table__paging-title h1 {
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  font-weight: 400;
+  font-family: var(--font-accent-primary);
+}
+
+.matchup-table__paging-title button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.matchup-table__paging-title svg {
+  color: var(--color-text-primary);
+  position: relative;
+  top: 2px;
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  .matchup-table__paging-title {
+    width: 192px;
+  }
+
+  .matchup-table__paging-title svg {
+    top: 0;
+  }
+}

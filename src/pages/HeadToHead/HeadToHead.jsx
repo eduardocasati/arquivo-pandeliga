@@ -2,10 +2,12 @@ import { useState } from 'react';
 
 import { Header } from '../../components/Header/Header';
 import { LoadingSpinner } from '../../components/LoadingSpinner/LoadingSpinner';
-import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
-import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
+import { MatchupTable } from './MatchupTable/MatchupTable';
 
 import './HeadToHead.css';
+
+import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
+import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
 
 import teamList from '../../constants/teamList';
 
@@ -52,7 +54,13 @@ export const HeadToHead = () => {
   const getStatColors = (a, b) => {
     const COLOR_GREEN = 'var(--color-text-accent-green)';
     const COLOR_PINK = 'var(--color-text-accent-pink)';
-    const COLOR_WHITE = 'var(--color-text-primary)';
+    // const COLOR_WHITE = 'var(--color-text-primary)';
+    // const COLOR_WHITE = '#FCDC4D';
+    // const COLOR_WHITE = '#F9DC5C';
+    // const COLOR_WHITE = '#EECF6D';
+    // const COLOR_WHITE = '#E1CE7A';
+    const COLOR_WHITE = '#C9F0FF';
+    // const COLOR_WHITE = '#CEE5F2';
     if (a > b) return [COLOR_GREEN, COLOR_PINK];
     if (a < b) return [COLOR_PINK, COLOR_GREEN];
     return [COLOR_WHITE, COLOR_WHITE];
@@ -66,8 +74,10 @@ export const HeadToHead = () => {
     secondTeamWinPercentage,
   );
   const [pointsLeftColor, pointsRightColor] = getStatColors(
-    firstTeamTotalPoints,
-    secondTeamTotalPoints,
+    parseFloat(firstTeamTotalPoints.replace('.', '').replace(',', '.')),
+    parseFloat(secondTeamTotalPoints.replace('.', '').replace(',', '.')),
+    // o parseFloat faz a string virar número
+    // os replaces formatam os números para o padrão americano para o JavaScript fazer a comparação corretamente
   );
 
   console.log(headToHeadMatchups, headToHeadStats);
@@ -79,9 +89,7 @@ export const HeadToHead = () => {
         {isLoading || !allSeasonsMatchups ? (
           <>
             <LoadingSpinner />
-            <p className="head-to-head__loading-message">
-              Carregando os confrontos
-            </p>
+            <p className="head-to-head__loading-message">Carregando</p>
           </>
         ) : (
           <>
@@ -103,7 +111,9 @@ export const HeadToHead = () => {
                         value={team.roster_id}
                         key={team.team_id}
                         disabled={
-                          team.team_name === selectedSecondTeam ? true : false
+                          team.roster_id === Number(selectedSecondTeam)
+                            ? true
+                            : false
                         }
                       >
                         {team.team_name}
@@ -126,7 +136,9 @@ export const HeadToHead = () => {
                         value={team.roster_id}
                         key={team.team_id}
                         disabled={
-                          team.team_name === selectedFirstTeam ? true : false
+                          team.roster_id === Number(selectedFirstTeam)
+                            ? true
+                            : false
                         }
                       >
                         {team.team_name}
@@ -200,6 +212,9 @@ export const HeadToHead = () => {
                     </p>
                   </div>
                 </div>
+
+                {/* TABELA COM OS MATCHUPS */}
+                <MatchupTable headToHeadMatchups={headToHeadMatchups} />
               </>
             )}
           </>
