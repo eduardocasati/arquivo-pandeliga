@@ -70,5 +70,3 @@ export async function getAllSeasonsMatchups() {
   console.log(allSeasonsMatchups);
   return allSeasonsMatchups;
 }
-
-export async function getHeadToHeadMatchups(teamA_RosterId, teamB_RosterId) {}
