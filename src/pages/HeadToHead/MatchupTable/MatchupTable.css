@@ -36,6 +36,20 @@
   cursor: pointer;
 }
 
+.matchup-table__points {
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  margin: 0 auto;
+  padding-top: 8px;
+  font: italic 600 1.1rem var(--font-accent-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.matchup-table__points p {
+  color: var(--points-color, inherit);
+}
+
 @media screen and (max-width: 420px) {
   .matchup-table__paging-title {
     width: 192px;
@@ -43,5 +57,11 @@
 
   .matchup-table__paging-title svg {
     top: 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .matchup-table__points {
+    width: 256px;
   }
 }

@@ -1,21 +1,46 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 
 import './MatchupTable.css';
 
-export const MatchupTable = ({ headToHeadMatchups = [] }) => {
+export const MatchupTable = ({
+  selectedFirstTeam,
+  selectedSecondTeam,
+  headToHeadMatchups = [],
+}) => {
   const [pageIndex, setPageIndex] = useState(0);
 
-  const safeMatchups = headToHeadMatchups ?? []; // garante array
-  const currentMatchup = safeMatchups[pageIndex];
+  // garante que headToHeadMatchups é um array
+  const safeMatchups = Array.isArray(headToHeadMatchups)
+    ? headToHeadMatchups
+    : [];
+  const hasPages = safeMatchups.length > 0;
+  const currentMatchup = hasPages ? safeMatchups[pageIndex] : null;
 
-  // reseta o index para 0 sempre que os times mudam
+  // reseta o índice quando os matchups mudam
   useEffect(() => {
     setPageIndex(0);
   }, [headToHeadMatchups]);
 
+  // obtém os dados dos dois times ordenados corretamente
+  const [firstTeamMatchup, secondTeamMatchup] = useMemo(() => {
+    if (!currentMatchup || !Array.isArray(currentMatchup.matchup)) {
+      return [null, null];
+    }
+
+    const first = currentMatchup.matchup.find(
+      (m) => Number(m.roster_id) === Number(selectedFirstTeam),
+    );
+    const second = currentMatchup.matchup.find(
+      (m) => Number(m.roster_id) === Number(selectedSecondTeam),
+    );
+
+    return [first, second];
+  }, [currentMatchup, selectedFirstTeam, selectedSecondTeam]);
+
+  // paginação
   const handleNextMatchup = () => {
-    if (pageIndex < headToHeadMatchups.length - 1) {
+    if (pageIndex < safeMatchups.length - 1) {
       setPageIndex(pageIndex + 1);
     } else {
       setPageIndex(0);
@@ -25,8 +50,26 @@ export const MatchupTable = ({ headToHeadMatchups = [] }) => {
   const handlePreviousMatchup = () => {
     if (pageIndex > 0) {
       setPageIndex(pageIndex - 1);
-    } else setPageIndex(headToHeadMatchups.length - 1);
+    } else {
+      setPageIndex(safeMatchups.length - 1);
+    }
   };
+
+  // cor dinâmica dos pontos
+  const getPointsColor = (a, b) => {
+    if (a == null || b == null) return 'inherit';
+    return a > b
+      ? 'var(--color-text-accent-green)'
+      : 'var(--color-text-accent-pink)';
+  };
+  const firstPointsColor = getPointsColor(
+    firstTeamMatchup?.points,
+    secondTeamMatchup?.points,
+  );
+  const secondPointsColor = getPointsColor(
+    secondTeamMatchup?.points,
+    firstTeamMatchup?.points,
+  );
 
   return (
     <div className="matchup-table">
@@ -42,6 +85,19 @@ export const MatchupTable = ({ headToHeadMatchups = [] }) => {
         <button onClick={handleNextMatchup}>
           <GrFormNext />
         </button>
+      </div>
+
+      <div className="matchup-table__points">
+        {firstTeamMatchup && secondTeamMatchup && (
+          <>
+            <p style={{ '--points-color': firstPointsColor }}>
+              {firstTeamMatchup.points.toFixed(2)}
+            </p>
+            <p style={{ '--points-color': secondPointsColor }}>
+              {secondTeamMatchup.points.toFixed(2)}
+            </p>
+          </>
+        )}
       </div>
     </div>
   );

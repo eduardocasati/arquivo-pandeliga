@@ -163,8 +163,6 @@ export const HeadToHead = () => {
                   />
                 </div>
 
-                {/* TODO a classe versus-stats__numbers-red é placeholder apenas para testar o visual */}
-                {/* na lógica final o número menor fica vermelho dinamicamente */}
                 <div className="head-to-head__versus-stats">
                   <div className="versus-stats__row">
                     <p
@@ -214,7 +212,11 @@ export const HeadToHead = () => {
                 </div>
 
                 {/* TABELA COM OS MATCHUPS */}
-                <MatchupTable headToHeadMatchups={headToHeadMatchups} />
+                <MatchupTable
+                  selectedFirstTeam={selectedFirstTeam}
+                  selectedSecondTeam={selectedSecondTeam}
+                  headToHeadMatchups={headToHeadMatchups}
+                />
               </>
             )}
           </>

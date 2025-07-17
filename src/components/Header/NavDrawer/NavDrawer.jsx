@@ -51,7 +51,6 @@ export const NavDrawer = () => {
         </div>
 
         <ul className="header__mobile-nav-list">
-          {/* TODO criar estilo específico para item ativo no menu mobile */}
           {navItems.map(({ to, label }) => (
             <NavLink
               key={to}
