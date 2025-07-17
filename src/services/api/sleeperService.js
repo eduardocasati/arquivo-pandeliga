@@ -30,3 +30,9 @@ export async function getMatchups(leagueId, week) {
   const response = await fetch(leagueEndpoint(leagueId, `/matchups/${week}`));
   return response.json();
 }
+
+// PEGA AS INFORMAÇÕES DE TODOS OS JOGADORES EM https://api.sleeper.app/v1/players/nfl
+export async function getAllPlayersData() {
+  const response = await fetch(`${BASE_URL}/players/nfl`);
+  return response.json();
+}
