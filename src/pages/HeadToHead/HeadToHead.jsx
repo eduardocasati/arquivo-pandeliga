@@ -85,143 +85,143 @@ export const HeadToHead = () => {
   return (
     <>
       <Header />
-      <div className="page-content__wrapper">
-        {isLoading || !allSeasonsMatchups ? (
-          <>
-            <LoadingSpinner />
-            <p className="head-to-head__loading-message">Carregando</p>
-          </>
-        ) : (
-          <>
-            <h1 className="mobile-page__title">Confrontos Diretos</h1>
-            <div className="head-to-head__form">
-              <form>
-                <label htmlFor="teamASelect">
-                  <select
-                    name="teamA"
-                    id="teamASelect"
-                    value={selectedFirstTeam}
-                    onChange={handleFirstTeamChange}
-                  >
-                    <option value="" disabled>
-                      Selecione um time
+      {/* <div className="page-content__wrapper"> */}
+      {isLoading || !allSeasonsMatchups ? (
+        <>
+          <LoadingSpinner />
+          <p className="head-to-head__loading-message">Carregando</p>
+        </>
+      ) : (
+        <>
+          {/* <h1 className="mobile-page__title">Confrontos Diretos</h1> */}
+          <div className="head-to-head__form">
+            <form>
+              <label htmlFor="teamASelect">
+                <select
+                  name="teamA"
+                  id="teamASelect"
+                  value={selectedFirstTeam}
+                  onChange={handleFirstTeamChange}
+                >
+                  <option value="" disabled>
+                    Selecione um time
+                  </option>
+                  {sortedTeams.map((team) => (
+                    <option
+                      value={team.roster_id}
+                      key={team.team_id}
+                      disabled={
+                        team.roster_id === Number(selectedSecondTeam)
+                          ? true
+                          : false
+                      }
+                    >
+                      {team.team_name}
                     </option>
-                    {sortedTeams.map((team) => (
-                      <option
-                        value={team.roster_id}
-                        key={team.team_id}
-                        disabled={
-                          team.roster_id === Number(selectedSecondTeam)
-                            ? true
-                            : false
-                        }
-                      >
-                        {team.team_name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label htmlFor="">
-                  <select
-                    name="teamB"
-                    id="teamBSelect"
-                    value={selectedSecondTeam}
-                    onChange={handleSecondTeamChange}
-                  >
-                    <option value="" disabled>
-                      Selecione um time
+                  ))}
+                </select>
+              </label>
+              <label htmlFor="">
+                <select
+                  name="teamB"
+                  id="teamBSelect"
+                  value={selectedSecondTeam}
+                  onChange={handleSecondTeamChange}
+                >
+                  <option value="" disabled>
+                    Selecione um time
+                  </option>
+                  {sortedTeams.map((team) => (
+                    <option
+                      value={team.roster_id}
+                      key={team.team_id}
+                      disabled={
+                        team.roster_id === Number(selectedFirstTeam)
+                          ? true
+                          : false
+                      }
+                    >
+                      {team.team_name}
                     </option>
-                    {sortedTeams.map((team) => (
-                      <option
-                        value={team.roster_id}
-                        key={team.team_id}
-                        disabled={
-                          team.roster_id === Number(selectedFirstTeam)
-                            ? true
-                            : false
-                        }
-                      >
-                        {team.team_name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </form>
-            </div>
+                  ))}
+                </select>
+              </label>
+            </form>
+          </div>
 
-            {selectedFirstTeam && selectedSecondTeam != '' && (
-              <>
-                <div className="head-to-head__team-logos">
-                  <img
-                    src={findTeam(selectedFirstTeam).team_logo}
-                    alt={`${findTeam(selectedFirstTeam).team_name} Logo`}
-                  />
-                  <span>vs.</span>
-                  <img
-                    src={findTeam(selectedSecondTeam).team_logo}
-                    alt={`${findTeam(selectedSecondTeam).team_name} Logo`}
-                  />
-                </div>
-
-                <div className="head-to-head__versus-stats">
-                  <div className="versus-stats__row">
-                    <p
-                      className="versus-stats__numbers versus-stats__numbers--left"
-                      style={{ '--stat-color': winsLeftColor }}
-                    >
-                      {firstTeamWins}
-                    </p>
-                    <p className="versus-stats__center">Vitórias</p>
-                    <p
-                      className="versus-stats__numbers versus-stats__numbers--right"
-                      style={{ '--stat-color': winsRightColor }}
-                    >
-                      {secondTeamWins}
-                    </p>
-                  </div>
-                  <div className="versus-stats__row">
-                    <p
-                      className="versus-stats__numbers versus-stats__numbers--left"
-                      style={{ '--stat-color': percentageLeftColor }}
-                    >
-                      {firstTeamWinPercentage}%
-                    </p>
-                    <p className="versus-stats__center">%Vitórias</p>
-                    <p
-                      className="versus-stats__numbers versus-stats__numbers--right"
-                      style={{ '--stat-color': percentageRightColor }}
-                    >
-                      {secondTeamWinPercentage}%
-                    </p>
-                  </div>
-                  <div className="versus-stats__row">
-                    <p
-                      className="versus-stats__numbers versus-stats__numbers--left"
-                      style={{ '--stat-color': pointsLeftColor }}
-                    >
-                      {firstTeamTotalPoints}
-                    </p>
-                    <p className="versus-stats__center">Pontos</p>
-                    <p
-                      className="versus-stats__numbers versus-stats__numbers--right"
-                      style={{ '--stat-color': pointsRightColor }}
-                    >
-                      {secondTeamTotalPoints}
-                    </p>
-                  </div>
-                </div>
-
-                {/* TABELA COM OS MATCHUPS */}
-                <MatchupTable
-                  selectedFirstTeam={selectedFirstTeam}
-                  selectedSecondTeam={selectedSecondTeam}
-                  headToHeadMatchups={headToHeadMatchups}
+          {selectedFirstTeam && selectedSecondTeam != '' && (
+            <>
+              <div className="head-to-head__team-logos">
+                <img
+                  src={findTeam(selectedFirstTeam).team_logo}
+                  alt={`${findTeam(selectedFirstTeam).team_name} Logo`}
                 />
-              </>
-            )}
-          </>
-        )}
-      </div>
+                <span>vs.</span>
+                <img
+                  src={findTeam(selectedSecondTeam).team_logo}
+                  alt={`${findTeam(selectedSecondTeam).team_name} Logo`}
+                />
+              </div>
+
+              <div className="head-to-head__versus-stats">
+                <div className="versus-stats__row">
+                  <p
+                    className="versus-stats__numbers versus-stats__numbers--left"
+                    style={{ '--stat-color': winsLeftColor }}
+                  >
+                    {firstTeamWins}
+                  </p>
+                  <p className="versus-stats__center">Vitórias</p>
+                  <p
+                    className="versus-stats__numbers versus-stats__numbers--right"
+                    style={{ '--stat-color': winsRightColor }}
+                  >
+                    {secondTeamWins}
+                  </p>
+                </div>
+                <div className="versus-stats__row">
+                  <p
+                    className="versus-stats__numbers versus-stats__numbers--left"
+                    style={{ '--stat-color': percentageLeftColor }}
+                  >
+                    {firstTeamWinPercentage}%
+                  </p>
+                  <p className="versus-stats__center">%Vitórias</p>
+                  <p
+                    className="versus-stats__numbers versus-stats__numbers--right"
+                    style={{ '--stat-color': percentageRightColor }}
+                  >
+                    {secondTeamWinPercentage}%
+                  </p>
+                </div>
+                <div className="versus-stats__row">
+                  <p
+                    className="versus-stats__numbers versus-stats__numbers--left"
+                    style={{ '--stat-color': pointsLeftColor }}
+                  >
+                    {firstTeamTotalPoints}
+                  </p>
+                  <p className="versus-stats__center">Pontos</p>
+                  <p
+                    className="versus-stats__numbers versus-stats__numbers--right"
+                    style={{ '--stat-color': pointsRightColor }}
+                  >
+                    {secondTeamTotalPoints}
+                  </p>
+                </div>
+              </div>
+
+              {/* TABELA COM OS MATCHUPS */}
+              <MatchupTable
+                selectedFirstTeam={selectedFirstTeam}
+                selectedSecondTeam={selectedSecondTeam}
+                headToHeadMatchups={headToHeadMatchups}
+              />
+            </>
+          )}
+        </>
+      )}
+      {/* </div> */}
     </>
   );
 };

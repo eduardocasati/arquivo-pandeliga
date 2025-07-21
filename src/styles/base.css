@@ -32,6 +32,30 @@ h3 {
   border-radius: 8px;
 }
 
+.quarterback--text {
+  color: var(--position-QB);
+}
+
+.runningback--text {
+  color: var(--position-RB);
+}
+
+.widereceiver--text {
+  color: var(--position-WR);
+}
+
+.tightend--text {
+  color: var(--position-TE);
+}
+
+.kicker--text {
+  color: var(--position-K);
+}
+
+.defense--text {
+  color: var(--position-DEF);
+}
+
 @media screen and (max-width: 1120px) {
   .page-content__wrapper {
     max-width: 90%;

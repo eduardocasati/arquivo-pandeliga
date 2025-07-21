@@ -1,5 +1,6 @@
 .matchup-table {
   padding-top: 16px;
+  padding-bottom: 80px;
 }
 
 .matchup-table__title {
@@ -38,16 +39,116 @@
 
 .matchup-table__points {
   display: flex;
-  justify-content: space-between;
-  width: 360px;
+  justify-content: center;
   margin: 0 auto;
   padding-top: 8px;
-  font: italic 600 1.1rem var(--font-accent-primary);
+  font: italic 600 clamp(1.1rem, 2.5vw, 1.4rem) var(--font-accent-primary);
   font-variant-numeric: tabular-nums;
 }
 
 .matchup-table__points p {
   color: var(--points-color, inherit);
+  padding-inline: 24px;
+}
+
+/* ====================================== */
+/* ESTILIZAÇÃO DA TABELA COM OS JOGADORES */
+/* ====================================== */
+.matchup-table__players {
+  /* border: 1px solid lime; */
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 8px;
+}
+
+.matchup-row {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.matchup-player {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.matchup-player--left,
+.matchup-player--right,
+.matchup-player__score--left,
+.matchup-player__score--right,
+.matchup-position-icon {
+  flex: 0 0 auto;
+}
+
+.matchup-player--left,
+.matchup-player--right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.matchup-player--left {
+  justify-content: flex-start;
+}
+
+.matchup-player--right {
+  justify-content: flex-end;
+}
+
+.matchup-player__group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.matchup-player__image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  display: block;
+}
+
+.matchup-player__name {
+  font-family: var(--font-accent-primary);
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+}
+
+.matchup-player__score {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-accent-primary);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.matchup-player__score--left,
+.matchup-player__score--right {
+  white-space: nowrap;
+  width: 60px;
+}
+
+.matchup-player__score--left {
+  text-align: right;
+}
+
+.matchup-player__score--right {
+  text-align: left;
+}
+
+.matchup-position-icon {
+  width: 48px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-family: var(--font-accent-primary);
+  font-weight: 300;
+}
+
+@media screen and (max-width: 810px) {
+  .matchup-player__image {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -58,10 +159,9 @@
   .matchup-table__paging-title svg {
     top: 0;
   }
-}
 
-@media screen and (max-width: 760px) {
-  .matchup-table__points {
-    width: 256px;
+  .matchup-position-icon {
+    width: 40px;
+    font-size: 0.7rem;
   }
 }

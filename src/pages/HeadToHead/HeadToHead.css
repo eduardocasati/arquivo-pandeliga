@@ -15,6 +15,10 @@
   color: var(--color-text-accent-green);
 }
 
+.head-to-head__form {
+  padding-top: 40px;
+}
+
 .head-to-head__form form {
   display: flex;
   justify-content: center;

@@ -61,4 +61,12 @@
     Tankei: Black Ops One, Bangers, Changa One, Sigmar One
     Valhalla Vikings: Vollkorn SC, IM Fell English SC (lembra Ringbearer)
   */
+
+  /* Cores de cada posição */
+  --position-QB: #ff2b6d;
+  --position-RB: #20ceb8;
+  --position-WR: #59a7ff;
+  --position-TE: #feae58;
+  --position-K: #c96cff;
+  --position-DEF: #bf5f40;
 }
