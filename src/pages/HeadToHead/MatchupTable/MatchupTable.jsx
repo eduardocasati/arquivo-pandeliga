@@ -3,6 +3,8 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 
 import './MatchupTable.css';
 
+import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
+
 export const MatchupTable = ({
   selectedFirstTeam,
   selectedSecondTeam,
@@ -92,318 +94,356 @@ export const MatchupTable = ({
         {firstTeamMatchup && secondTeamMatchup && (
           <>
             <p style={{ '--points-color': firstPointsColor }}>
-              {firstTeamMatchup.points.toFixed(2)}
+              {formatToBRDecimal(firstTeamMatchup.points)}
             </p>
             <p style={{ '--points-color': secondPointsColor }}>
-              {secondTeamMatchup.points.toFixed(2)}
+              {formatToBRDecimal(secondTeamMatchup.points)}
             </p>
           </>
         )}
       </div>
 
       {/* JOGADORES */}
-      <div className="matchup-table__players">
-        {/* QUARTERBACK */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/11566.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">J. Daniels</p>
+      {firstTeamMatchup && secondTeamMatchup && (
+        <div className="matchup-table__players">
+          {/* QUARTERBACK - INÍDICE 0 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[0]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[0]}
+                </p>
+              </div>
             </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            31,78
-          </p>
-          <div className="matchup-position-icon quarterback--text">
-            <p>QB</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            21,86
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">B. Nix</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/11563.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* RUNNING BACK 1 */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/8155.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">B. Hall</p>
-            </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            6,30
-          </p>
-          <div className="matchup-position-icon runningback--text">
-            <p>RB</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            18,90
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">S. Barkley</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/4866.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* RUNNING BACK 2 */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/9508.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">T. Spears</p>
-            </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            13,30
-          </p>
-          <div className="matchup-position-icon runningback--text">
-            <p>RB</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            27,60
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">J. Taylor</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/6813.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* WIDE RECEIVER 1 */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/6794.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">J. Jefferson</p>
-            </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            17,20
-          </p>
-          <div className="matchup-position-icon widereceiver--text">
-            <p>WR</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            22,90
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">P. Nacua</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/9493.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* WIDE RECEIVER 2 */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/5927.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">T. McLaurin</p>
-            </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            1,50
-          </p>
-          <div className="matchup-position-icon widereceiver--text">
-            <p>WR</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            17,60
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">G. Wilson</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/8146.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* TIGHT END */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/8130.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">T. McBride</p>
-            </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            30,30
-          </p>
-          <div className="matchup-position-icon tightend--text">
-            <p>TE</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            14,60
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">B. Bowers</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/11604.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* FLEX */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/11631.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">B. Thomas</p>
-            </div>
-          </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            23,90
-          </p>
-          <div className="matchup-position-icon">
-            <p>
-              <span className="widereceiver--text">W</span>
-              <span className="runningback--text">R</span>
-              <span className="tightend--text">T</span>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[0])}
             </p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            5,80
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">D. Achane</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/9226.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
+            <div className="matchup-position-icon quarterback--text">
+              <p>QB</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[0])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[0]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[0]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* KICKER */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/11792.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">W. Reichard</p>
+          {/* RUNNING BACK 1 - ÍNDICE 1 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[1]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[1]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[1])}
+            </p>
+            <div className="matchup-position-icon runningback--text">
+              <p>RB</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[1])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[1]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[1]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
             </div>
           </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            10,50
-          </p>
-          <div className="matchup-position-icon kicker--text">
-            <p>K</p>
-          </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            0,00
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">K. Fairbairn</p>
-              <img
-                src="https://sleepercdn.com/content/nfl/players/thumb/3451.jpg"
-                alt=""
-                className="matchup-player__image"
-              />
-            </div>
-          </div>
-        </div>
 
-        {/* DEFENSE */}
-        <div className="matchup-row">
-          <div className="matchup-player matchup-player--left">
-            <div className="matchup-player__group">
-              <img
-                src="https://sleepercdn.com/images/team_logos/nfl/min.png"
-                alt=""
-                className="matchup-player__image"
-              />
-              <p className="matchup-player__name">MIN</p>
+          {/* RUNNING BACK 2 - ÍNDICE 2 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[2]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[2]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[2])}
+            </p>
+            <div className="matchup-position-icon runningback--text">
+              <p>RB</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[2])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[2]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[2]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
             </div>
           </div>
-          <p className="matchup-player__score matchup-player__score--left">
-            5,00
-          </p>
-          <div className="matchup-position-icon defense--text">
-            <p>DEF</p>
+
+          {/* WIDE RECEIVER 1 - ÍNDICE 3 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[3]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[3]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[3])}
+            </p>
+            <div className="matchup-position-icon widereceiver--text">
+              <p>WR</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[3])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[3]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[3]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
+            </div>
           </div>
-          <p className="matchup-player__score matchup-player__score--right">
-            16,00
-          </p>
-          <div className="matchup-player matchup-player--right">
-            <div className="matchup-player__group">
-              <p className="matchup-player__name">SEA</p>
-              <img
-                src="https://sleepercdn.com/images/team_logos/nfl/sea.png"
-                alt=""
-                className="matchup-player__image"
-              />
+
+          {/* WIDE RECEIVER 2 - ÍNDICE 4 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[4]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[4]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[4])}
+            </p>
+            <div className="matchup-position-icon widereceiver--text">
+              <p>WR</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[4])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[4]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[4]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* TIGHT END - ÍNDICE 5 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[5]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[5]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[5])}
+            </p>
+            <div className="matchup-position-icon tightend--text">
+              <p>TE</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[5])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[5]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[5]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* FLEX - ÍNDICE 6 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[6]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[6]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[6])}
+            </p>
+            <div className="matchup-position-icon">
+              <p>
+                <span className="widereceiver--text">W</span>
+                <span className="runningback--text">R</span>
+                <span className="tightend--text">T</span>
+              </p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[6])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[6]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[6]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* KICKER - ÍNDICE 7 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${firstTeamMatchup.starters[7]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[7]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[7])}
+            </p>
+            <div className="matchup-position-icon kicker--text">
+              <p>K</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[7])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[7]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[7]}.jpg`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* DEFENSE - ÍNDICE 8 */}
+          <div className="matchup-row">
+            <div className="matchup-player matchup-player--left">
+              <div className="matchup-player__group">
+                <img
+                  src={`https://sleepercdn.com/images/team_logos/nfl/${firstTeamMatchup.starters[8].toLowerCase()}.png`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+                <p className="matchup-player__name">
+                  {firstTeamMatchup.starters[8]}
+                </p>
+              </div>
+            </div>
+            <p className="matchup-player__score matchup-player__score--left">
+              {formatToBRDecimal(firstTeamMatchup.starters_points[8])}
+            </p>
+            <div className="matchup-position-icon defense--text">
+              <p>DEF</p>
+            </div>
+            <p className="matchup-player__score matchup-player__score--right">
+              {formatToBRDecimal(secondTeamMatchup.starters_points[8])}
+            </p>
+            <div className="matchup-player matchup-player--right">
+              <div className="matchup-player__group">
+                <p className="matchup-player__name">
+                  {secondTeamMatchup.starters[8]}
+                </p>
+                <img
+                  src={`https://sleepercdn.com/images/team_logos/nfl/${secondTeamMatchup.starters[8].toLowerCase()}.png`}
+                  alt=""
+                  className="matchup-player__image"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
