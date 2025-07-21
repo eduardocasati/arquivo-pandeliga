@@ -1,13 +1,24 @@
-export function saveToLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
+const DEFAULT_MAX_AGE = 24 * 60 * 60 * 1000; // 24h em milissegundos
+
+export function saveToLocalStorage(key, data, maxAgeInMs = DEFAULT_MAX_AGE) {
+  const payload = {
+    data,
+    timestamp: Date.now(),
+    maxAgeInMs,
+  };
+  localStorage.setItem(key, JSON.stringify(payload));
 }
 
 export function getFromLocalStorage(key) {
   const raw = localStorage.getItem(key);
-  return JSON.parse(raw);
-}
+  if (!raw) return null;
 
-// TODO: adicionar verificação da idade e obsolescência das informações
-export function clearLocalStorageKey(key) {
-  localStorage.removeItem(key);
+  const { data, timestamp, maxAgeInMs } = JSON.parse(raw);
+
+  if (maxAgeInMs && Date.now() - timestamp > maxAgeInMs) {
+    localStorage.removeItem(key); // limpa dados expirados
+    return null;
+  }
+
+  return data;
 }
