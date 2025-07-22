@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups.js';
+// import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups.js';
 import { headToHeadProcessor } from '../../utils/processors/headToHeadProcessor.js';
 
 export const useHeadToHeadMatchups = (
   firstTeamRosterId,
   secondTeamRosterId,
+  allSeasonsMatchups,
 ) => {
-  const { allSeasonsMatchups, isLoading, isError, error } =
-    useAllSeasonsMatchups();
+  // const { allSeasonsMatchups, isLoading, isError, error } =
+  //   useAllSeasonsMatchups();
   const [headToHeadMatchups, setHeadToHeadMatchups] = useState(null);
   const [headToHeadStats, setHeadToHeadStats] = useState(null);
 

@@ -1,6 +1,6 @@
 import { getAllPlayersData } from '../services/api/sleeperService';
 
-// PEGA AS INFORMAÇÕES DE TODOS OS JOGADORES E FILTRA OS DADOS DESNECESSÁRIOS
+// PEGA AS INFORMAÇÕES DE TODOS OS JOGADORES E FILTRA APENAS OS DADOS DESNECESSÁRIOS
 export async function getFilteredPlayersData() {
   const allPlayers = await getAllPlayersData();
 

@@ -6,18 +6,22 @@ import { MatchupTable } from './MatchupTable/MatchupTable';
 
 import './HeadToHead.css';
 
-import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
+import { useHeadToHeadData } from './useHeadToHeadData';
 import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
 
 import teamList from '../../constants/teamList';
 
 export const HeadToHead = () => {
-  const { allSeasonsMatchups, isLoading } = useAllSeasonsMatchups();
+  const { data, isLoading } = useHeadToHeadData();
+  const allSeasonsMatchups = data?.allSeasonsMatchups;
+
   const [selectedFirstTeam, setSelectedFirstTeam] = useState('');
   const [selectedSecondTeam, setSelectedSecondTeam] = useState('');
+
   const { headToHeadMatchups, headToHeadStats } = useHeadToHeadMatchups(
     selectedFirstTeam ? Number(selectedFirstTeam) : null,
     selectedSecondTeam ? Number(selectedSecondTeam) : null,
+    allSeasonsMatchups,
   );
 
   // desestrutura o objeto headToHeadStats, e garante que a renderização espere até que os valores não sejam null
@@ -116,7 +120,7 @@ export const HeadToHead = () => {
                           : false
                       }
                     >
-                      {team.team_name}
+                      {team.display_name}
                     </option>
                   ))}
                 </select>
@@ -141,7 +145,7 @@ export const HeadToHead = () => {
                           : false
                       }
                     >
-                      {team.team_name}
+                      {team.display_name}
                     </option>
                   ))}
                 </select>
@@ -151,18 +155,6 @@ export const HeadToHead = () => {
 
           {selectedFirstTeam && selectedSecondTeam != '' && (
             <>
-              <div className="head-to-head__team-logos">
-                <img
-                  src={findTeam(selectedFirstTeam).team_logo}
-                  alt={`${findTeam(selectedFirstTeam).team_name} Logo`}
-                />
-                <span>vs.</span>
-                <img
-                  src={findTeam(selectedSecondTeam).team_logo}
-                  alt={`${findTeam(selectedSecondTeam).team_name} Logo`}
-                />
-              </div>
-
               <div className="head-to-head__versus-stats">
                 <div className="versus-stats__row">
                   <p
@@ -209,6 +201,18 @@ export const HeadToHead = () => {
                     {secondTeamTotalPoints}
                   </p>
                 </div>
+              </div>
+
+              <div className="head-to-head__team-logos">
+                <img
+                  src={findTeam(selectedFirstTeam).team_logo}
+                  alt={`${findTeam(selectedFirstTeam).team_name} Logo`}
+                />
+                <span>vs.</span>
+                <img
+                  src={findTeam(selectedSecondTeam).team_logo}
+                  alt={`${findTeam(selectedSecondTeam).team_name} Logo`}
+                />
               </div>
 
               {/* TABELA COM OS MATCHUPS */}
