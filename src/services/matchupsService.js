@@ -67,6 +67,5 @@ export async function getAllSeasonsMatchups() {
 
   const allSeasonsMatchups = await Promise.all(allSeasonsMatchupsPromises);
 
-  console.log(allSeasonsMatchups);
   return allSeasonsMatchups;
 }

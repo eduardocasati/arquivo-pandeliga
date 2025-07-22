@@ -6,6 +6,22 @@ import { STORAGE_KEYS } from '../../../constants/storageKeys';
 
 const { ALL_PLAYERS_DATA } = STORAGE_KEYS;
 
+const abbreviateName = (fullName) => {
+  if (typeof fullName !== 'string') return ''; // retorna vazio se não for string
+
+  const parts = fullName.trim().split(/\s+/); // remove espaços extras e divide pelo espaço
+
+  if (parts.length === 1) {
+    // se só tiver um nome, retorna o nome completo
+    return parts[0];
+  }
+
+  const firstInitial = parts[0][0].toUpperCase(); // primeira letra maiúscula do primeiro nome
+  const lastName = parts[parts.length - 1]; // sobrenome (última palavra)
+
+  return `${firstInitial}. ${lastName}`;
+};
+
 export const usePlayerNames = (starters = []) => {
   const allPlayersData = getFromLocalStorage(ALL_PLAYERS_DATA);
 
@@ -14,7 +30,10 @@ export const usePlayerNames = (starters = []) => {
 
     return starters.map((playerId) => {
       const player = allPlayersData[playerId];
-      return player ? player.full_name : playerId;
+      if (player && player.full_name) {
+        return abbreviateName(player.full_name);
+      }
+      return playerId;
     });
   }, [starters, allPlayersData]);
 

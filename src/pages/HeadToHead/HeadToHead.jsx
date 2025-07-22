@@ -36,7 +36,7 @@ export const HeadToHead = () => {
 
   // funções utilitárias
   const sortedTeams = [...teamList].sort((a, b) =>
-    a.team_name.localeCompare(b.team_name),
+    a.display_name.localeCompare(b.display_name),
   );
 
   const handleFirstTeamChange = (event) => {
@@ -83,8 +83,6 @@ export const HeadToHead = () => {
     // o parseFloat faz a string virar número
     // os replaces formatam os números para o padrão americano para o JavaScript fazer a comparação corretamente
   );
-
-  console.log(headToHeadMatchups, headToHeadStats);
 
   return (
     <>
