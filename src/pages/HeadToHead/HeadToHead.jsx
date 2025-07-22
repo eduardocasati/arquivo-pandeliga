@@ -89,7 +89,6 @@ export const HeadToHead = () => {
   return (
     <>
       <Header />
-      {/* <div className="page-content__wrapper"> */}
       {isLoading || !allSeasonsMatchups ? (
         <>
           <LoadingSpinner />
@@ -97,7 +96,6 @@ export const HeadToHead = () => {
         </>
       ) : (
         <>
-          {/* <h1 className="mobile-page__title">Confrontos Diretos</h1> */}
           <div className="head-to-head__form">
             <form>
               <label htmlFor="teamASelect">
@@ -225,7 +223,6 @@ export const HeadToHead = () => {
           )}
         </>
       )}
-      {/* </div> */}
     </>
   );
 };

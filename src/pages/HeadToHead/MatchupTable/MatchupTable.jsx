@@ -4,6 +4,7 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import './MatchupTable.css';
 
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
+import { usePlayerNames } from './usePlayerNames';
 
 export const MatchupTable = ({
   selectedFirstTeam,
@@ -73,6 +74,10 @@ export const MatchupTable = ({
     firstTeamMatchup?.points,
   );
 
+  // encontra os nomes dos jogadores
+  const firstTeamPlayerNames = usePlayerNames(firstTeamMatchup?.starters);
+  const secondTeamPlayerNames = usePlayerNames(secondTeamMatchup?.starters);
+
   return (
     <div className="matchup-table">
       <h1 className="matchup-table__title">CONFRONTOS</h1>
@@ -116,7 +121,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[0]}
+                  {firstTeamPlayerNames[0]}
                 </p>
               </div>
             </div>
@@ -132,7 +137,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[0]}
+                  {secondTeamPlayerNames[0]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[0]}.jpg`}
@@ -153,7 +158,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[1]}
+                  {firstTeamPlayerNames[1]}
                 </p>
               </div>
             </div>
@@ -169,7 +174,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[1]}
+                  {secondTeamPlayerNames[1]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[1]}.jpg`}
@@ -190,7 +195,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[2]}
+                  {firstTeamPlayerNames[2]}
                 </p>
               </div>
             </div>
@@ -206,7 +211,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[2]}
+                  {secondTeamPlayerNames[2]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[2]}.jpg`}
@@ -227,7 +232,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[3]}
+                  {firstTeamPlayerNames[3]}
                 </p>
               </div>
             </div>
@@ -243,7 +248,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[3]}
+                  {secondTeamPlayerNames[3]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[3]}.jpg`}
@@ -264,7 +269,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[4]}
+                  {firstTeamPlayerNames[4]}
                 </p>
               </div>
             </div>
@@ -280,7 +285,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[4]}
+                  {secondTeamPlayerNames[4]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[4]}.jpg`}
@@ -301,7 +306,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[5]}
+                  {firstTeamPlayerNames[5]}
                 </p>
               </div>
             </div>
@@ -317,7 +322,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[5]}
+                  {secondTeamPlayerNames[5]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[5]}.jpg`}
@@ -338,7 +343,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[6]}
+                  {firstTeamPlayerNames[6]}
                 </p>
               </div>
             </div>
@@ -358,7 +363,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[6]}
+                  {secondTeamPlayerNames[6]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[6]}.jpg`}
@@ -379,7 +384,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[7]}
+                  {firstTeamPlayerNames[7]}
                 </p>
               </div>
             </div>
@@ -395,7 +400,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[7]}
+                  {secondTeamPlayerNames[7]}
                 </p>
                 <img
                   src={`https://sleepercdn.com/content/nfl/players/thumb/${secondTeamMatchup.starters[7]}.jpg`}

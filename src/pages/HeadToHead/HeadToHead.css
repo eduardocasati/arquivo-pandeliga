@@ -6,15 +6,6 @@
   font: italic 500 clamp(0.9rem, 2.5vw, 1.1rem) var(--font-accent-primary);
 }
 
-.mobile-page__title {
-  text-align: center;
-  text-transform: uppercase;
-  display: none;
-  padding-bottom: 24px;
-  font-size: clamp(1.4rem, 3vw, 2.9rem);
-  color: var(--color-text-accent-green);
-}
-
 .head-to-head__form {
   padding-top: 40px;
 }
@@ -100,12 +91,7 @@
 }
 
 @media screen and (max-width: 1120px) {
-  .mobile-page__title {
-    display: block;
-  }
-
   .head-to-head__form form {
-    /* flex-direction: column; */
     gap: 0.6rem;
     padding-bottom: 8px;
   }
