@@ -97,58 +97,56 @@ export const HeadToHead = () => {
       ) : (
         <>
           <div className="head-to-head__form">
-            <form>
-              <label htmlFor="teamASelect">
-                <select
-                  name="teamA"
-                  id="teamASelect"
-                  value={selectedFirstTeam}
-                  onChange={handleFirstTeamChange}
-                >
-                  <option value="" disabled>
-                    Selecione um time
+            <label htmlFor="teamASelect">
+              <select
+                name="teamA"
+                id="teamASelect"
+                value={selectedFirstTeam}
+                onChange={handleFirstTeamChange}
+              >
+                <option value="" disabled>
+                  Selecione um time
+                </option>
+                {sortedTeams.map((team) => (
+                  <option
+                    value={team.roster_id}
+                    key={team.team_id}
+                    disabled={
+                      team.roster_id === Number(selectedSecondTeam)
+                        ? true
+                        : false
+                    }
+                  >
+                    {team.display_name}
                   </option>
-                  {sortedTeams.map((team) => (
-                    <option
-                      value={team.roster_id}
-                      key={team.team_id}
-                      disabled={
-                        team.roster_id === Number(selectedSecondTeam)
-                          ? true
-                          : false
-                      }
-                    >
-                      {team.display_name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label htmlFor="">
-                <select
-                  name="teamB"
-                  id="teamBSelect"
-                  value={selectedSecondTeam}
-                  onChange={handleSecondTeamChange}
-                >
-                  <option value="" disabled>
-                    Selecione um time
+                ))}
+              </select>
+            </label>
+            <label htmlFor="">
+              <select
+                name="teamB"
+                id="teamBSelect"
+                value={selectedSecondTeam}
+                onChange={handleSecondTeamChange}
+              >
+                <option value="" disabled>
+                  Selecione um time
+                </option>
+                {sortedTeams.map((team) => (
+                  <option
+                    value={team.roster_id}
+                    key={team.team_id}
+                    disabled={
+                      team.roster_id === Number(selectedFirstTeam)
+                        ? true
+                        : false
+                    }
+                  >
+                    {team.display_name}
                   </option>
-                  {sortedTeams.map((team) => (
-                    <option
-                      value={team.roster_id}
-                      key={team.team_id}
-                      disabled={
-                        team.roster_id === Number(selectedFirstTeam)
-                          ? true
-                          : false
-                      }
-                    >
-                      {team.display_name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </form>
+                ))}
+              </select>
+            </label>
           </div>
 
           {selectedFirstTeam && selectedSecondTeam != '' && (

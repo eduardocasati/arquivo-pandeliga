@@ -8,9 +8,6 @@
 
 .head-to-head__form {
   padding-top: 40px;
-}
-
-.head-to-head__form form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +15,10 @@
   margin: 0 auto;
   font-size: 0.8rem;
 }
+
+/* .head-to-head__form form {
+
+} */
 
 .head-to-head__form select {
   padding: 8px;
