@@ -44,14 +44,14 @@
   align-items: center;
   width: fit-content;
   margin: 0 auto;
-  padding-top: 12px;
-  padding-bottom: 4px;
+  padding-top: 14px;
+  padding-bottom: 6px;
 }
 
 .matchup-table__points-number {
   flex: 1;
   color: var(--points-color, inherit);
-  font: italic 600 clamp(1.1rem, 2.5vw, 1.4rem) var(--font-accent-primary);
+  font: italic 600 clamp(1.2rem, 2.5vw, 1.5rem) var(--font-accent-primary);
   font-variant-numeric: tabular-nums;
 }
 
