@@ -1,4 +1,4 @@
-import { Footer } from '../../components/Footer/Footer';
+// import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import { ChampionCard } from './ChampionCard/ChampionCard';
 import { HeroCarousel } from './HeroCarousel/HeroCarousel';
@@ -13,7 +13,7 @@ export const Home = () => {
       <HeroCarousel />
       <MarqueeJokes />
       <ChampionCard />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

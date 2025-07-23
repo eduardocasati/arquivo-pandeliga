@@ -9,6 +9,16 @@ body {
   color: var(--color-text-primary);
 }
 
+.page-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
 h1,
 h2,
 h3 {
