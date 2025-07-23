@@ -29,6 +29,10 @@ export const usePlayerNames = (starters = []) => {
     if (!Array.isArray(starters) || !allPlayersData) return [];
 
     return starters.map((playerId) => {
+      if (Number(playerId) === 0) {
+        return '(vazio)'; // ID 0 significa que não havia um jogador escalado
+      }
+
       const player = allPlayersData[playerId];
       if (player && player.full_name) {
         return abbreviateName(player.full_name);

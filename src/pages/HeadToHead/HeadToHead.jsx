@@ -88,10 +88,10 @@ export const HeadToHead = () => {
     <>
       <Header />
       {isLoading || !allSeasonsMatchups ? (
-        <>
+        <div className="head-to-head__loading-spinner">
           <LoadingSpinner />
           <p className="head-to-head__loading-message">Carregando</p>
-        </>
+        </div>
       ) : (
         <>
           <div className="head-to-head__form">

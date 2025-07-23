@@ -1,3 +1,7 @@
+.head-to-head__loading-spinner {
+  padding: 40px;
+}
+
 .head-to-head__loading-message {
   color: var(--color-text-accent-green);
   text-transform: uppercase;
@@ -15,10 +19,6 @@
   margin: 0 auto;
   font-size: 0.8rem;
 }
-
-/* .head-to-head__form form {
-
-} */
 
 .head-to-head__form select {
   padding: 8px;
@@ -38,7 +38,7 @@
   align-items: center;
   justify-items: center;
   width: fit-content;
-  margin: 24px auto 0;
+  margin: 12px auto 0;
 }
 
 .head-to-head__team-logos span {
@@ -92,8 +92,8 @@
 }
 
 @media screen and (max-width: 1120px) {
-  .head-to-head__form form {
-    gap: 0.6rem;
+  .head-to-head__form {
+    gap: 1rem;
     padding-bottom: 8px;
   }
 }
