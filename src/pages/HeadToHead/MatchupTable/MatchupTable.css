@@ -44,7 +44,8 @@
   align-items: center;
   width: fit-content;
   margin: 0 auto;
-  padding-top: 8px;
+  padding-top: 12px;
+  padding-bottom: 4px;
 }
 
 .matchup-table__points-number {
@@ -86,7 +87,18 @@
 .matchup-row {
   display: flex;
   align-items: center;
-  padding-block: 4px;
+  margin-block: 4px;
+  padding-inline: 4px;
+  border: 1px solid var(--color-accent-gray);
+  border-radius: 4px;
+}
+
+.matchup-row--even {
+  background-color: var(--color-surface-secondary);
+}
+
+.matchup-row--odd {
+  background-color: var(--color-surface-primary);
 }
 
 .matchup-player {
@@ -217,12 +229,15 @@
   .matchup-player__image {
     display: none;
   }
+
+  .matchup-row {
+    min-height: 40px;
+    margin-inline: 8px;
+    padding-inline: 0;
+  }
 }
 
 @media screen and (max-width: 620px) {
-  .matchup-row {
-    padding-inline: 8px;
-  }
 }
 
 @media screen and (max-width: 440px) {
