@@ -17,7 +17,7 @@ const abbreviateName = (fullName) => {
   }
 
   const firstInitial = parts[0][0].toUpperCase(); // primeira letra maiúscula do primeiro nome
-  const lastName = parts[parts.length - 1]; // sobrenome (última palavra)
+  const lastName = parts.slice(1).join(' '); // junta todas as palavras após o primeiro nome
 
   return `${firstInitial}. ${lastName}`;
 };
