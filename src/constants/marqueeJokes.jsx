@@ -27,7 +27,6 @@ const marqueeJokes = [
     ),
   },
   {
-    // joke: 'Vós que entrais, abandonai toda a esperança.',
     joke: <p>Esse é o ano do Kyle Pitts!</p>,
     author: (
       <span className="jokes-marquee__author">
@@ -50,7 +49,6 @@ const marqueeJokes = [
     ),
   },
   {
-    // joke: 'Vós que entrais, abandonai toda a esperança.',
     joke: (
       <p>
         Abandonai toda esperança, vós que <strike>entrais</strike> jogais
@@ -64,7 +62,6 @@ const marqueeJokes = [
     ),
   },
   {
-    // joke: 'If Kyle Pitts has a million haters, then I’m one of them. If Kyle Pitts has one hater, then I’m THAT ONE. If Kyle Pitts has no haters, that means I’m dead.',
     joke: (
       <p>
         Se Kyle Pitts tem um milhão de haters, então eu sou um deles. Se Kyle
@@ -74,7 +71,7 @@ const marqueeJokes = [
     ),
     author: (
       <span className="jokes-marquee__author">
-        Uma pessoa depois de escalar esse desgraçado por alguns jogos.
+        Uma pessoa depois de escalar o Kyle Pitts por alguns jogos.
       </span>
     ),
   },
