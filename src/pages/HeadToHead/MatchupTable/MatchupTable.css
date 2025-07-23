@@ -80,7 +80,7 @@
 /* ====================================== */
 .matchup-table__players {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 640px;
   padding-top: 8px;
 }
 
@@ -94,11 +94,11 @@
 }
 
 .matchup-row--even {
-  background-color: var(--color-surface-secondary);
+  background-color: var(--color-surface-primary);
 }
 
 .matchup-row--odd {
-  background-color: var(--color-surface-primary);
+  background-color: var(--color-surface-secondary);
 }
 
 .matchup-player {
@@ -231,13 +231,10 @@
   }
 
   .matchup-row {
-    min-height: 40px;
+    min-height: 44px;
     margin-inline: 8px;
     padding-inline: 0;
   }
-}
-
-@media screen and (max-width: 620px) {
 }
 
 @media screen and (max-width: 440px) {

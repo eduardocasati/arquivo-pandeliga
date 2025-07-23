@@ -6,6 +6,8 @@ import './MatchupTable.css';
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
 import { usePlayerNames } from './usePlayerNames';
 
+import teamList from '../../../constants/teamList';
+
 export const MatchupTable = ({
   selectedFirstTeam,
   selectedSecondTeam,
@@ -91,6 +93,13 @@ export const MatchupTable = ({
     }
     return `https://sleepercdn.com/content/nfl/players/thumb/${id}.jpg`;
   };
+  // essa função pega o team_id dos times para colorir as bordas da tabela com as cores dos times
+  const getTeamIdByRosterId = (rosterId) => {
+    return teamList.find((team) => team.roster_id === Number(rosterId))
+      ?.team_id;
+  };
+  const firstTeamId = getTeamIdByRosterId(selectedFirstTeam);
+  const secondTeamId = getTeamIdByRosterId(selectedSecondTeam);
 
   return (
     <div className="matchup-table">
@@ -133,7 +142,13 @@ export const MatchupTable = ({
       {firstTeamMatchup && secondTeamMatchup && (
         <div className="matchup-table__players">
           {/* QUARTERBACK - INÍDICE 0 */}
-          <div className="matchup-row  matchup-row--even">
+          <div
+            className="matchup-row  matchup-row--odd"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -170,7 +185,13 @@ export const MatchupTable = ({
           </div>
 
           {/* RUNNING BACK 1 - ÍNDICE 1 */}
-          <div className="matchup-row matchup-row--odd">
+          <div
+            className="matchup-row matchup-row--even"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -207,7 +228,13 @@ export const MatchupTable = ({
           </div>
 
           {/* RUNNING BACK 2 - ÍNDICE 2 */}
-          <div className="matchup-row matchup-row--even">
+          <div
+            className="matchup-row matchup-row--odd"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -244,7 +271,13 @@ export const MatchupTable = ({
           </div>
 
           {/* WIDE RECEIVER 1 - ÍNDICE 3 */}
-          <div className="matchup-row matchup-row--odd">
+          <div
+            className="matchup-row matchup-row--even"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -281,7 +314,13 @@ export const MatchupTable = ({
           </div>
 
           {/* WIDE RECEIVER 2 - ÍNDICE 4 */}
-          <div className="matchup-row matchup-row--even">
+          <div
+            className="matchup-row matchup-row--odd"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -318,7 +357,13 @@ export const MatchupTable = ({
           </div>
 
           {/* TIGHT END - ÍNDICE 5 */}
-          <div className="matchup-row matchup-row--odd">
+          <div
+            className="matchup-row matchup-row--even"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -355,7 +400,13 @@ export const MatchupTable = ({
           </div>
 
           {/* FLEX - ÍNDICE 6 */}
-          <div className="matchup-row matchup-row--even">
+          <div
+            className="matchup-row matchup-row--odd"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -392,7 +443,13 @@ export const MatchupTable = ({
           </div>
 
           {/* KICKER - ÍNDICE 7 */}
-          <div className="matchup-row matchup-row--odd">
+          <div
+            className="matchup-row matchup-row--even"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
@@ -429,7 +486,13 @@ export const MatchupTable = ({
           </div>
 
           {/* DEFENSE - ÍNDICE 8 */}
-          <div className="matchup-row matchup-row--even">
+          <div
+            className="matchup-row matchup-row--odd"
+            style={{
+              borderLeft: `4px solid var(--team-${firstTeamId})`,
+              borderRight: `4px solid var(--team-${secondTeamId})`,
+            }}
+          >
             <div className="matchup-player matchup-player--left">
               <div className="matchup-player__group">
                 <img
