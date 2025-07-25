@@ -7,7 +7,7 @@ import {
   saveToLocalStorage,
 } from '../../utils/localStorage/localStorageUtils';
 
-import { STORAGE_KEYS } from '../../constants/storageKeys';
+import { STORAGE_KEYS } from '../../config/storageKeys';
 
 const { ALL_SEASONS_MATCHUPS, ALL_PLAYERS_DATA } = STORAGE_KEYS;
 

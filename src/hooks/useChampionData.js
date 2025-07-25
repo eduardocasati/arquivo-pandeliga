@@ -7,7 +7,7 @@ import {
 } from '../utils/localStorage/localStorageUtils.js';
 import { transformChampionData } from '../utils/transformers/championTransformer.js';
 
-import { STORAGE_KEYS } from '../constants/storageKeys.js';
+import { STORAGE_KEYS } from '../config/storageKeys.js';
 
 const { CHAMPION_DATA } = STORAGE_KEYS;
 

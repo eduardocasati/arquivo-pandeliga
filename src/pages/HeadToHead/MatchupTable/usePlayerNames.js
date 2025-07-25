@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { getFromLocalStorage } from '../../../utils/localStorage/localStorageUtils';
 
-import { STORAGE_KEYS } from '../../../constants/storageKeys';
+import { STORAGE_KEYS } from '../../../config/storageKeys';
 
 const { ALL_PLAYERS_DATA } = STORAGE_KEYS;
 
