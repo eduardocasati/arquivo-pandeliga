@@ -9,7 +9,7 @@ import './HeadToHead.css';
 import { useHeadToHeadData } from './useHeadToHeadData';
 import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
 
-import teamList from '../../constants/teams';
+import teams from '../../constants/teams';
 
 export const HeadToHead = () => {
   const { data, isLoading } = useHeadToHeadData();
@@ -35,7 +35,7 @@ export const HeadToHead = () => {
   } = headToHeadStats || {};
 
   // funções utilitárias
-  const sortedTeams = [...teamList].sort((a, b) =>
+  const sortedTeams = [...teams].sort((a, b) =>
     a.display_name.localeCompare(b.display_name),
   );
 
@@ -48,7 +48,7 @@ export const HeadToHead = () => {
   };
 
   const findTeam = (selectedTeam) => {
-    const foundTeam = teamList.find(
+    const foundTeam = teams.find(
       (team) => team.roster_id === Number(selectedTeam),
     );
     return foundTeam;

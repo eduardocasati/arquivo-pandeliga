@@ -1,9 +1,9 @@
-import teamList from '../../../constants/teams';
+import teams from '../../../constants/teams';
 
 import './TeamsDropdown.css';
 
 export const TeamsDropdown = ({ setIsDropdownOpen }) => {
-  const sortedTeams = [...teamList].sort((a, b) =>
+  const sortedTeams = [...teams].sort((a, b) =>
     a.display_name.localeCompare(b.display_name),
   );
 

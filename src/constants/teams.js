@@ -9,7 +9,7 @@ import logoRiders from '../assets/images/teams/team_logo_riders.png';
 import logoTankei from '../assets/images/teams/team_logo_tankei.png';
 import logoVikings from '../assets/images/teams/team_logo_vikings.png';
 
-const teamList = [
+const teams = [
   {
     roster_id: 1,
     owner_id: '703075560737288192',
@@ -183,4 +183,4 @@ const teamList = [
   },
 ];
 
-export default teamList;
+export default teams;

@@ -5,12 +5,12 @@ import { formatToBRDecimal } from '../formatters/numberFormat.js';
 import { calculateTeamRecord } from '../stats/calculateTeamRecord.js';
 import { sumWeeklyPoints } from '../stats/sumWeeklyPoints.js';
 
-import teamList from '../../constants/teams.js';
+import teams from '../../constants/teams.js';
 
 export async function transformChampionData() {
   const championData = await getCurrentChampionData();
   const championResults = await getCurrentChampionResults();
-  const foundChampionTeam = teamList.find(
+  const foundChampionTeam = teams.find(
     (team) => team.roster_id === championData.roster_id,
   );
 

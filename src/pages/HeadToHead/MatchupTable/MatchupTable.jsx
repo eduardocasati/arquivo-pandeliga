@@ -6,7 +6,7 @@ import './MatchupTable.css';
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
 import { usePlayerNames } from './usePlayerNames';
 
-import teamList from '../../../constants/teams';
+import teams from '../../../constants/teams';
 
 export const MatchupTable = ({
   selectedFirstTeam,
@@ -95,8 +95,7 @@ export const MatchupTable = ({
   };
   // essa função pega o team_id dos times para colorir as bordas da tabela com as cores dos times
   const getTeamIdByRosterId = (rosterId) => {
-    return teamList.find((team) => team.roster_id === Number(rosterId))
-      ?.team_id;
+    return teams.find((team) => team.roster_id === Number(rosterId))?.team_id;
   };
   const firstTeamId = getTeamIdByRosterId(selectedFirstTeam);
   const secondTeamId = getTeamIdByRosterId(selectedSecondTeam);

@@ -8,13 +8,13 @@ import './NavDrawer.css';
 
 import { logoArquivoPandeliga } from '../../../constants/images';
 import { navItems } from '../../../constants/navItems';
-import teamList from '../../../constants/teams';
+import teams from '../../../constants/teams';
 
 export const NavDrawer = () => {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   const [isTeamlistOpen, setIsTeamlistOpen] = useState(false);
 
-  const sortedTeams = [...teamList].sort((a, b) =>
+  const sortedTeams = [...teams].sort((a, b) =>
     a.display_name.localeCompare(b.display_name),
   );
 
