@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// import { Countdown } from '../Countdown/Countdown';
-import { DraftCountdown } from '../../../components/DraftCountdown/DraftCountdown';
+import { DraftCountdown } from '../../../components';
 
 import './HeroCarousel.css';
 

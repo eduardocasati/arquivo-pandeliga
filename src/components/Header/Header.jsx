@@ -2,7 +2,7 @@ import { useMatchRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
-import { DraftCountdown } from '../DraftCountdown/DraftCountdown';
+import { DraftCountdown } from '..';
 import { NavDrawer } from './NavDrawer/NavDrawer';
 import { NavLink } from './NavLink/NavLink';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
@@ -13,12 +13,12 @@ import { useChampionData } from '../../hooks/useChampionData';
 
 import { navItems } from '../../constants/navItems';
 
+import { LoadingSpinner } from '..';
 import {
   logoArquivoPandeliga,
   logoSleeper,
   logoSleeperSmall,
 } from '../../constants/images';
-import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 export const Header = () => {
   const matchRoute = useMatchRoute();

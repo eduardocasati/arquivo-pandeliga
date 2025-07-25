@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import { Header } from '../../components/Header/Header';
-import { LoadingSpinner } from '../../components/LoadingSpinner/LoadingSpinner';
+import { Header, LoadingSpinner } from '../../components';
 import { MatchupTable } from './MatchupTable/MatchupTable';
 
 import './HeadToHead.css';

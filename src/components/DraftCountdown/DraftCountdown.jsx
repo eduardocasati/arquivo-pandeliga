@@ -1,6 +1,4 @@
 import React from 'react';
-// import { BsClockHistory } from 'react-icons/bs';
-// import { BsClock } from 'react-icons/bs';
 import { FaHourglassHalf } from 'react-icons/fa';
 
 import './DraftCountdown.header.css';
@@ -38,7 +36,6 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
       <div className={`${variant}__draft-countdown-numbers`}>
         <div className={`${variant}__draft-countdown-item`}>
           <p>{days}</p>
-          {/* <small>{days === '01' ? 'dia' : 'dias'}</small> */}
           <small>{formatUnitLabel(days, 'dia', 'dias', 'D')}</small>
         </div>
 
@@ -46,7 +43,6 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
 
         <div className={`${variant}__draft-countdown-item`}>
           <p>{hours}</p>
-          {/* <small>{hours === '01' ? 'hora' : 'horas'}</small> */}
           <small>{formatUnitLabel(hours, 'hora', 'horas', 'H')}</small>
         </div>
 
@@ -54,7 +50,6 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
 
         <div className={`${variant}__draft-countdown-item`}>
           <p>{minutes}</p>
-          {/* <small>{minutes === '01' ? 'minuto' : 'minutos'}</small> */}
           <small>{formatUnitLabel(minutes, 'minuto', 'minutos', 'M')}</small>
         </div>
 
@@ -62,7 +57,6 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
 
         <div className={`${variant}__draft-countdown-item`}>
           <p>{seconds}</p>
-          {/* <small>{seconds === '01' ? 'segundo' : 'segundos'}</small> */}
           <small>{formatUnitLabel(seconds, 'segundo', 'segundos', 'S')}</small>
         </div>
       </div>

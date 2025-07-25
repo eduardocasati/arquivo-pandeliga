@@ -1,7 +1,7 @@
 import { RouterProvider } from '@tanstack/react-router';
 import { router } from './routes';
 
-import { Footer } from './components/Footer/Footer';
+import { Footer } from './components';
 
 function App() {
   return (
