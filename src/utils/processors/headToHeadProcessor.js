@@ -1,5 +1,5 @@
-import { sumTeamTotalPoints } from '../aggregators/sumTeamTotalPoints';
 import { formatToBRDecimal } from '../formatters/numberFormat';
+import { sumTeamTotalPoints } from '../stats/sumTeamTotalPoints';
 
 export function headToHeadProcessor(
   firstTeamRosterId,

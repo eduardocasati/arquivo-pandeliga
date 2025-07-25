@@ -1,11 +1,4 @@
-/**
- * @param {number} initialWeek - A semana para começar a soma (1 para temporada regular, 15 para os playoffs)
- * @param {number} lastWeek - A semana onde a soma deve parar (14 para a temporada regular, 17 para os playoffs)
- * @param {number} rosterId - roster_id do time a ter suas vitórias e derrotas somadas
- * @param {Array} weeklyMatchups - array contendo as matchups
- */
-
-export function sumRegularSeasonTeamRecord(
+export function calculateTeamRecord(
   initialWeek,
   lastWeek,
   rosterId,

@@ -1,8 +1,8 @@
 import { getCurrentChampionData } from '../../services/championService.js';
 import { getCurrentChampionResults } from '../../services/matchupsService.js';
-import { sumPointsFromResults } from '../aggregators/sumPoints.js';
-import { sumRegularSeasonTeamRecord } from '../aggregators/sumTeamRecord.js';
 import { formatToBRDecimal } from '../formatters/numberFormat.js';
+import { calculateTeamRecord } from '../stats/calculateTeamRecord.js';
+import { sumWeeklyPoints } from '../stats/sumWeeklyPoints.js';
 import { hasByeWeekInPlayoffs } from '../validators/hasByeWeekInPlayoffs.js';
 
 import teamList from '../../constants/teamList.js';
@@ -14,10 +14,10 @@ export async function processChampionData() {
     (team) => team.roster_id === championData.roster_id,
   );
 
-  const totalRegularSeasonPoints = sumPointsFromResults(1, 14, championResults);
+  const totalRegularSeasonPoints = sumWeeklyPoints(1, 14, championResults);
   const regularSeasonPpg = totalRegularSeasonPoints / 14;
   const hadByeWeek = hasByeWeekInPlayoffs(championResults);
-  const totalPlayoffPoints = sumPointsFromResults(
+  const totalPlayoffPoints = sumWeeklyPoints(
     hadByeWeek ? 16 : 15, // se teve bye a conta começa na semana 16
     17,
     championResults,
@@ -25,7 +25,7 @@ export async function processChampionData() {
   const playoffsPpg = hadByeWeek
     ? totalPlayoffPoints / 2 // apenas dois jogos se teve bye
     : totalPlayoffPoints / 3;
-  const regularSeasonTeamRecord = sumRegularSeasonTeamRecord(
+  const regularSeasonTeamRecord = calculateTeamRecord(
     1,
     14,
     foundChampionTeam.roster_id,
