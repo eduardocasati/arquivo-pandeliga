@@ -1,4 +1,4 @@
-import { getSeasonMatchups } from '../repositories/matchupsRepository.js';
+import { getSeasonMatchups } from '../data/getSeasonMatchups.js';
 import { getCurrentChampionRosterId } from './championService.js';
 import { getAllLeagues, getPreviousLeagueId } from './leagueService.js';
 

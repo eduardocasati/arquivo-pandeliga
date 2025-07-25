@@ -32,7 +32,7 @@ export async function fetchMatchups(leagueId, week) {
 }
 
 // PEGA AS INFORMAÇÕES DE TODOS OS JOGADORES EM https://api.sleeper.app/v1/players/nfl
-export async function fetchAllPlayersData() {
+export async function fetchAllPlayers() {
   const response = await fetch(`${BASE_URL}/players/nfl`);
   return response.json();
 }

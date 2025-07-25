@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { getFilteredPlayersData } from '../../repositories/playerRepository';
+import { getSimplifiedPlayers } from '../../data/getSimplifiedPlayers';
 import { getAllSeasonsMatchups } from '../../services/matchupsService';
 import {
   getFromLocalStorage,
@@ -22,9 +22,7 @@ export const useHeadToHeadData = () => {
         cachedMatchups
           ? Promise.resolve(cachedMatchups)
           : getAllSeasonsMatchups(),
-        cachedPlayers
-          ? Promise.resolve(cachedPlayers)
-          : getFilteredPlayersData(),
+        cachedPlayers ? Promise.resolve(cachedPlayers) : getSimplifiedPlayers(),
       ]);
 
       if (!cachedMatchups) {

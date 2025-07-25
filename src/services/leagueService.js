@@ -1,5 +1,5 @@
 import { fetchLeague } from '../api/sleeperApi.js';
-import { getSeasonYear } from '../repositories/leagueRepository.js';
+import { getSeasonYear } from '../data/getSeasonYear.js';
 
 import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 
