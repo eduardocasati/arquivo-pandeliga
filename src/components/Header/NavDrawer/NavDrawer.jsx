@@ -8,7 +8,7 @@ import './NavDrawer.css';
 
 import { logoArquivoPandeliga } from '../../../constants/images';
 import { navItems } from '../../../constants/navItems';
-import teamList from '../../../constants/teamList';
+import teamList from '../../../constants/teams';
 
 export const NavDrawer = () => {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);

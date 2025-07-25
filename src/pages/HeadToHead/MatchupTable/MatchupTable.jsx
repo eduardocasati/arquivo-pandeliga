@@ -6,7 +6,7 @@ import './MatchupTable.css';
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
 import { usePlayerNames } from './usePlayerNames';
 
-import teamList from '../../../constants/teamList';
+import teamList from '../../../constants/teams';
 
 export const MatchupTable = ({
   selectedFirstTeam,

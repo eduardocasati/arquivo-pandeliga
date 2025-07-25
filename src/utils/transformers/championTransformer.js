@@ -5,7 +5,7 @@ import { formatToBRDecimal } from '../formatters/numberFormat.js';
 import { calculateTeamRecord } from '../stats/calculateTeamRecord.js';
 import { sumWeeklyPoints } from '../stats/sumWeeklyPoints.js';
 
-import teamList from '../../constants/teamList.js';
+import teamList from '../../constants/teams.js';
 
 export async function transformChampionData() {
   const championData = await getCurrentChampionData();

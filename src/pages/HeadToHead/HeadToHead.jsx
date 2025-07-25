@@ -9,7 +9,7 @@ import './HeadToHead.css';
 import { useHeadToHeadData } from './useHeadToHeadData';
 import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
 
-import teamList from '../../constants/teamList';
+import teamList from '../../constants/teams';
 
 export const HeadToHead = () => {
   const { data, isLoading } = useHeadToHeadData();

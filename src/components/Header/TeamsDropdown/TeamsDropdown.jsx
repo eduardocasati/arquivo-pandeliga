@@ -1,4 +1,4 @@
-import teamList from '../../../constants/teamList';
+import teamList from '../../../constants/teams';
 
 import './TeamsDropdown.css';
 
