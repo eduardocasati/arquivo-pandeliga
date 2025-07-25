@@ -1,7 +1,7 @@
 import { formatToBRDecimal } from '../formatters/numberFormat';
 import { sumTeamTotalPoints } from '../stats/sumTeamTotalPoints';
 
-export function headToHeadProcessor(
+export function transformHeadToHeadStats(
   firstTeamRosterId,
   secondTeamRosterId,
   data,

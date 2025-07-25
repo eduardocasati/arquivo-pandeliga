@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
-import { processChampionData } from '../utils/processors/championProcessor.js';
 import {
   getFromLocalStorage,
   saveToLocalStorage,
 } from '../utils/storage/localStorageUtils.js';
+import { transformChampionData } from '../utils/transformers/championTransformer.js';
 
 import { STORAGE_KEYS } from '../constants/storageKeys.js';
 
@@ -18,7 +18,7 @@ export const useChampionData = () => {
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ['championData'],
-    queryFn: processChampionData,
+    queryFn: transformChampionData,
     enabled: !cachedData,
   });
 

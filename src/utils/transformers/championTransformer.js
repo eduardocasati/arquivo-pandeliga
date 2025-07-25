@@ -7,7 +7,7 @@ import { hasByeWeekInPlayoffs } from '../validators/hasByeWeekInPlayoffs.js';
 
 import teamList from '../../constants/teamList.js';
 
-export async function processChampionData() {
+export async function transformChampionData() {
   const championData = await getCurrentChampionData();
   const championResults = await getCurrentChampionResults();
   const foundChampionTeam = teamList.find(

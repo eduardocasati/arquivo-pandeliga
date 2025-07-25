@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { headToHeadProcessor } from '../../utils/processors/headToHeadProcessor.js';
+import { transformHeadToHeadStats } from '../../utils/transformers/headToHeadTransformer.js';
 
 export const useHeadToHeadMatchups = (
   firstTeamRosterId,
@@ -61,7 +61,7 @@ export const useHeadToHeadMatchups = (
     setHeadToHeadMatchups(sortedHeadToHeadMatchups);
 
     // processa os dados dos matchups e retorna pontos, vitórias e porcentagem de vitórias
-    const statsBetweenTeams = headToHeadProcessor(
+    const statsBetweenTeams = transformHeadToHeadStats(
       firstTeamRosterId,
       secondTeamRosterId,
       sortedHeadToHeadMatchups,
