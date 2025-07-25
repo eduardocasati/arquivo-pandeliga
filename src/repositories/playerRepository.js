@@ -1,8 +1,8 @@
-import { getAllPlayersData } from '../services/api/sleeperService';
+import { fetchAllPlayersData } from '../api/sleeperApi.js';
 
 // PEGA AS INFORMAÇÕES DE TODOS OS JOGADORES E FILTRA APENAS OS DADOS DESNECESSÁRIOS
 export async function getFilteredPlayersData() {
-  const allPlayers = await getAllPlayersData();
+  const allPlayers = await fetchAllPlayersData();
 
   const filteredPlayers = Object.entries(allPlayers).reduce(
     (acc, [id, player]) => {

@@ -1,4 +1,4 @@
-import { getMatchups } from '../services/api/sleeperService.js';
+import { fetchMatchups } from '../api/sleeperApi.js';
 
 /**
  * PEGA TODOS OS MATCHUPS DE UMA TEMPORADA
@@ -10,7 +10,7 @@ export async function getSeasonMatchups(leagueId) {
   const matchupPromises = [];
 
   for (let i = 1; i <= numberOfWeeks; i++) {
-    matchupPromises.push(getMatchups(leagueId, i.toString()));
+    matchupPromises.push(fetchMatchups(leagueId, i.toString()));
   }
 
   const matchups = await Promise.all(matchupPromises);

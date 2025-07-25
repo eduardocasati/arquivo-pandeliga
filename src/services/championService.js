@@ -1,4 +1,4 @@
-import { getLeague, getRosters, getUsers } from './api/sleeperService.js';
+import { fetchLeague, fetchRosters, fetchUsers } from '../api/sleeperApi.js';
 import { getCurrentChampionMatchups } from './matchupsService.js';
 
 import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
@@ -6,7 +6,7 @@ import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
 export async function getCurrentChampionRosterId() {
-  const league = await getLeague(CURRENT_SEASON_LEAGUE_ID);
+  const league = await fetchLeague(CURRENT_SEASON_LEAGUE_ID);
   return Number(league.metadata.latest_league_winner_roster_id);
 }
 
@@ -16,8 +16,8 @@ export async function getCurrentChampionRosterId() {
  */
 export async function getCurrentChampionData() {
   const championRosterId = await getCurrentChampionRosterId();
-  const rosters = await getRosters(CURRENT_SEASON_LEAGUE_ID);
-  const users = await getUsers(CURRENT_SEASON_LEAGUE_ID);
+  const rosters = await fetchRosters(CURRENT_SEASON_LEAGUE_ID);
+  const users = await fetchUsers(CURRENT_SEASON_LEAGUE_ID);
 
   // o owner_id em /rosters é o user_id em /users ¯\_(ツ)_/¯
   const foundChampion = rosters.find(

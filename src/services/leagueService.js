@@ -1,5 +1,5 @@
+import { fetchLeague } from '../api/sleeperApi.js';
 import { getSeasonYear } from '../repositories/leagueRepository.js';
-import { getLeague } from './api/sleeperService.js';
 
 import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
 
@@ -7,7 +7,7 @@ const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
 // PEGA O LEAGUE_ID DO ANO ANTERIOR
 export async function getPreviousLeagueId(leagueId) {
-  const league = await getLeague(leagueId);
+  const league = await fetchLeague(leagueId);
   return league.previous_league_id;
 }
 
@@ -36,7 +36,7 @@ export async function getAllLeagues() {
   let leagueId = CURRENT_SEASON_LEAGUE_ID;
 
   while (leagueId) {
-    const league = await getLeague(leagueId);
+    const league = await fetchLeague(leagueId);
     allLeagues.push(league);
     leagueId = league.previous_league_id;
   }

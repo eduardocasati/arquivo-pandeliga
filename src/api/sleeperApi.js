@@ -1,4 +1,4 @@
-import { SLEEPER_CONFIG } from '../../config/sleeperConfig.js';
+import { SLEEPER_CONFIG } from '../config/sleeperConfig.js';
 
 const { BASE_URL } = SLEEPER_CONFIG; // https://api.sleeper.app/v1
 
@@ -8,31 +8,31 @@ function leagueEndpoint(leagueId, path = '') {
 }
 
 // PEGA AS INFORMAÇÕES GERAIS DA LIGA EM https://api.sleeper.app/v1/league/<league_id>
-export async function getLeague(leagueId) {
+export async function fetchLeague(leagueId) {
   const response = await fetch(leagueEndpoint(leagueId, ''));
   return response.json();
 }
 
 // PEGA AS INFORMAÇÕES DOS ROSTERS DA LIGA EM https://api.sleeper.app/v1/league/<league_id>/rosters
-export async function getRosters(leagueId) {
+export async function fetchRosters(leagueId) {
   const response = await fetch(leagueEndpoint(leagueId, '/rosters'));
   return response.json();
 }
 
 // PEGA AS INFORMAÇÕES DOS USUÁRIOS DA LIGA EM https://api.sleeper.app/v1/league/<league_id>/users
-export async function getUsers(leagueId) {
+export async function fetchUsers(leagueId) {
   const response = await fetch(leagueEndpoint(leagueId, '/users'));
   return response.json();
 }
 
 // PEGA OS MATCHUPS DA LIGA EM https://api.sleeper.app/v1/league/<league_id>/matchups/<week>
-export async function getMatchups(leagueId, week) {
+export async function fetchMatchups(leagueId, week) {
   const response = await fetch(leagueEndpoint(leagueId, `/matchups/${week}`));
   return response.json();
 }
 
 // PEGA AS INFORMAÇÕES DE TODOS OS JOGADORES EM https://api.sleeper.app/v1/players/nfl
-export async function getAllPlayersData() {
+export async function fetchAllPlayersData() {
   const response = await fetch(`${BASE_URL}/players/nfl`);
   return response.json();
 }
