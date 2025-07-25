@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import {
   getFromLocalStorage,
   saveToLocalStorage,
-} from '../utils/storage/localStorageUtils.js';
+} from '../utils/localStorage/localStorageUtils.js';
 import { transformChampionData } from '../utils/transformers/championTransformer.js';
 
 import { STORAGE_KEYS } from '../constants/storageKeys.js';

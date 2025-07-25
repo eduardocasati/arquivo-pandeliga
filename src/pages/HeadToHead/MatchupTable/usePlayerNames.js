@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { getFromLocalStorage } from '../../../utils/storage/localStorageUtils';
+import { getFromLocalStorage } from '../../../utils/localStorage/localStorageUtils';
 
 import { STORAGE_KEYS } from '../../../constants/storageKeys';
 

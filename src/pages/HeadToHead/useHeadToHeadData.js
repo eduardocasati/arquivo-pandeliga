@@ -5,7 +5,7 @@ import { getAllSeasonsMatchups } from '../../services/matchupsService';
 import {
   getFromLocalStorage,
   saveToLocalStorage,
-} from '../../utils/storage/localStorageUtils';
+} from '../../utils/localStorage/localStorageUtils';
 
 import { STORAGE_KEYS } from '../../constants/storageKeys';
 
