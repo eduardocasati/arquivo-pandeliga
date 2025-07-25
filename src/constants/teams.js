@@ -1,13 +1,15 @@
-import logoBeholders from '../assets/images/teams/team_logo_beholders.png';
-import logoBreakers from '../assets/images/teams/team_logo_breakers.png';
-import logoBrewers from '../assets/images/teams/team_logo_brewers.png';
-import logoFaceiros from '../assets/images/teams/team_logo_faceiros.png';
-import logoLesionaries from '../assets/images/teams/team_logo_lesionaries.png';
-import logoOnekick from '../assets/images/teams/team_logo_onekick.png';
-import logoReginaldos from '../assets/images/teams/team_logo_reginaldos.png';
-import logoRiders from '../assets/images/teams/team_logo_riders.png';
-import logoTankei from '../assets/images/teams/team_logo_tankei.png';
-import logoVikings from '../assets/images/teams/team_logo_vikings.png';
+import {
+  logoBeholders,
+  logoBreakers,
+  logoBrewers,
+  logoFaceiros,
+  logoLesionaries,
+  logoOnekick,
+  logoReginaldos,
+  logoRiders,
+  logoTankei,
+  logoVikings,
+} from './images';
 
 const teams = [
   {
