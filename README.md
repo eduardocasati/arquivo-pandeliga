@@ -22,9 +22,9 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 <!-- O Arquivo Pandeliga reúne diversos recursos para explorar e analisar o histórico da liga. Abaixo, estão descritas as funcionalidades da aplicação. -->
 
-- **CONFRONTOS DIRETOS:**
+- **Confrontos Diretos:** página que permite comparar dois times, exibindo o histórico completo de confrontos, incluindo número de vitórias, pontuação acumulada e resultado de cada confronto.
 
-- **RECORDES:**
+<!-- - **RECORDES:**
 
 - **CLASSIFICAÇÃO HISTÓRICA:**
 
@@ -32,7 +32,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - **SALA DE TROFÉUS:**
 
-- **PÁGINAS INDIVIDUAIS DE CADA TIME:**
+- **PÁGINAS INDIVIDUAIS DE CADA TIME:** -->
 
 ## Roadmap
 
@@ -40,12 +40,12 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 ### Próximas Etapas
 
-- [ ] Coletar dados do NFL Fantasy via _web scraping_, devido à indisponibilidade da API oficial
-- [ ] Tratar e estruturar os dados coletados
-- [ ] Integrar estes dados com os dados coletados na API do Sleeper
+- [ ] Coletar os dados do NFL Fantasy por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação
 - [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
 
 ### Etapas Concluídas
+
+- [x] ~~Página Confrontos Diretos~~
 
 ---
 
@@ -60,7 +60,5 @@ Um agradecimento especial para a [Giovana Casati](https://www.linkedin.com/in/gi
 </br>
 </br>
 </br>
-
----
 
 #### **SKOL VIKINGS!** 💛💜
