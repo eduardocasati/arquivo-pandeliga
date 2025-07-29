@@ -10,5 +10,3 @@ async function generateFile() {
     console.error('Erro ao gerar o arquivo:', error);
   }
 }
-
-generateFile();
