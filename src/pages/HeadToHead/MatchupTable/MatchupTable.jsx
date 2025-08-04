@@ -3,6 +3,7 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 
 import './MatchupTable.css';
 
+import { getPlayerImageUrl } from '../../../utils/assets/playerImages';
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
 import { usePlayerNames } from './usePlayerNames';
 
@@ -81,18 +82,6 @@ export const MatchupTable = ({
   const secondTeamPlayerNames = usePlayerNames(secondTeamMatchup?.starters);
 
   // utils
-  // essa função serve para retornar uma imagem fallback caso não havia jogador escalado (id = 0)
-  const getPlayerImageUrl = (playerId) => {
-    const id = Number(playerId);
-    if (id === 0) {
-      return 'https://sleepercdn.com/images/v2/icons/player_default.webp';
-    }
-    if (isNaN(id)) {
-      // específico pra lidar com os times (defesas)
-      return `https://sleepercdn.com/images/team_logos/nfl/${String(playerId).toLowerCase()}.png`;
-    }
-    return `https://sleepercdn.com/content/nfl/players/thumb/${id}.jpg`;
-  };
   // essa função pega o team_id dos times para colorir as bordas da tabela com as cores dos times
   const getTeamIdByRosterId = (rosterId) => {
     return teams.find((team) => team.roster_id === Number(rosterId))?.team_id;
