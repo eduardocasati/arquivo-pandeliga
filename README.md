@@ -22,7 +22,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 <!-- O Arquivo Pandeliga reúne diversos recursos para explorar e analisar o histórico da liga. Abaixo, estão descritas as funcionalidades da aplicação. -->
 
-- **Confrontos Diretos:** página que permite comparar dois times, exibindo o histórico completo de confrontos, incluindo número de vitórias, pontuação acumulada e resultado de cada confronto.
+- **_Confrontos Diretos:_** página que permite comparar dois times, exibindo o histórico completo de confrontos, incluindo número de vitórias, pontuação acumulada e resultado de cada confronto.
 
 <!-- - **RECORDES:**
 
@@ -45,7 +45,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 ### Etapas Concluídas
 
 - [x] ~~Página Confrontos Diretos~~
-- [x] ~~Coletar os dados do NFL Fantasy por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação~~
+- [x] ~~Coletar os dados do fantasy.nfl.com por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação~~
 
 ---
 
