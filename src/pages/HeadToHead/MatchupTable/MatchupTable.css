@@ -38,6 +38,14 @@
   cursor: pointer;
 }
 
+.matchup-table__playoff-round {
+  text-transform: capitalize;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 8px;
+  font: italic 0.9rem var(--font-base);
+}
+
 .matchup-table__points {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

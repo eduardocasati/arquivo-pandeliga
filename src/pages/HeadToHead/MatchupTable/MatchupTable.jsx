@@ -4,6 +4,7 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import './MatchupTable.css';
 
 import { getPlayerImageUrl } from '../../../utils/assets/playerImages';
+import { getPlayoffRound } from '../../../utils/checks/playoffRounds';
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
 import { usePlayerNames } from './usePlayerNames';
 
@@ -105,6 +106,24 @@ export const MatchupTable = ({
           <GrFormNext />
         </button>
       </div>
+
+      {/* renderiza a rodada dos playoffs */}
+      {currentMatchup &&
+        firstTeamMatchup &&
+        secondTeamMatchup &&
+        (currentMatchup.week === 15 ||
+          currentMatchup.week === 16 ||
+          currentMatchup.week === 17) && (
+          <div className="matchup-table__playoff-round">
+            <p>
+              {getPlayoffRound(
+                currentMatchup.season,
+                currentMatchup.week,
+                firstTeamMatchup.matchup_id,
+              )}
+            </p>
+          </div>
+        )}
 
       <div className="matchup-table__points">
         {firstTeamMatchup && secondTeamMatchup && (
