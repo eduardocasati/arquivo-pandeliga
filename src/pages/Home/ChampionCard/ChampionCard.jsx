@@ -10,7 +10,9 @@ export const ChampionCard = () => {
   return (
     <div className="champion-card">
       {isLoading || !championData ? (
-        <LoadingSpinner />
+        <div className="loading-spinner--fullscreen">
+          <LoadingSpinner />
+        </div>
       ) : (
         <>
           {/* logo do campeão como imagem de fundo */}
@@ -28,7 +30,7 @@ export const ChampionCard = () => {
           </div>
 
           <div className="champion-card__champion-stats">
-            <div className="stats-regular">
+            <div>
               <h4>TEMP REGULAR</h4>
               <p>
                 V-D{' '}
@@ -47,7 +49,7 @@ export const ChampionCard = () => {
                 Roster Moves <span>16</span>
               </p> */}
             </div>
-            <div className="stats-playoffs">
+            <div>
               <h4>PLAYOFFS</h4>
               <p>
                 Bye <span>{championData.had_bye_week ? 'Sim' : 'Não'}</span>

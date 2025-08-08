@@ -94,7 +94,9 @@ export const Header = () => {
 
           <div className="header__champion">
             {isLoading || !championData ? (
-              <LoadingSpinner />
+              <div className="loading-spinner--fullscreen">
+                <LoadingSpinner />
+              </div>
             ) : (
               <>
                 <div className="header__champion-logo">

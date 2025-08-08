@@ -66,6 +66,19 @@ h3 {
   color: var(--position-DEF);
 }
 
+.loading-spinner--fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: var(--color-surface-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
 @media screen and (max-width: 1120px) {
   .page-content__wrapper {
     max-width: 90%;
