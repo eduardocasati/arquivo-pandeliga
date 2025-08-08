@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
-        <div className="footer__social-links">
+        <div>
           <p>
             <a
               href="https://github.com/eduardocasati/arquivo-pandeliga"
