@@ -1,17 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { getSimplifiedPlayers } from '../../data/getSimplifiedPlayers';
-import { getAllSeasonsMatchups } from '../../services/matchupsService';
+import { getSimplifiedPlayers } from '../data/getSimplifiedPlayers';
+import { getAllSeasonsMatchups } from '../services/matchupsService';
 import {
   getFromLocalStorage,
   saveToLocalStorage,
-} from '../../utils/localStorage/localStorageUtils';
+} from '../utils/localStorage/localStorageUtils';
 
-import { STORAGE_KEYS } from '../../config/storageKeys';
+import { STORAGE_KEYS } from '../config/storageKeys';
 
 const { ALL_SEASONS_MATCHUPS, ALL_PLAYERS_DATA } = STORAGE_KEYS;
 
-export const useHeadToHeadData = () => {
+export const useAllSeasonsMatchups = () => {
   const cachedMatchups = getFromLocalStorage(ALL_SEASONS_MATCHUPS);
   const cachedPlayers = getFromLocalStorage(ALL_PLAYERS_DATA);
 

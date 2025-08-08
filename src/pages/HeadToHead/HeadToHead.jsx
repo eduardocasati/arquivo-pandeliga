@@ -5,13 +5,13 @@ import { MatchupTable } from './MatchupTable/MatchupTable';
 
 import './HeadToHead.css';
 
-import { useHeadToHeadData } from './useHeadToHeadData';
+import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
 import { useHeadToHeadMatchups } from './useHeadToHeadMatchups';
 
 import teams from '../../constants/teams';
 
 export const HeadToHead = () => {
-  const { data, isLoading } = useHeadToHeadData();
+  const { data, isLoading } = useAllSeasonsMatchups();
   const allSeasonsMatchups = data?.allSeasonsMatchups;
 
   const [selectedFirstTeam, setSelectedFirstTeam] = useState('');
