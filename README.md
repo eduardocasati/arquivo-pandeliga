@@ -41,6 +41,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 ### Próximas Etapas
 
 - [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
+- [ ] Página Classificação Histórica
 
 ### Etapas Concluídas
 
