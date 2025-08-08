@@ -10,13 +10,7 @@ const allFiles = import.meta.glob(
   { eager: true },
 );
 
-// console.log('✔️ MATCHUP FILES FOUND:', Object.keys(allFiles));
-
-/**
- * PEGA TODOS OS MATCHUPS DE UMA TEMPORADA
- * cada array com arrays, onde cada array contém todos os resultados da semana
- * @returns {Array<Array<Object>>}
- */
+// PEGA TODOS OS MATCHUPS DE UMA TEMPORADA
 export async function getSeasonMatchups(leagueId) {
   const numberOfWeeks = 17;
   const matchupPromises = [];
@@ -30,43 +24,38 @@ export async function getSeasonMatchups(leagueId) {
   return matchups;
 }
 
-export async function loadStaticSeasonMatchups() {
-  const seasonPromises = Object.entries(STATIC_SEASONS_WEEKS).map(
-    async ([season, weekCount]) => {
-      const weekPromises = [];
+// FUNÇÕES QUE FAZEM A UNIÃO DOS DADOS DA API COM OS ESTÁTICOS
+export function loadStaticSeasonMatchups() {
+  return Object.entries(STATIC_SEASONS_WEEKS).map(([season, weekCount]) => {
+    const weeklyMatchups = [];
 
-      for (let i = 1; i <= weekCount; i++) {
-        const weekStr = i.toString().padStart(2, '0');
-        const path = `/src/constants/nfl-fantasy-scraped-data/${season}/matchups/week-${weekStr}.json`;
+    for (let i = 1; i <= weekCount; i++) {
+      const weekStr = i.toString().padStart(2, '0');
+      const path = `/src/constants/nfl-fantasy-scraped-data/${season}/matchups/week-${weekStr}.json`;
+      weeklyMatchups.push(allFiles[path]?.default || []);
+    }
 
-        const matchupData = allFiles[path]?.default || [];
-        weekPromises.push(matchupData);
-      }
-
-      const weeklyMatchups = await Promise.all(weekPromises);
-
-      return {
-        season,
-        matchups: weeklyMatchups,
-      };
-    },
-  );
-
-  return Promise.all(seasonPromises);
+    return {
+      season,
+      matchups: weeklyMatchups,
+    };
+  });
 }
-
-export async function mergeStaticWithApiData(apiData) {
-  const staticData = await loadStaticSeasonMatchups();
-
+export function mergeStaticWithApiData(apiData) {
+  const staticData = loadStaticSeasonMatchups();
   const seasonMap = new Map();
 
+  // insere dados estáticos
   staticData.forEach((seasonEntry) => {
     seasonMap.set(seasonEntry.season, seasonEntry);
   });
 
+  // sobrescreve com dados da API
   apiData.forEach((seasonEntry) => {
     seasonMap.set(seasonEntry.season, seasonEntry);
   });
 
-  return Array.from(seasonMap.values());
+  return Array.from(seasonMap.values()).sort(
+    (a, b) => Number(b.season) - Number(a.season),
+  );
 }

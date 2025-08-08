@@ -1,4 +1,7 @@
-import { getSeasonMatchups } from '../data/getSeasonMatchups.js';
+import {
+  getSeasonMatchups,
+  mergeStaticWithApiData,
+} from '../data/getSeasonMatchups.js';
 import { getCurrentChampionRosterId } from './championService.js';
 import { getAllLeagues, getPreviousLeagueId } from './leagueService.js';
 
@@ -16,7 +19,6 @@ export async function getCurrentChampionMatchups() {
   // allWeeklyMatchups retorna um array de arrays contendo os objetos que são
   // os resultados de cada time naquela semana
   // a chamada a getSeasonMatchups precisa de await apesar do VSCode dizer que não
-  // TODO resolver o problema do await abaixo
   const allWeeklyMatchups = await getSeasonMatchups(previousLeagueId);
 
   const championMatchups = allWeeklyMatchups.map((weeklyMatchups) => {
@@ -44,7 +46,6 @@ export async function getCurrentChampionMatchups() {
 export async function getCurrentChampionResults() {
   const previousLeagueId = await getPreviousLeagueId(CURRENT_SEASON_LEAGUE_ID);
   const championRosterId = await getCurrentChampionRosterId();
-  // TODO resolver o problema do await abaixo
   const allWeeklyMatchups = await getSeasonMatchups(previousLeagueId);
 
   const foundChampionResults = allWeeklyMatchups.map((matchup) => {
@@ -65,7 +66,9 @@ export async function getAllSeasonsMatchups() {
     };
   });
 
-  const allSeasonsMatchups = await Promise.all(allSeasonsMatchupsPromises);
+  // const allSeasonsMatchups = await Promise.all(allSeasonsMatchupsPromises);
+  const apiMatchups = await Promise.all(allSeasonsMatchupsPromises);
 
-  return allSeasonsMatchups;
+  // return allSeasonsMatchups;
+  return mergeStaticWithApiData(apiMatchups);
 }

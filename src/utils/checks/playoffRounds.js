@@ -2,9 +2,9 @@ const PLAYOFF_FINAL = 'Final 🏆';
 const PLAYOFF_SEMIFINAL = 'Semifinal';
 const PLAYOFF_QUARTERFINAL = 'Quartas de final';
 
-const PLAYOFF_THIRD_PLACE = 'Terceiro lugar';
-const PLAYOFF_FIFTH_PLACE = 'Quinto lugar';
-const PLAYOFF_SEVENTH_PLACE = 'Sétimo lugar';
+const PLAYOFF_THIRD_PLACE = 'Disputa de 3º lugar';
+const PLAYOFF_FIFTH_PLACE = 'Disputa de 5º lugar';
+const PLAYOFF_SEVENTH_PLACE = 'Disputa de 7º lugar';
 const PLAYOFF_SHIT_BOWL = 'Shit Bowl 💩';
 const PLAYOFF_PRE_SHIT_BOWL = 'Fuga do Shit Bowl'; // alternativa: 'Pré-Shit Bowl'
 

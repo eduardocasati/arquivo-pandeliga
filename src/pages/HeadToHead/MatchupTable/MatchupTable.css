@@ -39,11 +39,11 @@
 }
 
 .matchup-table__playoff-round {
-  text-transform: capitalize;
+  text-transform: uppercase;
   margin: 0 auto;
   text-align: center;
   margin-top: 8px;
-  font: italic 0.9rem var(--font-base);
+  font: italic clamp(0.8rem, 2.5vw, 1rem) var(--font-accent-primary);
 }
 
 .matchup-table__points {
@@ -242,6 +242,12 @@
     min-height: 44px;
     margin-inline: 8px;
     padding-inline: 0;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .matchup-table__playoff-round {
+    margin-top: 4px;
   }
 }
 

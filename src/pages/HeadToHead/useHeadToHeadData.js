@@ -19,10 +19,8 @@ export const useHeadToHeadData = () => {
     queryKey: ['headToHeadData'],
     queryFn: async () => {
       const [matchups, players] = await Promise.all([
-        cachedMatchups
-          ? Promise.resolve(cachedMatchups)
-          : getAllSeasonsMatchups(),
-        cachedPlayers ? Promise.resolve(cachedPlayers) : getSimplifiedPlayers(),
+        cachedMatchups ?? getAllSeasonsMatchups(),
+        cachedPlayers ?? getSimplifiedPlayers(),
       ]);
 
       if (!cachedMatchups) {
