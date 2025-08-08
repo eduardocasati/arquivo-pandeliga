@@ -40,12 +40,12 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 ### Próximas Etapas
 
-- [ ] Coletar os dados do NFL Fantasy por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação
 - [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
 
 ### Etapas Concluídas
 
 - [x] ~~Página Confrontos Diretos~~
+- [x] ~~Coletar os dados do NFL Fantasy por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação~~
 
 ---
 
