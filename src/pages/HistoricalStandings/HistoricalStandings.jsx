@@ -40,7 +40,7 @@ export const HistoricalStandings = () => {
       ) : (
         <>
           <div className="historical-standings">
-            <h1>Temporada Regular</h1>
+            <h1>Temporadas Regulares</h1>
             <div className="historical-standings__table">
               <table>
                 <thead>
