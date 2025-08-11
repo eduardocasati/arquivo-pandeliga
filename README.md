@@ -24,6 +24,8 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - **_Confrontos Diretos:_** página que permite comparar dois times, exibindo o histórico completo de confrontos, incluindo número de vitórias, pontuação acumulada e resultado de cada confronto.
 
+- **_Classificação Histórica:_** página que apresenta as estatísticas acumuladas de cada time, como pontos totais, número de vitórias, derrotas e outras métricas relevantes.
+
 <!-- - **RECORDES:**
 
 - **CLASSIFICAÇÃO HISTÓRICA:**
