@@ -4,7 +4,7 @@ import {
   createRouter,
   Outlet,
 } from '@tanstack/react-router';
-import { HeadToHead, HistoricalStandings, Home, Records } from './pages';
+import { HeadToHead, HistoricalStandings, Home } from './pages';
 
 // Rota raiz (usada como wrapper)
 const rootRoute = createRootRoute({
@@ -24,11 +24,11 @@ const headToHeadRoute = createRoute({
   component: HeadToHead,
 });
 
-const recordsRoute = createRoute({
-  path: '/recordes',
-  getParentRoute: () => rootRoute,
-  component: Records,
-});
+// const recordsRoute = createRoute({
+//   path: '/recordes',
+//   getParentRoute: () => rootRoute,
+//   component: Records,
+// });
 
 const historicalStandingsRoute = createRoute({
   path: '/classificacao',
@@ -52,7 +52,6 @@ const historicalStandingsRoute = createRoute({
 const routeTree = rootRoute.addChildren([
   homeRoute,
   headToHeadRoute,
-  recordsRoute,
   historicalStandingsRoute,
   // seasonsRoute,
   // trophyRoomRoute,
