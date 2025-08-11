@@ -40,12 +40,13 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 ### Próximas Etapas
 
-- [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
+- [ ] Colocar estatísticas dos playoffs na página Classificação Histórica
 - [ ] Colocar na página Confrontos Diretos o time da NFL que cada jogador jogava naquela partida
-- [ ] Página Classificação Histórica
+- [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
 
 ### Etapas Concluídas
 
+- [x] ~~Página Classificação Histórica~~
 - [x] ~~Página Confrontos Diretos~~
 - [x] ~~Coletar os dados do fantasy.nfl.com por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação~~
 
