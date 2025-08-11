@@ -4,6 +4,7 @@ import { LoadingSpinner } from '../../components';
 
 import './HistoricalStandings.css';
 
+import { formatToBRDecimal } from '../../utils/formatters/numberFormat';
 import { useHistoricalStandings } from './useHistoricalStandings';
 
 import teams from '../../constants/teams';
@@ -69,19 +70,24 @@ export const HistoricalStandings = () => {
                       <td>{team.losses}</td>
                       <td>
                         {team.totalGames
-                          ? ((team.wins / team.totalGames) * 100).toFixed(2) +
-                            '%'
+                          ? formatToBRDecimal(
+                              (team.wins / team.totalGames) * 100,
+                            ) + '%'
                           : '0%'}
                       </td>
                       <td>
                         {team.totalGames
-                          ? (team.totalPoints / team.totalGames).toFixed(2)
+                          ? formatToBRDecimal(
+                              team.totalPoints / team.totalGames,
+                            )
                           : '0.00'}
                       </td>
-                      <td>{team.totalPoints.toFixed(2)}</td>
+                      <td>{formatToBRDecimal(team.totalPoints)}</td>
                       <td>
                         {team.seasonsPlayed > 0
-                          ? (team.totalPoints / team.seasonsPlayed).toFixed(2)
+                          ? formatToBRDecimal(
+                              team.totalPoints / team.seasonsPlayed,
+                            )
                           : '0.00'}
                       </td>
                       {/* <td>4</td> */}
