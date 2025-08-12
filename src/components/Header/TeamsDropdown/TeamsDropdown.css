@@ -6,14 +6,20 @@
   font:
     600 0.7rem 'Exo 2',
     sans-serif;
-  /* font-family: var(--font-accent-primary);
-  font-weight: 600;
-  font-size: 0.7rem; */
   text-transform: uppercase;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   z-index: 99;
 
   animation: fade-in 0.3s;
+}
+
+.header__dropdown ul a {
+  font:
+    600 0.7rem 'Exo 2',
+    sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
 }
 
 .header__dropdown ul {

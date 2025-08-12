@@ -99,6 +99,14 @@
   list-style: none;
 }
 
+.header__mobile-team-list ul a {
+  font:
+    600 clamp(1rem, 2.5vw, 2rem) 'Exo 2',
+    sans-serif;
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
 .team-list--open.header__mobile-team-list {
   max-height: 500px;
 }

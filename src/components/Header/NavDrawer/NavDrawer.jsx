@@ -81,14 +81,14 @@ export const NavDrawer = () => {
           <ul>
             {sortedTeams.map((team) => {
               return (
-                <li
-                  style={{ '--team-color': `var(--team-${team.team_id})` }}
-                  key={team.team_id}
-                >
-                  <Link to={`/$teamId`} params={{ teamId: team.team_id }}>
+                <Link to={`/$teamId`} params={{ teamId: team.team_id }}>
+                  <li
+                    style={{ '--team-color': `var(--team-${team.team_id})` }}
+                    key={team.team_id}
+                  >
                     {team.display_name}
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               );
             })}
           </ul>
