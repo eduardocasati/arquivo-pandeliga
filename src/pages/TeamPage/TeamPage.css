@@ -1,0 +1,31 @@
+.team-page {
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 1186px;
+}
+
+.team-page__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.team-page__title img {
+  width: clamp(64px, 10vw, 160px);
+}
+
+.team-page__title h1 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+}
+
+@media screen and (max-width: 360px) {
+  .team-page {
+    max-width: 96dvw;
+  }
+
+  .team-page__title {
+    flex-direction: column;
+  }
+}
