@@ -1,6 +1,8 @@
-import teams from '../../../constants/teams';
+import { Link } from '@tanstack/react-router';
 
 import './TeamsDropdown.css';
+
+import teams from '../../../constants/teams';
 
 export const TeamsDropdown = ({ setIsDropdownOpen }) => {
   const sortedTeams = [...teams].sort((a, b) =>
@@ -19,7 +21,9 @@ export const TeamsDropdown = ({ setIsDropdownOpen }) => {
             key={team.team_id}
             style={{ '--team-color': `var(--team-${team.team_id})` }}
           >
-            {team.display_name}
+            <Link to={`/$teamId`} params={{ teamId: team.team_id }}>
+              {team.display_name}
+            </Link>
           </li>
         ))}
       </ul>

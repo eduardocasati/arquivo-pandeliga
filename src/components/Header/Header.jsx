@@ -19,10 +19,14 @@ import {
   logoSleeper,
   logoSleeperSmall,
 } from '../../constants/images';
+import teams from '../../constants/teams';
 
 export const Header = () => {
   const matchRoute = useMatchRoute();
   const isHomeRouteActive = matchRoute({ to: '/', fuzzy: false });
+  const isTeamRouteActive = teams.some((team) =>
+    matchRoute({ to: `/${team.display_name}`, fuzzy: false }),
+  );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { championData, isLoading } = useChampionData();
 
@@ -49,9 +53,8 @@ export const Header = () => {
               ))}
               {/* Times está separado pois não leva a nenhuma rota */}
               <li
-                className={`header__nav-item${
-                  isDropdownOpen ? ' header__nav-item--dropdown-open' : ''
-                }`}
+                className={`header__nav-item${isDropdownOpen ? ' header__nav-item--dropdown-open' : ''}${isTeamRouteActive ? ' nav-item--active' : ''}`}
+                // className={`header__nav-item${isDropdownOpen ? ' header__nav-item--dropdown-open' : ''}`}
                 onMouseEnter={handleDropdownToggle}
                 onMouseLeave={handleDropdownToggle}
               >

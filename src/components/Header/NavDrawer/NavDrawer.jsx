@@ -1,3 +1,4 @@
+import { Link, useMatchRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { CgClose, CgMenu } from 'react-icons/cg';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -11,6 +12,10 @@ import { navItems } from '../../../constants/navItems';
 import teams from '../../../constants/teams';
 
 export const NavDrawer = () => {
+  const matchRoute = useMatchRoute();
+  const isTeamRouteActive = teams.some((team) =>
+    matchRoute({ to: `/${team.display_name}`, fuzzy: false }),
+  );
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   const [isTeamlistOpen, setIsTeamlistOpen] = useState(false);
 
@@ -60,7 +65,7 @@ export const NavDrawer = () => {
             />
           ))}
           <li
-            className="header__mobile-nav-item noselect"
+            className={`header__mobile-nav-item noselect${isTeamRouteActive ? ' nav-item--active' : ''}`}
             onClick={handleTeamlistToggle}
           >
             Times
@@ -80,7 +85,9 @@ export const NavDrawer = () => {
                   style={{ '--team-color': `var(--team-${team.team_id})` }}
                   key={team.team_id}
                 >
-                  {team.display_name}
+                  <Link to={`/$teamId`} params={{ teamId: team.team_id }}>
+                    {team.display_name}
+                  </Link>
                 </li>
               );
             })}
