@@ -69,24 +69,24 @@ export const HistoricalStandings = () => {
                       <td>{team.wins}</td>
                       <td>{team.losses}</td>
                       <td>
-                        {team.totalGames
+                        {team.total_games
                           ? formatToBRDecimal(
-                              (team.wins / team.totalGames) * 100,
+                              (team.wins / team.total_games) * 100,
                             ) + '%'
                           : '0%'}
                       </td>
                       <td>
-                        {team.totalGames
+                        {team.total_games
                           ? formatToBRDecimal(
-                              team.totalPoints / team.totalGames,
+                              team.total_points / team.total_games,
                             )
                           : '0.00'}
                       </td>
-                      <td>{formatToBRDecimal(team.totalPoints)}</td>
+                      <td>{formatToBRDecimal(team.total_points)}</td>
                       <td>
-                        {team.seasonsPlayed > 0
+                        {team.seasons_played > 0
                           ? formatToBRDecimal(
-                              team.totalPoints / team.seasonsPlayed,
+                              team.total_points / team.seasons_played,
                             )
                           : '0.00'}
                       </td>

@@ -3,10 +3,17 @@ import { Route } from '../../routes/$teamId';
 
 import './TeamPage.css';
 
+import { useTeamStats } from './useTeamStats.js';
+
 import teams from '../../constants/teams';
 
 export const TeamPage = () => {
   const { teamId } = Route.useLoaderData();
+  const { stats, isLoading } = useTeamStats(
+    Number(teams.find((team) => team.team_id === teamId).roster_id),
+  );
+
+  console.log(stats);
 
   const findTeamImage = (teamId) => {
     return teams.find((team) => team.team_id === teamId).team_logo;

@@ -16,16 +16,16 @@ export function transformAllTeamsHistoricalStats(allSeasonsMatchups) {
           statsByTeam[rosterId] = {
             wins: 0,
             losses: 0,
-            totalPoints: 0,
-            totalGames: 0,
-            seasonsPlayed: 0,
+            total_points: 0,
+            total_games: 0,
+            seasons_played: 0,
           };
         }
 
         teamsPlayedThisSeason.add(rosterId);
 
-        statsByTeam[rosterId].totalPoints += points;
-        statsByTeam[rosterId].totalGames += 1;
+        statsByTeam[rosterId].total_points += points;
+        statsByTeam[rosterId].total_games += 1;
       });
 
       // contabiliza vitórias e derrotas depois de acumular pontos para a semana
@@ -48,9 +48,203 @@ export function transformAllTeamsHistoricalStats(allSeasonsMatchups) {
 
     // após processar a temporada inteira, conta as temporadas jogadas
     teamsPlayedThisSeason.forEach((rosterId) => {
-      statsByTeam[rosterId].seasonsPlayed += 1;
+      statsByTeam[rosterId].seasons_played += 1;
     });
   });
 
   return statsByTeam;
+}
+
+export function transformHistoricalStatsForSingleTeam(
+  allSeasonsMatchups,
+  rosterIdToAnalyze,
+) {
+  const stats = {
+    total_points: 0,
+    total_games: 0,
+    wins: 0,
+    losses: 0,
+    seasons_played: 0,
+    highest_single_game: null,
+    lowest_single_game: null,
+    highest_season_points: null,
+    lowest_season_points: null,
+    highest_season_record: null,
+    lowest_season_record: null,
+    highest_position_points: {
+      qb: null,
+      rb: null,
+      wr: null,
+      te: null,
+      flex: null,
+      k: null,
+      def: null,
+    },
+    // novos stats
+    win_percentage: null,
+    points_per_season: null,
+    points_per_game: null,
+  };
+
+  allSeasonsMatchups.forEach(({ season, matchups }) => {
+    let seasonPoints = 0;
+    let seasonWins = 0;
+    let seasonLosses = 0;
+    let playedThisSeason = false;
+
+    matchups.forEach((week, weekIndex) => {
+      if (weekIndex >= 14) return; // ignora playoffs
+
+      const teamMatchup = week.find((m) => m.roster_id === rosterIdToAnalyze);
+      if (!teamMatchup) return;
+
+      playedThisSeason = true;
+      const points = teamMatchup.points;
+      stats.total_points += points;
+      stats.total_games += 1;
+      seasonPoints += points;
+
+      // maior/menor pontuação em uma partida
+      if (
+        !stats.highest_single_game ||
+        points > stats.highest_single_game.points
+      ) {
+        stats.highest_single_game = {
+          points,
+          year: season,
+          week: weekIndex + 1,
+          opponent_roster_id: week.find(
+            (m) =>
+              m.matchup_id === teamMatchup.matchup_id &&
+              m.roster_id !== rosterIdToAnalyze,
+          )?.roster_id,
+        };
+      }
+      if (
+        !stats.lowest_single_game ||
+        points < stats.lowest_single_game.points
+      ) {
+        stats.lowest_single_game = {
+          points,
+          year: season,
+          week: weekIndex + 1,
+          opponent_roster_id: week.find(
+            (m) =>
+              m.matchup_id === teamMatchup.matchup_id &&
+              m.roster_id !== rosterIdToAnalyze,
+          )?.roster_id,
+        };
+      }
+    });
+
+    if (!playedThisSeason) return;
+
+    stats.seasons_played += 1;
+    // vitórias e derrotas por semana
+    matchups.forEach((week, weekIndex) => {
+      if (weekIndex >= 14) return;
+
+      const matchupIds = [...new Set(week.map((m) => m.matchup_id))];
+      matchupIds.forEach((matchupId) => {
+        const results = week.filter((m) => m.matchup_id === matchupId);
+        if (results.length !== 2) return;
+
+        const [teamA, teamB] = results;
+        if (
+          teamA.roster_id === rosterIdToAnalyze ||
+          teamB.roster_id === rosterIdToAnalyze
+        ) {
+          if (
+            teamA.roster_id === rosterIdToAnalyze &&
+            teamA.points > teamB.points
+          )
+            stats.wins += 1;
+          else if (
+            teamB.roster_id === rosterIdToAnalyze &&
+            teamB.points > teamA.points
+          )
+            stats.wins += 1;
+          else stats.losses += 1;
+        }
+      });
+    });
+
+    // maior/menor pontuação em temporada
+    if (
+      !stats.highest_season_points ||
+      seasonPoints > stats.highest_season_points.points
+    ) {
+      stats.highest_season_points = { points: seasonPoints, year: season };
+    }
+    if (
+      !stats.lowest_season_points ||
+      seasonPoints < stats.lowest_season_points.points
+    ) {
+      stats.lowest_season_points = { points: seasonPoints, year: season };
+    }
+
+    // maior/menor recorde temporada
+    if (
+      !stats.highest_season_record ||
+      seasonWins > stats.highest_season_record.wins
+    ) {
+      stats.highest_season_record = {
+        wins: seasonWins,
+        losses: seasonLosses,
+        year: season,
+      };
+    }
+    if (
+      !stats.lowest_season_record ||
+      seasonWins < stats.lowest_season_record.wins
+    ) {
+      stats.lowest_season_record = {
+        wins: seasonWins,
+        losses: seasonLosses,
+        year: season,
+      };
+    }
+
+    // calcula maiores pontuações por posição
+    matchups.forEach((week, weekIndex) => {
+      if (weekIndex >= 14) return;
+      const teamMatchup = week.find((m) => m.roster_id === rosterIdToAnalyze);
+      if (!teamMatchup) return;
+
+      const sp = teamMatchup.starters_points;
+      const posPoints = {
+        qb: sp[0],
+        rb: Math.max(sp[1], sp[2]),
+        wr: Math.max(sp[3], sp[4]),
+        te: sp[5],
+        flex: sp[6],
+        k: sp[7],
+        def: sp[8],
+      };
+
+      Object.entries(posPoints).forEach(([pos, points]) => {
+        if (
+          !stats.highest_position_points[pos] ||
+          points > stats.highest_position_points[pos].points
+        ) {
+          stats.highest_position_points[pos] = {
+            points,
+            year: season,
+            week: weekIndex + 1,
+            opponent_roster_id: week.find(
+              (m) =>
+                m.matchup_id === teamMatchup.matchup_id &&
+                m.roster_id !== rosterIdToAnalyze,
+            )?.roster_id,
+          };
+        }
+      });
+    });
+  });
+
+  stats.win_percentage = (stats.wins / stats.total_games) * 100;
+  stats.points_per_season = stats.total_points / stats.seasons_played;
+  stats.points_per_game = stats.total_points / stats.total_games;
+
+  return stats;
 }
