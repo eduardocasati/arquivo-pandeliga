@@ -87,9 +87,9 @@ export const HeadToHead = () => {
     <>
       <Header />
       {isLoading || !allSeasonsMatchups ? (
-        <div className="head-to-head__loading-spinner">
+        <div className="loading-spinner--local">
           <LoadingSpinner />
-          <p className="head-to-head__loading-message">
+          <p className="loading-spinner__message">
             Carregando os dados dos confrontos e jogadores
           </p>
         </div>

@@ -31,9 +31,9 @@ export const HistoricalStandings = () => {
     <>
       <Header />
       {isLoading || !statsByTeam ? (
-        <div className="head-to-head__loading-spinner">
+        <div className="loading-spinner--local">
           <LoadingSpinner />
-          <p className="head-to-head__loading-message">
+          <p className="loading-spinner__message">
             Carregando dados das temporadas
           </p>
         </div>

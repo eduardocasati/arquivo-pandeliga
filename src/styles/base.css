@@ -79,6 +79,18 @@ h3 {
   z-index: 999999;
 }
 
+.loading-spinner--local {
+  padding: 40px;
+}
+
+.loading-spinner__message {
+  color: var(--color-text-accent-green);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 24px;
+  font: italic 500 clamp(0.9rem, 2.5vw, 1.1rem) var(--font-accent-primary);
+}
+
 @media screen and (max-width: 1120px) {
   .page-content__wrapper {
     max-width: 90%;

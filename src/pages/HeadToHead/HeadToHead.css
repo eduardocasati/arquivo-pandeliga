@@ -1,15 +1,3 @@
-.head-to-head__loading-spinner {
-  padding: 40px;
-}
-
-.head-to-head__loading-message {
-  color: var(--color-text-accent-green);
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 24px;
-  font: italic 500 clamp(0.9rem, 2.5vw, 1.1rem) var(--font-accent-primary);
-}
-
 .head-to-head__form {
   padding-top: 40px;
   display: flex;

@@ -7,10 +7,10 @@ export const useTeamStats = (rosterId) => {
   const { data, isLoading } = useAllSeasonsMatchups();
   const allSeasonsMatchups = data?.allSeasonsMatchups;
 
-  const stats = useMemo(() => {
+  const teamStats = useMemo(() => {
     if (!allSeasonsMatchups || !rosterId) return null;
     return transformHistoricalStatsForSingleTeam(allSeasonsMatchups, rosterId);
   }, [allSeasonsMatchups, rosterId]);
 
-  return { stats, isLoading };
+  return { teamStats, isLoading };
 };
