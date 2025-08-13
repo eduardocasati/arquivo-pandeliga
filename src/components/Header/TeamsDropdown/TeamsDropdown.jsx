@@ -17,7 +17,11 @@ export const TeamsDropdown = ({ setIsDropdownOpen }) => {
     >
       <ul>
         {sortedTeams.map((team) => (
-          <Link to={`/$teamId`} params={{ teamId: team.team_id }}>
+          <Link
+            to={`/$teamId`}
+            params={{ teamId: team.team_id }}
+            key={team.team_id}
+          >
             <li
               key={team.team_id}
               style={{ '--team-color': `var(--team-${team.team_id})` }}

@@ -14,7 +14,7 @@ import teams from '../../../constants/teams';
 export const NavDrawer = () => {
   const matchRoute = useMatchRoute();
   const isTeamRouteActive = teams.some((team) =>
-    matchRoute({ to: `/${team.display_name}`, fuzzy: false }),
+    matchRoute({ to: `/${team.team_id}`, fuzzy: false }),
   );
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
   const [isTeamlistOpen, setIsTeamlistOpen] = useState(false);
@@ -43,7 +43,7 @@ export const NavDrawer = () => {
 
       <div
         className={`header__mobile-menu${isNavDrawerOpen ? ' mobile-menu--open' : ''}`}
-        aria-hidden={!isNavDrawerOpen}
+        inert={!isNavDrawerOpen}
       >
         <div className="mobile-menu-nav__top">
           <img src={logoArquivoPandeliga} alt="Arquivo Pandeliga Logo" />
@@ -62,6 +62,7 @@ export const NavDrawer = () => {
               to={to}
               label={label}
               className={'header__mobile-nav-item'}
+              onClick={handleNavDrawerToggle}
             />
           ))}
           <li
@@ -80,11 +81,24 @@ export const NavDrawer = () => {
         >
           <ul>
             {sortedTeams.map((team) => {
+              const isTeamActive = matchRoute({
+                to: `/${team.team_id}`,
+                fuzzy: false,
+              });
+
               return (
-                <Link to={`/$teamId`} params={{ teamId: team.team_id }}>
+                <Link
+                  to={`/$teamId`}
+                  params={{ teamId: team.team_id }}
+                  key={team.team_id}
+                >
                   <li
                     style={{ '--team-color': `var(--team-${team.team_id})` }}
                     key={team.team_id}
+                    onClick={handleNavDrawerToggle}
+                    className={
+                      isTeamActive ? 'mobile-team-list--team-active' : ''
+                    }
                   >
                     {team.display_name}
                   </li>

@@ -2,7 +2,7 @@ import { useMatchRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { FaTrophy } from 'react-icons/fa';
 
-import { DraftCountdown } from '..';
+import { DraftCountdown, LoadingSpinner } from '..';
 import { NavDrawer } from './NavDrawer/NavDrawer';
 import { NavLink } from './NavLink/NavLink';
 import { TeamsDropdown } from './TeamsDropdown/TeamsDropdown';
@@ -11,21 +11,19 @@ import './Header.css';
 
 import { useChampionData } from '../../hooks/useChampionData';
 
-import { navItems } from '../../constants/navItems';
-
-import { LoadingSpinner } from '..';
 import {
   logoArquivoPandeliga,
   logoSleeper,
   logoSleeperSmall,
 } from '../../constants/images';
+import { navItems } from '../../constants/navItems';
 import teams from '../../constants/teams';
 
 export const Header = () => {
   const matchRoute = useMatchRoute();
   const isHomeRouteActive = matchRoute({ to: '/', fuzzy: false });
   const isTeamRouteActive = teams.some((team) =>
-    matchRoute({ to: `/${team.display_name}`, fuzzy: false }),
+    matchRoute({ to: `/${team.team_id}`, fuzzy: false }),
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { championData, isLoading } = useChampionData();
