@@ -12,7 +12,7 @@
 }
 
 .team-page__title img {
-  width: clamp(64px, 10vw, 160px);
+  width: clamp(64px, 10vw, 136px);
 }
 
 .team-page__title h1 {

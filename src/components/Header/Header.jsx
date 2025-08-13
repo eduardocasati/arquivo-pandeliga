@@ -79,7 +79,7 @@ export const Header = () => {
           {/* LOGO SLEEPER VERSÃO MOBILE */}
           <div className="header__sleeper-logo-mobile">
             <a
-              href="https://sleeper.com/leagues/1181787756111253504/predraft"
+              href="sleeper://league/1181787756111253504"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -121,7 +121,7 @@ export const Header = () => {
 
           <div className="header__sleeper-logo">
             <a
-              href="https://sleeper.com/leagues/1181787756111253504/predraft"
+              href="https://sleeper.com/leagues/1181787756111253504/"
               target="_blank"
               rel="noopener noreferrer"
             >
