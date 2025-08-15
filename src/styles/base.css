@@ -43,27 +43,27 @@ h3 {
 }
 
 .quarterback--text {
-  color: var(--position-QB);
+  color: var(--position-QB) !important;
 }
 
 .runningback--text {
-  color: var(--position-RB);
+  color: var(--position-RB) !important;
 }
 
 .widereceiver--text {
-  color: var(--position-WR);
+  color: var(--position-WR) !important;
 }
 
 .tightend--text {
-  color: var(--position-TE);
+  color: var(--position-TE) !important;
 }
 
 .kicker--text {
-  color: var(--position-K);
+  color: var(--position-K) !important;
 }
 
 .defense--text {
-  color: var(--position-DEF);
+  color: var(--position-DEF) !important;
 }
 
 .loading-spinner--fullscreen {

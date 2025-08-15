@@ -1,25 +1,11 @@
 import { useMemo } from 'react';
 
+import { abbreviateName } from '../../../utils/formatters/playerNameFormat';
 import { getFromLocalStorage } from '../../../utils/localStorage/localStorageUtils';
 
 import { STORAGE_KEYS } from '../../../config/storageKeys';
 
 const { ALL_PLAYERS_DATA } = STORAGE_KEYS;
-
-const abbreviateName = (fullName) => {
-  if (typeof fullName !== 'string') return '';
-
-  const parts = fullName.trim().split(/\s+/);
-
-  if (parts.length === 1) {
-    return parts[0];
-  }
-
-  const firstInitial = parts[0][0].toUpperCase();
-  const lastName = parts.slice(1).join(' ');
-
-  return `${firstInitial}. ${lastName}`;
-};
 
 export const usePlayerNames = (starters = []) => {
   const allPlayersData = getFromLocalStorage(ALL_PLAYERS_DATA);
