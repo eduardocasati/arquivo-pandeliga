@@ -266,7 +266,7 @@ export const TeamPage = () => {
                 </div>
                 <div className="stats-card__row">
                   <div className="stats-card__label">
-                    <h3>Melhor temporada</h3>
+                    <h3>Melhor temporada*</h3>
                   </div>
                   <div className="stats-card__value">
                     <h3>{teamStats.best_season.record}</h3>
@@ -275,7 +275,7 @@ export const TeamPage = () => {
                 </div>
                 <div className="stats-card__row">
                   <div className="stats-card__label">
-                    <h3>Pior temporada</h3>
+                    <h3>Pior temporada*</h3>
                   </div>
                   <div className="stats-card__value">
                     <h3>{teamStats.worst_season.record}</h3>
