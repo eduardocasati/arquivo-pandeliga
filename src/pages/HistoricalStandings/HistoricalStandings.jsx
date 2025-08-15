@@ -59,7 +59,6 @@ export const HistoricalStandings = () => {
                   {teamStatsArray.map((team) => (
                     <tr key={team.roster_id}>
                       <td>
-                        {/* style={{ '--team-color': `var(--team-${team.team_id})` }} */}
                         <img
                           src={findTeamImage(team.roster_id)}
                           alt={`${findTeamName(team.roster_id)} Logo`}

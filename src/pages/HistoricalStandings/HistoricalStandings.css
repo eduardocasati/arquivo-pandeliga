@@ -12,17 +12,19 @@
   margin: 0 auto;
   margin-bottom: 36px;
   border-collapse: separate;
-  /* border-radius: 4px; */
+  border-radius: 8px;
   border-spacing: 0;
   overflow: hidden;
+  border: 1px solid var(--color-accent-gray);
 }
 
 .historical-standings__table table thead th {
   padding: 10px 0;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-text-secondary);
   font-family: var(--font-base);
+  color: #ffffff7e;
+  background-color: var(--color-accent-gray);
 }
 
 .historical-standings__table table td:not(:first-child) {
@@ -31,11 +33,12 @@
 
 .historical-standings__table table td,
 .historical-standings__table table th {
-  padding: 6px 16px;
+  height: 48px;
+  padding: 0 24px;
 }
 
-.historical-standings__table table th {
-  background-color: var(--color-background-main);
+.historical-standings__table table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color-accent-gray);
 }
 
 .historical-standings__table table tr:nth-child(even) {
@@ -46,13 +49,9 @@
   background-color: var(--color-surface-secondary);
 }
 
-.historical-standings__table table td {
-  border-left: 4px solid var(--team-color);
-}
-
 .historical-standings__table table td img {
   width: 32px;
-  margin-right: 4px;
+  margin-right: 8px;
   vertical-align: middle;
 }
 
