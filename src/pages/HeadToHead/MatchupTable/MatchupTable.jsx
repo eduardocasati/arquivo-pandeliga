@@ -152,8 +152,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row  matchup-row--odd"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -195,8 +194,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--even"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -238,8 +236,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--odd"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -281,8 +278,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--even"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -324,8 +320,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--odd"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -367,8 +362,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--even"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -410,8 +404,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--odd"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -453,8 +446,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--even"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">
@@ -496,8 +488,7 @@ export const MatchupTable = ({
           <div
             className="matchup-row matchup-row--odd"
             style={{
-              borderLeft: `4px solid var(--team-${firstTeamId})`,
-              borderRight: `4px solid var(--team-${secondTeamId})`,
+              boxShadow: `-4px 0 0 0 var(--team-${firstTeamId}), 4px 0 0 0 var(--team-${secondTeamId})`,
             }}
           >
             <div className="matchup-player matchup-player--left">

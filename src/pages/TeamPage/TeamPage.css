@@ -19,11 +19,11 @@
 }
 
 .team-page__header img {
-  width: clamp(64px, 10vw, 136px);
+  width: clamp(80px, 10vw, 136px);
 }
 
 .team-page__header h1 {
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
   text-align: center;
 }
 
@@ -57,8 +57,11 @@
   background-color: var(--color-surface-secondary);
   font-size: 0.9rem;
   font-style: italic;
-  font-weight: 600;
   border-left: 6px solid var(--team-color);
+}
+
+.stats-card__header h2 {
+  font-weight: 700;
 }
 
 .stats-card__body {
@@ -73,13 +76,13 @@
   padding: 0 24px;
   border-top: 1px solid var(--color-surface-secondary);
   font-family: var(--font-accent-primary);
-  font-weight: 600;
   text-transform: uppercase;
   position: relative;
 }
 
-.stats-card__label {
-  font-size: 0.9rem;
+.stats-card__label h3 {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .stats-card__label span {
@@ -87,8 +90,8 @@
   font-weight: 500;
 }
 
-.stats-card__value {
-  font-size: 1.2rem;
+.stats-card__value h3 {
+  font-size: 1.4rem;
   font-style: italic;
   color: var(--color-text-accent-green);
   text-align: right;
@@ -238,7 +241,10 @@
     font-size: 0.8rem;
   }
 
-  .stats-card__label,
+  .stats-card__label h3 {
+    font-size: 0.9rem;
+  }
+
   .stats-card__player-name {
     font-size: 0.8rem;
   }
@@ -247,14 +253,20 @@
     font-size: 0.6rem;
   }
 
-  .stats-card__value,
+  .stats-card__value h3 {
+    font-size: 1.3rem;
+  }
+
   .stats-card__player-points {
     font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 350px) {
-  .stats-card__label,
+  .stats-card__label h3 {
+    font-size: 0.8rem;
+  }
+
   .stats-card__player-name {
     font-size: 0.7rem;
   }
@@ -263,7 +275,10 @@
     font-size: 0.5rem;
   }
 
-  .stats-card__value,
+  .stats-card__value h3 {
+    font-size: 1.2rem;
+  }
+
   .stats-card__player-points {
     font-size: 1rem;
   }
