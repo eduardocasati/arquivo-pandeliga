@@ -22,9 +22,11 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 <!-- O Arquivo Pandeliga reúne diversos recursos para explorar e analisar o histórico da liga. Abaixo, estão descritas as funcionalidades da aplicação. -->
 
-- **_Confrontos Diretos:_** página que permite comparar dois times, exibindo o histórico completo de confrontos, incluindo número de vitórias, pontuação acumulada e resultado de cada confronto.
+- **_Confrontos Diretos:_** compara dois times, mostrando o histórico completo de confrontos, com número de vitórias, pontuação acumulada e resultado de cada partida.
 
-- **_Classificação Histórica:_** página que apresenta as estatísticas acumuladas de cada time, como pontos totais, número de vitórias, derrotas e outras métricas relevantes.
+- **_Classificação Histórica:_** reúne as estatísticas acumuladas de cada time, como pontos totais, vitórias, derrotas e outras métricas relevantes.
+
+- **_Times:_** detalha informações individuais de cada time, incluindo dados adicionais não exibidos na "Classificação Histórica".
 
 <!-- - **RECORDES:**
 
