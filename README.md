@@ -7,8 +7,6 @@
 
 [![🌐 Acesse o Site](https://img.shields.io/badge/🌐_Acesse_o_Site-arquivo--pandeliga.vercel.app-292c31?style=for-the-badge)](https://arquivo-pandeliga.vercel.app/)
 
-</br>
-
 ### Índice
 
 - [Sobre](#sobre)
