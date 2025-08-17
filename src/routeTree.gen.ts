@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ConfrontosRouteImport } from './routes/confrontos'
 import { Route as ClassificacaoRouteImport } from './routes/classificacao'
+import { Route as CampeoesRouteImport } from './routes/campeoes'
 import { Route as TeamIdRouteImport } from './routes/$teamId'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const ConfrontosRoute = ConfrontosRouteImport.update({
 const ClassificacaoRoute = ClassificacaoRouteImport.update({
   id: '/classificacao',
   path: '/classificacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampeoesRoute = CampeoesRouteImport.update({
+  id: '/campeoes',
+  path: '/campeoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamIdRoute = TeamIdRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$teamId': typeof TeamIdRoute
+  '/campeoes': typeof CampeoesRoute
   '/classificacao': typeof ClassificacaoRoute
   '/confrontos': typeof ConfrontosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$teamId': typeof TeamIdRoute
+  '/campeoes': typeof CampeoesRoute
   '/classificacao': typeof ClassificacaoRoute
   '/confrontos': typeof ConfrontosRoute
 }
@@ -51,20 +59,28 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$teamId': typeof TeamIdRoute
+  '/campeoes': typeof CampeoesRoute
   '/classificacao': typeof ClassificacaoRoute
   '/confrontos': typeof ConfrontosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$teamId' | '/classificacao' | '/confrontos'
+  fullPaths: '/' | '/$teamId' | '/campeoes' | '/classificacao' | '/confrontos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$teamId' | '/classificacao' | '/confrontos'
-  id: '__root__' | '/' | '/$teamId' | '/classificacao' | '/confrontos'
+  to: '/' | '/$teamId' | '/campeoes' | '/classificacao' | '/confrontos'
+  id:
+    | '__root__'
+    | '/'
+    | '/$teamId'
+    | '/campeoes'
+    | '/classificacao'
+    | '/confrontos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   TeamIdRoute: typeof TeamIdRoute
+  CampeoesRoute: typeof CampeoesRoute
   ClassificacaoRoute: typeof ClassificacaoRoute
   ConfrontosRoute: typeof ConfrontosRoute
 }
@@ -83,6 +99,13 @@ declare module '@tanstack/react-router' {
       path: '/classificacao'
       fullPath: '/classificacao'
       preLoaderRoute: typeof ClassificacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campeoes': {
+      id: '/campeoes'
+      path: '/campeoes'
+      fullPath: '/campeoes'
+      preLoaderRoute: typeof CampeoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$teamId': {
@@ -105,6 +128,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   TeamIdRoute: TeamIdRoute,
+  CampeoesRoute: CampeoesRoute,
   ClassificacaoRoute: ClassificacaoRoute,
   ConfrontosRoute: ConfrontosRoute,
 }

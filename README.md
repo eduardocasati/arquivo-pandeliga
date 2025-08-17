@@ -26,6 +26,8 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - **_Times:_** detalha informações individuais de cada time, incluindo dados adicionais não exibidos na "Classificação Histórica".
 
+- **_Campeões:_** lista contendo todos os campeões da liga.
+
 ## Roadmap
 
 ### Na fila

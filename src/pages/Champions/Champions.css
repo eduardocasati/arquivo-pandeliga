@@ -1,0 +1,70 @@
+.champions-page {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 1186px;
+}
+
+.champions-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.champions-page__header h1 {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  text-align: center;
+}
+
+.champions-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.champion-list-card {
+  height: fit-content;
+  width: 360px;
+  max-width: 86dvw;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-surface-secondary);
+}
+
+.champion-list-card__header {
+  height: 72px;
+  padding: 22px 24px;
+  background-color: var(--color-surface-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+  border-left: 6px solid var(--team-color);
+}
+
+.champion-list-card__body {
+  background-color: var(--color-surface-primary);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.champion-list-card__body h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.champion-list-card__body img {
+  width: 160px;
+}
+
+@media screen and (max-width: 756px) {
+  .champions-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

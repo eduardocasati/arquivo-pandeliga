@@ -1,9 +1,10 @@
 import { Header } from '../../components';
 import { Route } from '../../routes/$teamId';
 
+import { LoadingSpinner } from '../../components';
+
 import './TeamPage.css';
 
-import { LoadingSpinner } from '../../components';
 import { adjustHighestPositionsWithFlex } from '../../utils/adjustHighestPositionsWithFlex.js';
 import { getPlayerImageUrl } from '../../utils/assets/playerImages.js';
 import { formatToBRDecimal } from '../../utils/formatters/numberFormat.js';
