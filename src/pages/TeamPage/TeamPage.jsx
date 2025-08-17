@@ -30,9 +30,9 @@ export const TeamPage = () => {
 
   const extraTeamStats = calculateTeamStats(activeTeam.history);
 
-  const adjustedHighestPositionsPoints = adjustHighestPositionsWithFlex(
-    teamStats.highest_position_points,
-  );
+  const adjustedHighestPositionsPoints = teamStats
+    ? adjustHighestPositionsWithFlex(teamStats.highest_position_points)
+    : [];
 
   const findOpponentName = (teamId) => {
     return teams.find((team) => team.roster_id === teamId).display_name;
@@ -84,7 +84,7 @@ export const TeamPage = () => {
                     <h3>Melhor colocação</h3>
                   </div>
                   <div className="stats-card__value">
-                    <h3>{extraTeamStats.best_finish.position}</h3>
+                    <h3>{extraTeamStats.best_finish.position}º</h3>
                     <small>{extraTeamStats.best_finish.year}</small>
                   </div>
                 </div>
