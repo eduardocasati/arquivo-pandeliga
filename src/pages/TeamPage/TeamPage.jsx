@@ -93,7 +93,10 @@ export const TeamPage = () => {
                     <h3>Pior colocação</h3>
                   </div>
                   <div className="stats-card__value">
-                    <h3>{extraTeamStats.worst_finish.position}</h3>
+                    <h3>
+                      {extraTeamStats.worst_finish.position}
+                      {extraTeamStats.worst_finish.position != 'último' && 'º'}
+                    </h3>
                     <small>{extraTeamStats.worst_finish.year}</small>
                   </div>
                 </div>
