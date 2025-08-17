@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useAllSeasonsMatchups } from '../../hooks/useAllSeasonsMatchups';
 import { transformHistoricalStatsForSingleTeam } from '../../utils/transformers/historicalStatsTransformer';
 
