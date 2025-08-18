@@ -13,30 +13,30 @@ import teams from '../../constants/teams';
 export const HistoricalStandings = () => {
   const { statsByTeam, isLoading } = useHistoricalStandings();
   const [sortConfig, setSortConfig] = useState({
-    key: 'winPercentage',
+    key: 'win_percentage',
     direction: 'desc',
   });
 
   const teamStatsArray = Object.entries(statsByTeam).map(
     ([roster_id, stats]) => {
-      const winPercentage = stats.total_games
+      const win_percentage = stats.total_games
         ? (stats.wins / stats.total_games) * 100
         : 0;
 
-      const pointsPerGame = stats.total_games
+      const points_per_game = stats.total_games
         ? stats.total_points / stats.total_games
         : 0;
 
-      const pointsPerSeason = stats.seasons_played
+      const points_per_season = stats.seasons_played
         ? stats.total_points / stats.seasons_played
         : 0;
 
       return {
         roster_id,
         ...stats,
-        winPercentage,
-        pointsPerGame,
-        pointsPerSeason,
+        win_percentage,
+        points_per_game,
+        points_per_season,
       };
     },
   );
@@ -110,20 +110,22 @@ export const HistoricalStandings = () => {
                     D {renderSortIcon('losses')}
                   </th>
                   <th
-                    onClick={() => handleSort('winPercentage')}
+                    onClick={() => handleSort('win_percentage')}
                     className={
-                      sortConfig.key === 'winPercentage' ? 'sorted-column' : ''
+                      sortConfig.key === 'win_percentage' ? 'sorted-column' : ''
                     }
                   >
-                    %V {renderSortIcon('winPercentage')}
+                    %V {renderSortIcon('win_percentage')}
                   </th>
                   <th
-                    onClick={() => handleSort('pointsPerGame')}
+                    onClick={() => handleSort('points_per_game')}
                     className={
-                      sortConfig.key === 'pointsPerGame' ? 'sorted-column' : ''
+                      sortConfig.key === 'points_per_game'
+                        ? 'sorted-column'
+                        : ''
                     }
                   >
-                    PPJ {renderSortIcon('pointsPerGame')}
+                    PPJ {renderSortIcon('points_per_game')}
                   </th>
                   <th
                     onClick={() => handleSort('total_points')}
@@ -134,14 +136,14 @@ export const HistoricalStandings = () => {
                     PF {renderSortIcon('total_points')}
                   </th>
                   <th
-                    onClick={() => handleSort('pointsPerSeason')}
+                    onClick={() => handleSort('points_per_season')}
                     className={
-                      sortConfig.key === 'pointsPerSeason'
+                      sortConfig.key === 'points_per_season'
                         ? 'sorted-column'
                         : ''
                     }
                   >
-                    PPT {renderSortIcon('pointsPerSeason')}
+                    PPT {renderSortIcon('points_per_season')}
                   </th>
                 </tr>
               </thead>
@@ -171,21 +173,21 @@ export const HistoricalStandings = () => {
                     </td>
                     <td
                       className={
-                        sortConfig.key === 'winPercentage'
+                        sortConfig.key === 'win_percentage'
                           ? 'sorted-column'
                           : ''
                       }
                     >
-                      {formatToBRDecimal(team.winPercentage) + '%'}
+                      {formatToBRDecimal(team.win_percentage) + '%'}
                     </td>
                     <td
                       className={
-                        sortConfig.key === 'pointsPerGame'
+                        sortConfig.key === 'points_per_game'
                           ? 'sorted-column'
                           : ''
                       }
                     >
-                      {formatToBRDecimal(team.pointsPerGame)}
+                      {formatToBRDecimal(team.points_per_game)}
                     </td>
                     <td
                       className={
@@ -196,12 +198,12 @@ export const HistoricalStandings = () => {
                     </td>
                     <td
                       className={
-                        sortConfig.key === 'pointsPerSeason'
+                        sortConfig.key === 'points_per_season'
                           ? 'sorted-column'
                           : ''
                       }
                     >
-                      {formatToBRDecimal(team.pointsPerSeason)}
+                      {formatToBRDecimal(team.points_per_season)}
                     </td>
                   </tr>
                 ))}
