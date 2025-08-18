@@ -55,6 +55,16 @@
   vertical-align: middle;
 }
 
+.sorted-column {
+  border-right: 1px solid var(--color-accent-gray);
+  border-left: 1px solid var(--color-accent-gray);
+  background-color: var(--color-accent-gray);
+}
+
+.historical-standings__table table thead tr th:not(:first-child) {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 740px) {
   .historical-standings__table {
     padding: 0 16px;
