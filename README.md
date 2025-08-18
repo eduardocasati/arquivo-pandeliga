@@ -22,7 +22,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - **_Confrontos Diretos:_** compara dois times, mostrando o histórico completo de confrontos, com número de vitórias, pontuação acumulada e resultado de cada partida.
 
-- **_Classificação Histórica:_** reúne as estatísticas acumuladas de cada time, como pontos totais, vitórias, derrotas e outras métricas relevantes.
+- **_Classificação Histórica:_** reúne em uma tabela as estatísticas acumuladas de cada time, como pontos totais, vitórias, derrotas e outras métricas relevantes. Permite ao usuário ordenar as colunas de forma crescente ou decrescente.
 
 - **_Times:_** detalha informações individuais de cada time, incluindo dados adicionais não exibidos na "Classificação Histórica".
 
