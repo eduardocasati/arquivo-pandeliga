@@ -57,7 +57,7 @@ export function transformAllTeamsHistoricalStats(allSeasonsMatchups) {
 
 export function transformHistoricalStatsForSingleTeam(
   allSeasonsMatchups,
-  rosterIdToAnalyze,
+  rosterId,
 ) {
   const stats = {
     total_points: 0,
@@ -95,7 +95,7 @@ export function transformHistoricalStatsForSingleTeam(
 
     matchups.forEach((week, weekIndex) => {
       const teamMatchup = week.find(
-        (m) => m.roster_id === rosterIdToAnalyze && m.matchup_id != null,
+        (m) => m.roster_id === rosterId && m.matchup_id != null,
       );
       if (!teamMatchup) return;
 
@@ -111,8 +111,7 @@ export function transformHistoricalStatsForSingleTeam(
       const points = teamMatchup.points;
       const opponent = week.find(
         (m) =>
-          m.matchup_id === teamMatchup.matchup_id &&
-          m.roster_id !== rosterIdToAnalyze,
+          m.matchup_id === teamMatchup.matchup_id && m.roster_id !== rosterId,
       );
 
       if (
@@ -155,31 +154,16 @@ export function transformHistoricalStatsForSingleTeam(
         if (results.length !== 2) return;
 
         const [teamA, teamB] = results;
-        if (
-          teamA.roster_id === rosterIdToAnalyze ||
-          teamB.roster_id === rosterIdToAnalyze
-        ) {
-          if (
-            teamA.roster_id === rosterIdToAnalyze &&
-            teamA.points > teamB.points
-          )
+        if (teamA.roster_id === rosterId || teamB.roster_id === rosterId) {
+          if (teamA.roster_id === rosterId && teamA.points > teamB.points)
             stats.wins += 1;
-          else if (
-            teamB.roster_id === rosterIdToAnalyze &&
-            teamB.points > teamA.points
-          )
+          else if (teamB.roster_id === rosterId && teamB.points > teamA.points)
             stats.wins += 1;
           else stats.losses += 1;
 
-          if (
-            teamA.roster_id === rosterIdToAnalyze &&
-            teamA.points > teamB.points
-          )
+          if (teamA.roster_id === rosterId && teamA.points > teamB.points)
             seasonWins += 1;
-          else if (
-            teamB.roster_id === rosterIdToAnalyze &&
-            teamB.points > teamA.points
-          )
+          else if (teamB.roster_id === rosterId && teamB.points > teamA.points)
             seasonWins += 1;
           else seasonLosses += 1;
         }
@@ -258,7 +242,7 @@ export function transformHistoricalStatsForSingleTeam(
     // maiores pontuações por posição
     matchups.forEach((week, weekIndex) => {
       const teamMatchup = week.find(
-        (m) => m.roster_id === rosterIdToAnalyze && m.matchup_id != null,
+        (m) => m.roster_id === rosterId && m.matchup_id != null,
       );
       if (!teamMatchup) return;
 
@@ -275,8 +259,7 @@ export function transformHistoricalStatsForSingleTeam(
 
       const opponent = week.find(
         (m) =>
-          m.matchup_id === teamMatchup.matchup_id &&
-          m.roster_id !== rosterIdToAnalyze,
+          m.matchup_id === teamMatchup.matchup_id && m.roster_id !== rosterId,
       );
 
       Object.entries(posPoints).forEach(([pos, points]) => {
