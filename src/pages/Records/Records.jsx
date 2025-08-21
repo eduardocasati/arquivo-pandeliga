@@ -66,8 +66,8 @@ export const Records = () => {
                     <div className="record-section__value">
                       <h3>{formatToBRDecimal(score.points)}</h3>
                       <small>
-                        vs. {findTeamName(score.opponent_id)}, {score.season} -{' '}
-                        {score.week}
+                        vs. {findTeamName(score.opponent_id)}, {score.season} -
+                        semana {score.week}
                       </small>
                     </div>
                   </li>
@@ -98,8 +98,8 @@ export const Records = () => {
                     <div className="record-section__value">
                       <h3>{formatToBRDecimal(score.points)}</h3>
                       <small>
-                        vs. {findTeamName(score.opponent_id)}, {score.season} -{' '}
-                        {score.week}
+                        vs. {findTeamName(score.opponent_id)}, {score.season} -
+                        semana {score.week}
                       </small>
                     </div>
                   </li>
