@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RecordesRouteImport } from './routes/recordes'
 import { Route as ConfrontosRouteImport } from './routes/confrontos'
 import { Route as ClassificacaoRouteImport } from './routes/classificacao'
 import { Route as CampeoesRouteImport } from './routes/campeoes'
 import { Route as TeamIdRouteImport } from './routes/$teamId'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RecordesRoute = RecordesRouteImport.update({
+  id: '/recordes',
+  path: '/recordes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConfrontosRoute = ConfrontosRouteImport.update({
   id: '/confrontos',
   path: '/confrontos',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/campeoes': typeof CampeoesRoute
   '/classificacao': typeof ClassificacaoRoute
   '/confrontos': typeof ConfrontosRoute
+  '/recordes': typeof RecordesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/campeoes': typeof CampeoesRoute
   '/classificacao': typeof ClassificacaoRoute
   '/confrontos': typeof ConfrontosRoute
+  '/recordes': typeof RecordesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,12 +70,25 @@ export interface FileRoutesById {
   '/campeoes': typeof CampeoesRoute
   '/classificacao': typeof ClassificacaoRoute
   '/confrontos': typeof ConfrontosRoute
+  '/recordes': typeof RecordesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$teamId' | '/campeoes' | '/classificacao' | '/confrontos'
+  fullPaths:
+    | '/'
+    | '/$teamId'
+    | '/campeoes'
+    | '/classificacao'
+    | '/confrontos'
+    | '/recordes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$teamId' | '/campeoes' | '/classificacao' | '/confrontos'
+  to:
+    | '/'
+    | '/$teamId'
+    | '/campeoes'
+    | '/classificacao'
+    | '/confrontos'
+    | '/recordes'
   id:
     | '__root__'
     | '/'
@@ -75,6 +96,7 @@ export interface FileRouteTypes {
     | '/campeoes'
     | '/classificacao'
     | '/confrontos'
+    | '/recordes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -83,10 +105,18 @@ export interface RootRouteChildren {
   CampeoesRoute: typeof CampeoesRoute
   ClassificacaoRoute: typeof ClassificacaoRoute
   ConfrontosRoute: typeof ConfrontosRoute
+  RecordesRoute: typeof RecordesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/recordes': {
+      id: '/recordes'
+      path: '/recordes'
+      fullPath: '/recordes'
+      preLoaderRoute: typeof RecordesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/confrontos': {
       id: '/confrontos'
       path: '/confrontos'
@@ -131,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampeoesRoute: CampeoesRoute,
   ClassificacaoRoute: ClassificacaoRoute,
   ConfrontosRoute: ConfrontosRoute,
+  RecordesRoute: RecordesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

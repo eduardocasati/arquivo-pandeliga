@@ -1,0 +1,185 @@
+.records-page {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 1186px;
+}
+
+.records-page__regular-season-obs {
+  padding-top: 32px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.records-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.records-page__header h1 {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  text-align: center;
+}
+
+.records-page__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  /* border: 1px solid lime; */
+}
+
+.record-section {
+  height: fit-content;
+  /* width: calc(50% - 16px); */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-surface-secondary);
+}
+
+.record-section__header {
+  height: 72px;
+  padding: 22px 24px;
+  background-color: var(--color-surface-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+  border-left: 6px solid var(--color-accent-pink);
+}
+
+.record-section__body {
+  background-color: var(--color-surface-primary);
+}
+
+.record-section__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 24px;
+  border-top: 1px solid var(--color-surface-secondary);
+  font-family: var(--font-accent-primary);
+  text-transform: uppercase;
+  position: relative;
+}
+
+.record-section__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.record-section__label span {
+  /* color: var(--color-text-secondary); */
+  color: #ffffff83;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.record-section__label img {
+  width: 32px;
+}
+
+.record-section__label h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  /* color: var(--team-color); */
+  text-transform: capitalize;
+}
+
+.record-section__value h3 {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-text-accent-green);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.record-section__row small {
+  position: absolute;
+  right: 24px;
+  bottom: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  text-transform: capitalize !important;
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+@media screen and (max-width: 1186px) {
+  .records-page__content {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 90dvw;
+  }
+
+  .record-section {
+    max-width: 90dvw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .records-page__regular-season-obs {
+    padding-top: 24px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .record-section__header {
+    height: fit-content;
+    font-size: 0.8rem;
+  }
+
+  .records-page__content {
+    gap: 16px;
+  }
+
+  .record-section__label img {
+    width: 24px;
+  }
+
+  .record-section__label h3 {
+    font-size: 1.1rem;
+  }
+
+  .record-section__value h3 {
+    font-size: 1.2rem;
+  }
+
+  .record-section__row {
+    padding: 0 24px 0 16px;
+  }
+
+  .record-section__row:last-child {
+    padding: 0 24px 0 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .record-section__label h3 {
+    font-size: 0.8rem;
+  }
+
+  .record-section__value h3 {
+    font-size: 1rem;
+  }
+
+  .record-section__row small,
+  .record-section__match-details {
+    font-size: 0.6rem;
+  }
+
+  .record-section__label img {
+    width: 20px;
+  }
+
+  .record-section__row small {
+    bottom: 12px;
+  }
+}

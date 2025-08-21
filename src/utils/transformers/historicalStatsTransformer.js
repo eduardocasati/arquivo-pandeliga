@@ -1,7 +1,7 @@
-export function transformAllTeamsHistoricalStats(allSeasonsMatchups) {
+export function transformAllTeamsHistoricalStats(seasonData) {
   const statsByTeam = {};
 
-  allSeasonsMatchups.forEach(({ season, matchups }) => {
+  seasonData.forEach(({ season, matchups }) => {
     const teamsPlayedThisSeason = new Set();
 
     // percorre as semanas, ignorando as 15, 16, 17 (index 14,15,16)
@@ -55,10 +55,7 @@ export function transformAllTeamsHistoricalStats(allSeasonsMatchups) {
   return statsByTeam;
 }
 
-export function transformHistoricalStatsForSingleTeam(
-  allSeasonsMatchups,
-  rosterId,
-) {
+export function transformHistoricalStatsForSingleTeam(seasonData, rosterId) {
   const stats = {
     total_points: 0,
     total_games: 0,
@@ -87,7 +84,7 @@ export function transformHistoricalStatsForSingleTeam(
     worst_season: null,
   };
 
-  allSeasonsMatchups.forEach(({ season, matchups }) => {
+  seasonData.forEach(({ season, matchups }) => {
     let seasonPoints = 0;
     let seasonWins = 0;
     let seasonLosses = 0;
