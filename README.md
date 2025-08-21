@@ -24,9 +24,11 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - **_Classificação Histórica:_** reúne em uma tabela as estatísticas acumuladas de cada time, como pontos totais, vitórias, derrotas e outras métricas relevantes. Permite ao usuário ordenar as colunas de forma crescente ou decrescente.
 
-- **_Times:_** detalha informações individuais de cada time, incluindo dados adicionais não exibidos na "Classificação Histórica".
+- **_Recordes:_** apresenta os principais feitos da liga.
 
 - **_Campeões:_** lista contendo todos os campeões da liga.
+
+- **_Times:_** detalha informações individuais de cada time, incluindo dados adicionais não exibidos na "Classificação Histórica".
 
 ## Roadmap
 
