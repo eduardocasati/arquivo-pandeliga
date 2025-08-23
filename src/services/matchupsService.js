@@ -58,17 +58,19 @@ export async function getCurrentChampionResults() {
 export async function getAllSeasonsMatchups() {
   const allLeaguesData = await getAllLeagues();
 
-  const allSeasonsMatchupsPromises = allLeaguesData.map(async (league) => {
-    const seasonMatchups = await getSeasonMatchups(league.league_id);
-    return {
-      season: league.season,
-      matchups: seasonMatchups,
-    };
-  });
+  const currentSeason = new Date().getFullYear();
 
-  // const allSeasonsMatchups = await Promise.all(allSeasonsMatchupsPromises);
+  const allSeasonsMatchupsPromises = allLeaguesData
+    .filter((league) => Number(league.season) !== currentSeason) // ignora o ano da temporada corrente
+    .map(async (league) => {
+      const seasonMatchups = await getSeasonMatchups(league.league_id);
+      return {
+        season: league.season,
+        matchups: seasonMatchups,
+      };
+    });
+
   const apiMatchups = await Promise.all(allSeasonsMatchupsPromises);
 
-  // return allSeasonsMatchups;
   return mergeStaticWithApiData(apiMatchups);
 }
