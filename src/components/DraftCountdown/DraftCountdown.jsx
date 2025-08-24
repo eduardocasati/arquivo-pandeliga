@@ -14,6 +14,7 @@ import { useDraftCountdown } from './useDraftCountdown';
 export const DraftCountdown = React.memo(({ variant, compact = false }) => {
   const targetDate = getTargetDate(); // Importa de getTargetDate qual é a data e horário do draft
   const { days, hours, minutes, seconds } = useDraftCountdown(targetDate); // Passa para o custom hook useDraftCountdown a data do draft
+  console.log('Target Date:', targetDate, targetDate.getTime());
 
   // essa função controla duas coisas:
   // se compact for true, ao invés de mostrar Dia/Hora/Minuto/Segundo, mostra D/H/M/S
@@ -30,7 +31,7 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
               <FaHourglassHalf />
             </span>
           )}
-          O draft de 2025 começa em
+          {/* O draft de 2025 começa em */}A temporada de 2025 começa em
         </h1>
       </div>
       <div className={`${variant}__draft-countdown-numbers`}>

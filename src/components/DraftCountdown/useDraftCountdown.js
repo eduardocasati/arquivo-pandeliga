@@ -1,7 +1,5 @@
-// Custom hook que lida com o cálculo de quanto tempo falta para o draft da liga
 import { useEffect, useState } from 'react';
 
-// Faz o número sempre ter no mínimo dois dígitos
 const padNumber = (number) => {
   return number.toString().padStart(2, '0');
 };
