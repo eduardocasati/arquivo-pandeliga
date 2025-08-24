@@ -6,9 +6,11 @@
 }
 
 .records-page__regular-season-obs {
-  padding-top: 32px;
+  margin: 0 auto;
+  margin-top: 40px;
   font-size: 0.9rem;
   width: 100%;
+  max-width: 1186px;
 }
 
 .records-page__header {
@@ -73,7 +75,6 @@
 }
 
 .record-section__label span {
-  /* color: var(--color-text-secondary); */
   color: #ffffff83;
   font-weight: 500;
   font-size: clamp(0.8rem, 2.5vw, 0.9rem);
@@ -143,10 +144,95 @@
   color: var(--color-text-accent-pink);
 }
 
+.record-section__row--matchup > .record-section__value > small {
+  bottom: 16px;
+}
+
+.record-section__row--player {
+  padding-block: 8px !important;
+  height: auto;
+}
+
+.record-section__player-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.record-section__player-avatar img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  display: block;
+}
+
+.record-section__player-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-accent-primary);
+  padding-left: 16px;
+  gap: 4px;
+}
+
+.record-section__player-header {
+  display: flex;
+  align-items: center;
+}
+
+.record-section__player-position {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.record-section__player-name h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-left: 8px;
+  text-transform: capitalize;
+}
+
+.record-section__player-points {
+  margin-left: auto;
+}
+
+.record-section__player-points h3 {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-text-accent-green);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.record-section__match-details {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+  text-transform: none;
+}
+
+.record-section__row--player span {
+  color: #ffffff83;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  margin-right: 12px;
+}
+
+.record-section__match-details > p > strong {
+  /* color: var(--team-color); */
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1186px) {
   .records-page__content {
     grid-template-columns: repeat(1, 1fr);
     max-width: 90dvw;
+  }
+
+  .records-page__regular-season-obs {
+    max-width: 90dvw;
+    margin-top: 24px;
   }
 
   .record-section {
@@ -159,6 +245,13 @@
     padding-top: 24px;
     font-size: 0.9rem;
     width: 100%;
+  }
+
+  .record-section__player-avatar img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    display: block;
   }
 }
 
@@ -195,6 +288,10 @@
   .record-section__matchup p {
     margin-left: 6px;
     font-size: 0.6rem;
+  }
+
+  .record-section__player-details {
+    gap: 8px;
   }
 }
 

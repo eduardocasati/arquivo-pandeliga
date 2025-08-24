@@ -6,9 +6,11 @@
 }
 
 .team-page__regular-season-obs {
-  padding-top: 32px;
+  margin: 0 auto;
+  margin-top: 40px;
   font-size: 0.9rem;
   width: 100%;
+  max-width: 736px;
 }
 
 .team-page__header {
@@ -200,6 +202,11 @@
     grid-column: span 1;
     width: 360px;
     max-width: 90dvw;
+  }
+
+  .team-page__regular-season-obs {
+    max-width: 90dvw;
+    margin-top: 24px;
   }
 
   .stats-card--players__wrapper {

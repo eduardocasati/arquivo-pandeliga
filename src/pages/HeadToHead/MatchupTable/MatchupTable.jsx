@@ -5,6 +5,7 @@ import './MatchupTable.css';
 
 import { getPlayerImageUrl } from '../../../utils/assets/playerImages';
 import { getPlayoffRound } from '../../../utils/checks/playoffRounds';
+import { mapTeamName } from '../../../utils/formatters/nflTeamNameFormat';
 import { formatToBRDecimal } from '../../../utils/formatters/numberFormat';
 import { usePlayerNames } from './usePlayerNames';
 
@@ -501,7 +502,7 @@ export const MatchupTable = ({
                   className="matchup-player__image"
                 />
                 <p className="matchup-player__name">
-                  {firstTeamMatchup.starters[8]}
+                  {mapTeamName(firstTeamMatchup.starters[8]).last_name}
                 </p>
               </div>
             </div>
@@ -517,7 +518,7 @@ export const MatchupTable = ({
             <div className="matchup-player matchup-player--right">
               <div className="matchup-player__group">
                 <p className="matchup-player__name">
-                  {secondTeamMatchup.starters[8]}
+                  {mapTeamName(secondTeamMatchup.starters[8]).last_name}
                 </p>
                 <img
                   src={getPlayerImageUrl(

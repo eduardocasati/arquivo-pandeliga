@@ -1,0 +1,38 @@
+const teamMap = {
+  ARI: { first_name: 'Arizona', last_name: 'Cardinals' },
+  ATL: { first_name: 'Atlanta', last_name: 'Falcons' },
+  BAL: { first_name: 'Baltimore', last_name: 'Ravens' },
+  BUF: { first_name: 'Buffalo', last_name: 'Bills' },
+  CAR: { first_name: 'Carolina', last_name: 'Panthers' },
+  CHI: { first_name: 'Chicago', last_name: 'Bears' },
+  CIN: { first_name: 'Cincinnati', last_name: 'Bengals' },
+  CLE: { first_name: 'Cleveland', last_name: 'Browns' },
+  DAL: { first_name: 'Dallas', last_name: 'Cowboys' },
+  DEN: { first_name: 'Denver', last_name: 'Broncos' },
+  DET: { first_name: 'Detroit', last_name: 'Lions' },
+  GB: { first_name: 'Green Bay', last_name: 'Packers' },
+  HOU: { first_name: 'Houston', last_name: 'Texans' },
+  IND: { first_name: 'Indianapolis', last_name: 'Colts' },
+  JAX: { first_name: 'Jacksonville', last_name: 'Jaguars' },
+  KC: { first_name: 'Kansas City', last_name: 'Chiefs' },
+  LV: { first_name: 'Las Vegas', last_name: 'Raiders' },
+  LAC: { first_name: 'Los Angeles', last_name: 'Chargers' },
+  LAR: { first_name: 'Los Angeles', last_name: 'Rams' },
+  MIA: { first_name: 'Miami', last_name: 'Dolphins' },
+  MIN: { first_name: 'Minnesota', last_name: 'Vikings' },
+  NE: { first_name: 'New England', last_name: 'Patriots' },
+  NO: { first_name: 'New Orleans', last_name: 'Saints' },
+  NYG: { first_name: 'New York', last_name: 'Giants' },
+  NYJ: { first_name: 'New York', last_name: 'Jets' },
+  PHI: { first_name: 'Philadelphia', last_name: 'Eagles' },
+  PIT: { first_name: 'Pittsburgh', last_name: 'Steelers' },
+  SF: { first_name: 'San Francisco', last_name: '49ers' },
+  SEA: { first_name: 'Seattle', last_name: 'Seahawks' },
+  TB: { first_name: 'Tampa Bay', last_name: 'Buccaneers' },
+  TEN: { first_name: 'Tennessee', last_name: 'Titans' },
+  WAS: { first_name: 'Washington', last_name: 'Commanders' },
+};
+
+export function mapTeamName(teamId) {
+  return teamMap[teamId];
+}

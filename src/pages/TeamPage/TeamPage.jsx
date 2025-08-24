@@ -7,6 +7,7 @@ import './TeamPage.css';
 
 import { adjustHighestPositionsWithFlex } from '../../utils/adjustHighestPositionsWithFlex.js';
 import { getPlayerImageUrl } from '../../utils/assets/playerImages.js';
+import { mapTeamName } from '../../utils/formatters/nflTeamNameFormat.js';
 import { formatToBRDecimal } from '../../utils/formatters/numberFormat.js';
 import { abbreviateName } from '../../utils/formatters/playerNameFormat.js';
 import { getFromLocalStorage } from '../../utils/localStorage/localStorageUtils.js';
@@ -560,7 +561,13 @@ export const TeamPage = () => {
                         <p>def</p>
                       </div>
                       <div className="stats-card__player-name">
-                        <h3>{adjustedHighestPositionsPoints.def.player_id}</h3>
+                        <h3>
+                          {
+                            mapTeamName(
+                              adjustedHighestPositionsPoints.def.player_id,
+                            ).last_name
+                          }
+                        </h3>
                       </div>
                       <div className="stats-card__player-points">
                         <h3>
@@ -584,10 +591,9 @@ export const TeamPage = () => {
                 </div>
               </div>
             </div>
-
-            <small className="team-page__regular-season-obs">
-              * Inclui apenas temporadas regulares
-            </small>
+          </div>
+          <div className="team-page__regular-season-obs">
+            <small>* Inclui apenas temporadas regulares</small>
           </div>
         </div>
       )}
