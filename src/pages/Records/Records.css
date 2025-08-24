@@ -111,6 +111,38 @@
   font-variant-numeric: tabular-nums;
 }
 
+.record-section__row--matchup {
+  padding-block: 24px !important;
+  height: auto;
+}
+
+.record-section__matchup p {
+  margin-left: 8px;
+  padding-block: 8px;
+  font-size: 0.7rem;
+  /* color: var(--color-text-secondary); */
+}
+
+.matchup__team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.matchup__team--winner h4,
+.matchup__team--loser h4 {
+  font-style: italic;
+  /* opacity: 75%; */
+}
+
+.matchup__team--winner h4 {
+  color: var(--color-text-accent-green);
+}
+
+.matchup__team--loser h4 {
+  color: var(--color-text-accent-pink);
+}
+
 @media screen and (max-width: 1186px) {
   .records-page__content {
     grid-template-columns: repeat(1, 1fr);
@@ -159,6 +191,11 @@
   .record-section__row:last-child {
     padding: 0 24px 0 20px;
   }
+
+  .record-section__matchup p {
+    margin-left: 6px;
+    font-size: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 350px) {
@@ -181,5 +218,15 @@
 
   .record-section__row small {
     bottom: 12px;
+  }
+
+  .record-section__matchup p {
+    margin-left: 6px;
+    font-size: 0.4rem;
+  }
+
+  .matchup__team--loser h4,
+  .matchup__team--winner h4 {
+    font-size: 0.7rem;
   }
 }

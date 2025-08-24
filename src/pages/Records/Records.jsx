@@ -223,6 +223,102 @@ export const Records = () => {
               </ol>
             </div>
 
+            <div className="record-section">
+              <div className="record-section__header">
+                <h2>Maiores Surras</h2>
+              </div>
+              <ol className="record-section__body">
+                {records.top_10_victories.map((victory, index) => (
+                  <li
+                    key={index}
+                    className="record-section__row record-section__row--matchup"
+                  >
+                    <div
+                      className="record-section__label"
+                      // style={{
+                      //   '--team-color': `var(--team-${findTeamId(team.roster_id)})`,
+                      // }}
+                    >
+                      <span>{index + 1}.</span>
+                      <div className="record-section__matchup">
+                        <div className="matchup__team matchup__team--winner">
+                          <img
+                            src={findTeamLogo(victory.winner_id)}
+                            alt={`${findTeamName(victory.winner_id)} Logo`}
+                          />
+                          <h3>{findTeamDisplayName(victory.winner_id)}</h3>
+                          <h4>{formatToBRDecimal(victory.winner_points)}</h4>
+                        </div>
+                        <p>vs.</p>
+                        <div className="matchup__team matchup__team--loser">
+                          <img
+                            src={findTeamLogo(victory.loser_id)}
+                            alt={`${findTeamName(victory.loser_id)} Logo`}
+                          />
+                          <h3>{findTeamDisplayName(victory.loser_id)}</h3>
+                          <h4>{formatToBRDecimal(victory.loser_points)}</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="record-section__value">
+                      <h3>{formatToBRDecimal(victory.margin)}%</h3>
+                      <small>
+                        {victory.season} -semana {victory.week}
+                      </small>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="record-section">
+              <div className="record-section__header">
+                <h2>Vitórias Mais Apertadas</h2>
+              </div>
+              <ol className="record-section__body">
+                {records.low_10_victories.map((victory, index) => (
+                  <li
+                    key={index}
+                    className="record-section__row record-section__row--matchup"
+                  >
+                    <div
+                      className="record-section__label"
+                      // style={{
+                      //   '--team-color': `var(--team-${findTeamId(team.roster_id)})`,
+                      // }}
+                    >
+                      <span>{index + 1}.</span>
+                      <div className="record-section__matchup">
+                        <div className="matchup__team matchup__team--winner">
+                          <img
+                            src={findTeamLogo(victory.winner_id)}
+                            alt={`${findTeamName(victory.winner_id)} Logo`}
+                          />
+                          <h3>{findTeamDisplayName(victory.winner_id)}</h3>
+                          <h4>{formatToBRDecimal(victory.winner_points)}</h4>
+                        </div>
+                        <p>vs.</p>
+                        <div className="matchup__team matchup__team--loser">
+                          <img
+                            src={findTeamLogo(victory.loser_id)}
+                            alt={`${findTeamName(victory.loser_id)} Logo`}
+                          />
+                          <h3>{findTeamDisplayName(victory.loser_id)}</h3>
+                          <h4>{formatToBRDecimal(victory.loser_points)}</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="record-section__value">
+                      <h3>{formatToBRDecimal(victory.margin)}%</h3>
+                      <small>
+                        {victory.season} -semana {victory.week}
+                      </small>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
             <small className="records-page__regular-season-obs">
               * Inclui apenas temporadas regulares
             </small>
