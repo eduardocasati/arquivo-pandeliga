@@ -1,3 +1,4 @@
+// TODO condicional para exibir data do draft, depois data do início da temporada, depois outra coisa
 export function getTargetDate() {
   const timestamp = 1757031600000; // Data em Unix epoch
   return new Date(timestamp); // 1757031600000 = 4 de setembro de 2025, 20:20, fuso-horário de Cuiabá (GMT-4)

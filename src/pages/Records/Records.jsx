@@ -21,17 +21,17 @@ export const Records = () => {
 
   const allPlayers = getFromLocalStorage(ALL_PLAYERS_DATA);
 
-  console.log(records);
+  // console.log(records);
 
   const adjustedTop10Positions = records
     ? adjustPositionTop10WithFlex(records)
     : [];
 
-  console.log(adjustedTop10Positions);
+  // console.log(adjustedTop10Positions);
 
   const top10Players = getTop10Players(adjustedTop10Positions);
 
-  console.log(top10Players);
+  // console.log(top10Players);
 
   const findTeamName = (rosterId) => {
     return teams.find((team) => team.roster_id === rosterId).team_name;

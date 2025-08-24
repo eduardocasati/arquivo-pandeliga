@@ -31,6 +31,7 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
               <FaHourglassHalf />
             </span>
           )}
+          {/* TODO condicional para exibir data do draft, depois data do início da temporada, depois outra coisa */}
           {/* O draft de 2025 começa em */}A temporada de 2025 começa em
         </h1>
       </div>
