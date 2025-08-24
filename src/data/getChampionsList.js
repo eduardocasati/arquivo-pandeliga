@@ -26,6 +26,5 @@ export async function getChampionsList() {
     ...champions,
   };
 
-  console.log(championsList);
   return championsList;
 }
