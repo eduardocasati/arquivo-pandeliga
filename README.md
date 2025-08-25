@@ -35,7 +35,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 ### Na fila
 
 - [ ] Colocar estatísticas dos playoffs na página "Classificação Histórica"
-- [ ] Exibir, nos cards dos jogadores das páginas "Confrontos Diretos", "Recordes" e "Times", o time da NFL pelo qual cada jogador atuava naquela partida
+- [ ] Exibir nos cards dos jogadores o time da NFL pelo qual cada jogador atuava naquela partida
 - [ ] Melhorar a componentização da aplicação (ex: cards dos jogadores)
 - [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
 
