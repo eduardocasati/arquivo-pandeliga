@@ -3,11 +3,9 @@
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1C?style=for-the-badge&logo=javascript&logoColor=black)
 ![React Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000000)
 
-</br>
-
 [![🌐 Acesse o Site](https://img.shields.io/badge/🌐_Acesse_o_Site-arquivo--pandeliga.vercel.app-292c31?style=for-the-badge)](https://arquivo-pandeliga.vercel.app/)
 
-### Índice
+## Índice
 
 - [Sobre](#sobre)
 - [Funcionalidades](#funcionalidades)
@@ -20,15 +18,15 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 ## Funcionalidades
 
-- **_Confrontos Diretos:_** compara dois times, mostrando o histórico completo de confrontos, com número de vitórias, pontuação acumulada e resultado de cada partida.
+- **_Confrontos Diretos_** – histórico completo entre dois times (vitórias, derrotas, pontos, partidas detalhadas, etc.).
 
-- **_Classificação Histórica:_** reúne em uma tabela as estatísticas acumuladas de cada time, como pontos totais, vitórias, derrotas e outras métricas relevantes. Permite ao usuário ordenar as colunas de forma crescente ou decrescente.
+- **_Classificação Histórica_** – tabela dinâmica com estatísticas acumuladas de cada time
 
-- **_Recordes:_** apresenta os principais feitos da liga.
+- **_Recordes_** – principais feitos da liga
 
-- **_Campeões:_** lista contendo todos os campeões da liga.
+- **_Campeões_** – lista de todos os campeões até hoje
 
-- **_Times:_** detalha informações individuais de cada time, incluindo dados adicionais não exibidos na "Classificação Histórica".
+- **_Times_** – detalhes individuais de cada time (com extras além do que é exibido em "Classificação Histórica")
 
 ## Roadmap
 
@@ -45,10 +43,8 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 ---
 
-## Agradecimento
+## Agradecimentos
 
-Thanks to [Nick Melhado](https://github.com/nmelhado) for helping me out with some Sleeper API questions. While I was digging into the project and doing some research for it, I came across Nick's similar (but way more advanced) project on [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/). He was really helpful in answering my questions and gave me a boost in getting this project started.
+[Nick Melhado](https://github.com/nmelhado) – while I was digging into the project and doing some research for it, I came across Nick's similar (but way more advanced) project on [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/). He was really helpful in answering my questions and gave me a boost in getting this project started.
 
-</br>
-
-Um agradecimento especial para a [Giovana Casati](https://www.linkedin.com/in/giovanacasati/) que não cansou (será? 👀) de me ajudar com feedback sobre o design do site.
+[Giovana Casati](https://www.linkedin.com/in/giovanacasati/) – que não cansou (será? 👀) de me ajudar com feedback sobre o design do site.
