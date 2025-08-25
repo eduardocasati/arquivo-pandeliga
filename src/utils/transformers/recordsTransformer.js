@@ -71,8 +71,10 @@ export function transformRecords(seasonsData) {
         const winner = teamA.points > teamB.points ? teamA : teamB;
         const loser = teamA.points > teamB.points ? teamB : teamA;
         if (winner.points !== loser.points) {
+          // o cálculo abaixo usa a mesma fórmula dos reportes semanais do Sleeper para margem de vitória em %:
+          // é calculada como a diferença de pontos entre o vencedor e o perdedor dividida pelos pontos do perdedor, multiplicada por 100
           const diff = winner.points - loser.points;
-          const percDiff = (diff / Math.max(winner.points, loser.points)) * 100;
+          const percDiff = (diff / loser.points) * 100;
           victories.push({
             season,
             week: weekIdx + 1,
