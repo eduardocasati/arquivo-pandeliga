@@ -41,8 +41,6 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - [x] ~~Coletar os dados do fantasy.nfl.com por _web scraping_, devido à indisponibilidade da API oficial, e integrá-los à aplicação~~
 
----
-
 ## Agradecimentos
 
 [Nick Melhado](https://github.com/nmelhado) – while I was digging into the project and doing some research for it, I came across Nick's similar (but way more advanced) project on [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/). He was really helpful in answering my questions and gave me a boost in getting this project started.
