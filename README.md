@@ -36,6 +36,7 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 - [ ] Colocar estatísticas dos playoffs na página "Classificação Histórica"
 - [ ] Exibir, nos cards dos jogadores das páginas "Confrontos Diretos", "Recordes" e "Times", o time da NFL pelo qual cada jogador atuava naquela partida
+- [ ] Melhorar a componentização da aplicação (ex: cards dos jogadores)
 - [ ] Criar preenchimento dinâmico de dados da liga e dos times para utilizar o site com outras ligas
 
 ### Concluído
@@ -45,8 +46,6 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 ---
 
 ## Agradecimento
-
-<!-- [Nick Melhado](https://github.com/nmelhado) por me ajudar com algumas dicas de como otimizar a busca dos dados na API do Sleeper. Enquanto eu estava estudando e fazendo pesquisas para o projeto, me deparei com um projeto semelhante (mas muito mais avançado) do Nick no [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/), e ele foi muito solícito em responder minhas dúvidas e me ajudar. -->
 
 Thanks to [Nick Melhado](https://github.com/nmelhado) for helping me out with some Sleeper API questions. While I was digging into the project and doing some research for it, I came across Nick's similar (but way more advanced) project on [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/). He was really helpful in answering my questions and gave me a boost in getting this project started.
 
