@@ -294,7 +294,7 @@ export const Records = () => {
                     <div className="record-section__value">
                       <h3>{formatToBRDecimal(victory.margin)}%</h3>
                       <small>
-                        {victory.season} -semana {victory.week}
+                        {victory.season} - semana {victory.week}
                       </small>
                     </div>
                   </li>
@@ -342,7 +342,7 @@ export const Records = () => {
                     <div className="record-section__value">
                       <h3>{formatToBRDecimal(victory.margin)}%</h3>
                       <small>
-                        {victory.season} -semana {victory.week}
+                        {victory.season} - semana {victory.week}
                       </small>
                     </div>
                   </li>
