@@ -47,4 +47,4 @@ Em 2022, a liga fez uma transição de plataformas, saindo do [NFL Fantasy](http
 
 [Nick Melhado](https://github.com/nmelhado) – while I was digging into the project and doing some research for it, I came across Nick's similar (but way more advanced) project on [Reddit](https://www.reddit.com/r/DynastyFF/comments/ow6fa9/league_website_using_sleeper_api/). He was really helpful in answering my questions and gave me a boost in getting this project started.
 
-[Giovana Casati](https://www.linkedin.com/in/giovanacasati/) – que não cansou (será? 👀) de me ajudar com feedback sobre o design do site.
+[Giovana Casati](https://www.linkedin.com/in/giovanacasati/) – que não cansou (será? 👀) de me ajudar com o design do site.
