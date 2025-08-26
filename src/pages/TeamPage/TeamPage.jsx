@@ -366,7 +366,7 @@ export const TeamPage = () => {
                         {findOpponentName(
                           adjustedHighestPositionsPoints.qb.opponent_roster_id,
                         )}
-                        , {adjustedHighestPositionsPoints.qb.year} - semana{' '}
+                        , {adjustedHighestPositionsPoints.qb.year} - Semana{' '}
                         {adjustedHighestPositionsPoints.qb.week}
                       </div>
                     </div>
@@ -409,7 +409,7 @@ export const TeamPage = () => {
                         {findOpponentName(
                           adjustedHighestPositionsPoints.rb.opponent_roster_id,
                         )}
-                        , {adjustedHighestPositionsPoints.rb.year} - semana{' '}
+                        , {adjustedHighestPositionsPoints.rb.year} - Semana{' '}
                         {adjustedHighestPositionsPoints.rb.week}
                       </div>
                     </div>
@@ -452,7 +452,7 @@ export const TeamPage = () => {
                         {findOpponentName(
                           adjustedHighestPositionsPoints.wr.opponent_roster_id,
                         )}
-                        , {adjustedHighestPositionsPoints.wr.year} - semana{' '}
+                        , {adjustedHighestPositionsPoints.wr.year} - Semana{' '}
                         {adjustedHighestPositionsPoints.wr.week}
                       </div>
                     </div>
@@ -495,7 +495,7 @@ export const TeamPage = () => {
                         {findOpponentName(
                           adjustedHighestPositionsPoints.te.opponent_roster_id,
                         )}
-                        , {adjustedHighestPositionsPoints.te.year} - semana{' '}
+                        , {adjustedHighestPositionsPoints.te.year} - Semana{' '}
                         {adjustedHighestPositionsPoints.te.week}
                       </div>
                     </div>
@@ -538,7 +538,7 @@ export const TeamPage = () => {
                         {findOpponentName(
                           adjustedHighestPositionsPoints.k.opponent_roster_id,
                         )}
-                        , {adjustedHighestPositionsPoints.k.year} - semana{' '}
+                        , {adjustedHighestPositionsPoints.k.year} - Semana{' '}
                         {adjustedHighestPositionsPoints.k.week}
                       </div>
                     </div>
@@ -583,7 +583,7 @@ export const TeamPage = () => {
                         {findOpponentName(
                           adjustedHighestPositionsPoints.def.opponent_roster_id,
                         )}
-                        , {adjustedHighestPositionsPoints.def.year} - semana{' '}
+                        , {adjustedHighestPositionsPoints.def.year} - Semana{' '}
                         {adjustedHighestPositionsPoints.def.week}
                       </div>
                     </div>
