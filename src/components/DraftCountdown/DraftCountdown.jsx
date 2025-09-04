@@ -21,6 +21,11 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
   const formatUnitLabel = (n, singular, plural, short) =>
     compact ? short : n === '01' ? singular : plural;
 
+  // se o countdown chegou a zero, ele não é renderizado
+  if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
+    return null;
+  }
+
   return (
     <>
       <div className={`${variant}__draft-countdown-title`}>
