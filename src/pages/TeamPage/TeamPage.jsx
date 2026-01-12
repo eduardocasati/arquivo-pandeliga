@@ -86,7 +86,8 @@ export const TeamPage = () => {
                   </div>
                   <div className="stats-card__value">
                     <h3>{extraTeamStats.best_finish.position}º</h3>
-                    <small>{extraTeamStats.best_finish.year}</small>
+                    {/* <small>{extraTeamStats.best_finish.year}</small> */}
+                    <small>{extraTeamStats.best_finish.years.join(', ')}</small>
                   </div>
                 </div>
                 <div className="stats-card__row">
@@ -94,11 +95,19 @@ export const TeamPage = () => {
                     <h3>Pior colocação</h3>
                   </div>
                   <div className="stats-card__value">
-                    <h3>
+                    {/* <h3>
                       {extraTeamStats.worst_finish.position}
                       {extraTeamStats.worst_finish.position != 'último' && 'º'}
+                    </h3> */}
+                    <h3>
+                      {extraTeamStats.worst_finish.isLastPlace
+                        ? 'Último'
+                        : `${extraTeamStats.worst_finish.position}º`}
                     </h3>
-                    <small>{extraTeamStats.worst_finish.year}</small>
+                    {/* <small>{extraTeamStats.worst_finish.year}</small> */}
+                    <small>
+                      {extraTeamStats.worst_finish.years.join(', ')}
+                    </small>
                   </div>
                 </div>
                 <div className="stats-card__row">

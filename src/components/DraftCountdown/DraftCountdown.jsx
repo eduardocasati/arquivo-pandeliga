@@ -1,19 +1,31 @@
 import React from 'react';
 import { FaHourglassHalf } from 'react-icons/fa';
 
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
+
 import './DraftCountdown.header.css';
 import './DraftCountdown.hero.css';
 
-import { getTargetDate } from './getTargetDate';
 import { useDraftCountdown } from './useDraftCountdown';
+import { useDraftDate } from './useDraftDate';
 
 /**
  * A prop variant é o prefixo/base da classe CSS, por ex: 'hero'
  * @param {string} variant
  */
 export const DraftCountdown = React.memo(({ variant, compact = false }) => {
-  const targetDate = getTargetDate(); // Importa de getTargetDate qual é a data e horário do draft
-  const { days, hours, minutes, seconds } = useDraftCountdown(targetDate); // Passa para o custom hook useDraftCountdown a data do draft
+  const { data: targetDate, isLoading } = useDraftDate();
+
+  const countdown = useDraftCountdown(targetDate, {
+    enabled: !!targetDate,
+  });
+
+  // TODO pensar em uma solução visual mais elegante para aparecer enquanto recebe a data do draft
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
+  const { days, hours, minutes, seconds } = countdown;
 
   // essa função controla duas coisas:
   // se compact for true, ao invés de mostrar Dia/Hora/Minuto/Segundo, mostra D/H/M/S
@@ -36,7 +48,7 @@ export const DraftCountdown = React.memo(({ variant, compact = false }) => {
             </span>
           )}
           {/* TODO condicional para exibir data do draft, depois data do início da temporada, depois outra coisa */}
-          {/* O draft de 2025 começa em */}A temporada de 2025 começa em
+          O draft de 2026 começa em
         </h1>
       </div>
       <div className={`${variant}__draft-countdown-numbers`}>

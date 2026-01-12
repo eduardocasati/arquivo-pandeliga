@@ -42,19 +42,50 @@ export function calculateTeamStats(teamHistory) {
     shit_bowl_losses: { count: 0, years: [] },
   };
 
-  // TODO colocar condição em best_finish para armazenar vários anos se o time foi campeão mais de uma vez
-  // idem para último lugar
-
   teamHistory.forEach(({ year, position }) => {
     year = Number(year);
     if (position === null) return;
 
+    const isLast = isLastPlace(position, year);
+
+    // if (!stats.best_finish || position < stats.best_finish.position) {
+    //   stats.best_finish = { position, year };
+    // }
     if (!stats.best_finish || position < stats.best_finish.position) {
-      stats.best_finish = { position, year };
+      stats.best_finish = {
+        position,
+        years: [year],
+      };
+    } else if (position === stats.best_finish.position) {
+      stats.best_finish.years.push(year);
     }
 
-    if (!stats.worst_finish || position > stats.worst_finish.position) {
-      stats.worst_finish = { position, year };
+    // if (!stats.worst_finish || position > stats.worst_finish.position) {
+    //   stats.worst_finish = { position, year };
+    // }
+    if (isLast) {
+      if (!stats.worst_finish || stats.worst_finish.position !== 'último') {
+        stats.worst_finish = {
+          position: 'último',
+          years: [year],
+        };
+      } else {
+        stats.worst_finish.years.push(year);
+      }
+    } else if (
+      !stats.worst_finish ||
+      (stats.worst_finish.position !== 'último' &&
+        position > stats.worst_finish.position)
+    ) {
+      stats.worst_finish = {
+        position,
+        years: [year],
+      };
+    } else if (
+      stats.worst_finish.position !== 'último' &&
+      position === stats.worst_finish.position
+    ) {
+      stats.worst_finish.years.push(year);
     }
 
     if (wentToPlayoffs(position, year)) stats.playoffs.count++;
@@ -73,12 +104,12 @@ export function calculateTeamStats(teamHistory) {
   });
 
   // depois que determina a pior posição aplica 'último' se necessário
-  if (
-    stats.worst_finish &&
-    isLastPlace(stats.worst_finish.position, stats.worst_finish.year)
-  ) {
-    stats.worst_finish.position = 'último';
-  }
+  // if (
+  //   stats.worst_finish &&
+  //   isLastPlace(stats.worst_finish.position, stats.worst_finish.year)
+  // ) {
+  //   stats.worst_finish.position = 'último';
+  // }
 
   return stats;
 }

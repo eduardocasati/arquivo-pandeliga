@@ -36,3 +36,9 @@ export async function fetchAllPlayers() {
   const response = await fetch(`${BASE_URL}/players/nfl`);
   return response.json();
 }
+
+// PEGA AS INFORMAÇÕES DE UM DRAFT em https://api.sleeper.app/v1/draft/<draft_id>
+export async function fetchDraft(draftId) {
+  const response = await fetch(`${BASE_URL}/draft/${draftId}`);
+  return response.json();
+}

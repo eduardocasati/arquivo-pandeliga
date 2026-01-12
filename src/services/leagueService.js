@@ -1,4 +1,4 @@
-import { fetchLeague } from '../api/sleeperApi.js';
+import { fetchDraft, fetchLeague } from '../api/sleeperApi.js';
 import { getSeasonYear } from '../data/getSeasonYear.js';
 
 import { LEAGUE_CONFIG } from '../config/leagueConfig.js';
@@ -42,4 +42,15 @@ export async function getAllLeagues() {
   }
 
   return allLeagues;
+}
+
+// PEGA DATA E HORÁRIO DO DRAFT DA LIGA
+export async function getDraftDate() {
+  const league = await fetchLeague(CURRENT_SEASON_LEAGUE_ID);
+  const draftId = league.draft_id;
+
+  const draft = await fetchDraft(draftId);
+  const draftDate = draft.start_time;
+
+  return draftDate;
 }

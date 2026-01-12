@@ -11,6 +11,7 @@ import './Header.css';
 
 import { useChampionData } from '../../hooks/useChampionData';
 
+import { LEAGUE_CONFIG } from '../../config/leagueConfig';
 import {
   logoArquivoPandeliga,
   logoSleeper,
@@ -18,6 +19,8 @@ import {
 } from '../../constants/images';
 import { navItems } from '../../constants/navItems';
 import teams from '../../constants/teams';
+
+const { CURRENT_SEASON_LEAGUE_ID } = LEAGUE_CONFIG;
 
 export const Header = () => {
   const matchRoute = useMatchRoute();
@@ -79,7 +82,7 @@ export const Header = () => {
           {/* LOGO SLEEPER VERSÃO MOBILE */}
           <div className="header__sleeper-logo-mobile">
             <a
-              href="sleeper://league/1181787756111253504"
+              href={`sleeper://league/${CURRENT_SEASON_LEAGUE_ID}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -121,7 +124,7 @@ export const Header = () => {
 
           <div className="header__sleeper-logo">
             <a
-              href="https://sleeper.com/leagues/1181787756111253504/"
+              href={`https://sleeper.com/leagues/${CURRENT_SEASON_LEAGUE_ID}/`}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -25,6 +25,7 @@ const teams = [
       { year: '2022', position: 1 },
       { year: '2023', position: 7 },
       { year: '2024', position: 2 },
+      { year: '2025', position: 6 },
     ],
   },
   {
@@ -40,6 +41,7 @@ const teams = [
       { year: '2022', position: 7 },
       { year: '2023', position: 3 },
       { year: '2024', position: 10 },
+      { year: '2025', position: 9 },
     ],
   },
   {
@@ -55,6 +57,7 @@ const teams = [
       { year: '2022', position: 6 },
       { year: '2023', position: 6 },
       { year: '2024', position: 8 },
+      { year: '2025', position: 3 },
     ],
   },
   {
@@ -70,6 +73,7 @@ const teams = [
       { year: '2022', position: 3 },
       { year: '2023', position: 5 },
       { year: '2024', position: 5 },
+      { year: '2025', position: 5 },
     ],
   },
   {
@@ -85,6 +89,7 @@ const teams = [
       { year: '2022', position: 2 },
       { year: '2023', position: 4 },
       { year: '2024', position: 3 },
+      { year: '2025', position: 2 },
     ],
   },
   {
@@ -100,6 +105,7 @@ const teams = [
       { year: '2022', position: 5 },
       { year: '2023', position: 8 },
       { year: '2024', position: 1 },
+      { year: '2025', position: 4 },
     ],
   },
   {
@@ -115,6 +121,7 @@ const teams = [
       { year: '2022', position: 8 },
       { year: '2023', position: 2 },
       { year: '2024', position: 6 },
+      { year: '2025', position: 10 },
     ],
   },
   {
@@ -130,6 +137,7 @@ const teams = [
       { year: '2022', position: 4 },
       { year: '2023', position: 1 },
       { year: '2024', position: 4 },
+      { year: '2025', position: 1 },
     ],
   },
   {
@@ -145,6 +153,7 @@ const teams = [
       { year: '2022', position: null },
       { year: '2023', position: null },
       { year: '2024', position: 7 },
+      { year: '2025', position: 8 },
     ],
   },
   {
@@ -160,6 +169,7 @@ const teams = [
       { year: '2022', position: null },
       { year: '2023', position: null },
       { year: '2024', position: 9 },
+      { year: '2025', position: 7 },
     ],
   },
 ];
