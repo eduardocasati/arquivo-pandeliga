@@ -96,6 +96,14 @@ export const HistoricalStandings = () => {
                 <tr>
                   <th>Times</th>
                   <th
+                    onClick={() => handleSort('win_percentage')}
+                    className={
+                      sortConfig.key === 'win_percentage' ? 'sorted-column' : ''
+                    }
+                  >
+                    %V {renderSortIcon('win_percentage')}
+                  </th>
+                  <th
                     onClick={() => handleSort('wins')}
                     className={sortConfig.key === 'wins' ? 'sorted-column' : ''}
                   >
@@ -108,14 +116,6 @@ export const HistoricalStandings = () => {
                     }
                   >
                     D {renderSortIcon('losses')}
-                  </th>
-                  <th
-                    onClick={() => handleSort('win_percentage')}
-                    className={
-                      sortConfig.key === 'win_percentage' ? 'sorted-column' : ''
-                    }
-                  >
-                    %V {renderSortIcon('win_percentage')}
                   </th>
                   <th
                     onClick={() => handleSort('points_per_game')}
@@ -159,6 +159,15 @@ export const HistoricalStandings = () => {
                     </td>
                     <td
                       className={
+                        sortConfig.key === 'win_percentage'
+                          ? 'sorted-column'
+                          : ''
+                      }
+                    >
+                      {formatToBRDecimal(team.win_percentage) + '%'}
+                    </td>
+                    <td
+                      className={
                         sortConfig.key === 'wins' ? 'sorted-column' : ''
                       }
                     >
@@ -170,15 +179,6 @@ export const HistoricalStandings = () => {
                       }
                     >
                       {team.losses}
-                    </td>
-                    <td
-                      className={
-                        sortConfig.key === 'win_percentage'
-                          ? 'sorted-column'
-                          : ''
-                      }
-                    >
-                      {formatToBRDecimal(team.win_percentage) + '%'}
                     </td>
                     <td
                       className={
